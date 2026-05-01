@@ -1,0 +1,84 @@
+ai-pipeline.html | ai-pipeline.html
+index.html | index.html
+
+images/ai-advantage/Development_Applications.png | Development_Applications.png
+images/ai-advantage/Entourage.png | Entourage.png
+images/ai-advantage/Marketing_1.png | Marketing_1.png
+images/ai-advantage/Marketing_2.jpg | Marketing_2.jpg
+images/ai-advantage/Media_Release.png | Media_Release.png
+images/ai-advantage/Photography.jpg | Photography.jpg
+images/ai-advantage/masterplan.jpeg | masterplan.jpeg
+
+images/icons/icon_01_architectural_viz.png | icon_01_architectural_viz.png
+images/icons/icon_02_animation_film.png | icon_02_animation_film.png
+images/icons/icon_03_ai_enhancement.png | icon_03_ai_enhancement.png
+images/icons/icon_04_virtual_reality.png | icon_04_virtual_reality.png
+images/icons/icon_05_masterplan.png | icon_05_masterplan.png
+images/icons/icon_06_view_impact.png | icon_06_view_impact.png
+
+images/projects/688 Pacific Highway - Chatswood/688PacificHwy_View01E_Streetscape_FINAL.jpg | 688PacificHwy_View01E_Streetscape_FINAL.jpg
+images/projects/688 Pacific Highway - Chatswood/688PacificHwy_View025E_Apt501_Penthouse_FINAL.jpg | 688PacificHwy_View025E_Apt501_Penthouse_FINAL.jpg
+images/projects/688 Pacific Highway - Chatswood/688PacificHwy_View11B_Apt501_Master_Bedroom FINAL.jpg | 688PacificHwy_View11B_Apt501_Master_Bedroom FINAL.jpg
+images/projects/688 Pacific Highway - Chatswood/688PacificHwy_View15C_Apt501_Kitchen_Joinery FINAL.jpg | 688PacificHwy_View15C_Apt501_Kitchen_Joinery FINAL.jpg
+images/projects/688 Pacific Highway - Chatswood/688PacificHwy_View15C4_Apt501_Kitchen_Joinery_Vignette FINAL.jpg | 688PacificHwy_View15C4_Apt501_Kitchen_Joinery_Vignette FINAL.jpg
+images/projects/688 Pacific Highway - Chatswood/688PacificHwy_View16C_Apt501_Fireplace FINAL.jpg | 688PacificHwy_View16C_Apt501_Fireplace FINAL.jpg
+images/projects/688 Pacific Highway - Chatswood/688PacificHwy_View21B2_Apt502_Kitchen FINAL.jpg | 688PacificHwy_View21B2_Apt502_Kitchen FINAL.jpg
+images/projects/688 Pacific Highway - Chatswood/688PacificHwy_View24C_Apt502_Study_FINAL.jpg | 688PacificHwy_View24C_Apt502_Study_FINAL.jpg
+
+images/projects/Beauchamp - 107 High St North Sydney/107High_View01A_G02_Section FINAL.jpg | 107High_View01A_G02_Section FINAL.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View02B_Apt201_Living_to_View Final V2.jpg | 107High_View02B_Apt201_Living_to_View Final V2.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View03A_Apt202_Living_to_Balcony FINAL.jpg | 107High_View03A_Apt202_Living_to_Balcony FINAL.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View04A_APTG02_Bedroom FINAL v2.jpg | 107High_View04A_APTG02_Bedroom FINAL v2.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View05A_APTG02_Ensuite FINAL.jpg | 107High_View05A_APTG02_Ensuite FINAL.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View07A_Apt_G02_Entry FINAL.jpg | 107High_View07A_Apt_G02_Entry FINAL.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View08A_G02_Garden FINAL v2.jpg | 107High_View08A_G02_Garden FINAL v2.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View10C_Hero_Street FINAL.jpg | 107High_View10C_Hero_Street FINAL.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View11A_Building_Entry Dusk FINAL.jpg | 107High_View11A_Building_Entry Dusk FINAL.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View11A_Building_Entry FINAL v2.jpg | 107High_View11A_Building_Entry FINAL v2.jpg
+images/projects/Beauchamp - 107 High St North Sydney/107High_View14A_G02_Kitchen FINAL.jpg | 107High_View14A_G02_Kitchen FINAL.jpg
+
+images/projects/Hume_Place_Crows Nest/HumePL_View02C_A0801_Typical_Kitchen FINAL.jpg | HumePL_View02C_A0801_Typical_Kitchen FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View04B2_A1806_Living_to_View FINAL.jpg | HumePL_View04B2_A1806_Living_to_View FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View04B3_A1806_Living_Vignette FINAL.jpg | HumePL_View04B3_A1806_Living_Vignette FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View05A2_A1805_Living_to_View FINAL.jpg | HumePL_View05A2_A1805_Living_to_View FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View08C_A1810_Typical_Bathroom_LIGHT Door FINAL.jpg | HumePL_View08C_A1810_Typical_Bathroom_LIGHT Door FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View11B2_A1810_Bedroom_to_View FINAL.jpg | HumePL_View11B2_A1810_Bedroom_to_View FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View12A2_A1806_Balcony_Facing_West FINAL.jpg | HumePL_View12A2_A1806_Balcony_Facing_West FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View12C_A1806_Balcony_Facing_West FINAL.jpg | HumePL_View12C_A1806_Balcony_Facing_West FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View14B_A2003_Bedroom_and_WIR FINAL.jpg | HumePL_View14B_A2003_Bedroom_and_WIR FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View17A2_A1902_Sub_Pent_Living_to_Kitchen FINAL.jpg | HumePL_View17A2_A1902_Sub_Pent_Living_to_Kitchen FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View21B_A1501_Superman_to_City FINAL.jpg | HumePL_View21B_A1501_Superman_to_City FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View22C9_A2003_Upper_Pent_Kitchen_LIGHT_FINAL.jpg | HumePL_View22C9_A2003_Upper_Pent_Kitchen_LIGHT_FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View32B_A2007_PH_Rooftop FINAL.jpg | HumePL_View32B_A2007_PH_Rooftop FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View37C_A1506_Living_Kitchen_WG FINAL.jpg | HumePL_View37C_A1506_Living_Kitchen_WG FINAL.jpg
+images/projects/Hume_Place_Crows Nest/HumePL_View41L_Entry_LookingUP Redesign Final.jpg | HumePL_View41L_Entry_LookingUP Redesign Final.jpg
+
+images/projects/Origami_55 Grafton Street Bondi Junction/55Grafton_View26C_Apt1501_Fireplace_to_Balcony_FINAL.jpg | 55Grafton_View26C_Apt1501_Fireplace_to_Balcony_FINAL.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55Grafton_View28A_Apt1201_Bedroom_FINAL3.jpg | 55Grafton_View28A_Apt1201_Bedroom_FINAL3.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View06F_Apt1701_Living_To_View FINAL2.jpg | 55_Grafton_View06F_Apt1701_Living_To_View FINAL2.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View06I5_Apt1702_WIR FINAL2.jpg | 55_Grafton_View06I5_Apt1702_WIR FINAL2.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View07B_Apt1702_Bedroom_FINAL2.jpg | 55_Grafton_View07B_Apt1702_Bedroom_FINAL2.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View10A2_Apt1701_Kitchen_Dark_FINAL2.jpg | 55_Grafton_View10A2_Apt1701_Kitchen_Dark_FINAL2.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View10A2_Apt1701_Kitchen_Light_FINAL3.jpg | 55_Grafton_View10A2_Apt1701_Kitchen_Light_FINAL3.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View11C_Apt1801_Scullery_Kit_FINAL2.jpg | 55_Grafton_View11C_Apt1801_Scullery_Kit_FINAL2.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View18D7_Apt1403_Living to View_FINAL2.jpg | 55_Grafton_View18D7_Apt1403_Living to View_FINAL2.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View19C_Apt1403_Ensuite+WiR_FINAL2.jpg | 55_Grafton_View19C_Apt1403_Ensuite+WiR_FINAL2.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View1Q_Hero Day_FINAL.jpg | 55_Grafton_View1Q_Hero Day_FINAL.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View2D_Apt1604_Superman_FINAL.jpg | 55_Grafton_View2D_Apt1604_Superman_FINAL.jpg
+images/projects/Origami_55 Grafton Street Bondi Junction/55_Grafton_View33_Penthouse_Master_Bed_WiR_R6.jpg | 55_Grafton_View33_Penthouse_Master_Bed_WiR_R6.jpg
+
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_01F3_Twilight Aerial_FINAL.jpg | 18_Darlinghurst_View_01F3_Twilight Aerial_FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_03C_Hero FINAL.jpg | 18_Darlinghurst_View_03C_Hero FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_05D_Laneway_FINAL.jpg | 18_Darlinghurst_View_05D_Laneway_FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_10A_R22_Living FINAL.jpg | 18_Darlinghurst_View_10A_R22_Living FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_12C_B22_Living Final_CorrectView.jpg | 18_Darlinghurst_View_12C_B22_Living Final_CorrectView.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_13B_E51_Living FINAL.jpg | 18_Darlinghurst_View_13B_E51_Living FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_14D_L62_Bedroom_FINAL.jpg | 18_Darlinghurst_View_14D_L62_Bedroom_FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_28C_Street_Level_FINAL.jpg | 18_Darlinghurst_View_28C_Street_Level_FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_29N_135mm_View_Corridor_R51 R8.jpg | 18_Darlinghurst_View_29N_135mm_View_Corridor_R51 R8.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_32B_Walk In Robe_FINAL.jpg | 18_Darlinghurst_View_32B_Walk In Robe_FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_43Ab_AptC501_Kitchen_Living FINAL.jpg | 18_Darlinghurst_View_43Ab_AptC501_Kitchen_Living FINAL.jpg
+images/projects/Queensgate - 18-32A Darlinghurst Rd Potts Point/18_Darlinghurst_View_45A_AptS301_Living FINAL.jpg | 18_Darlinghurst_View_45A_AptS301_Living FINAL.jpg
+
+videos/project-cards/Hume_Place_Preview_Card.mp4 | Hume_Place_Preview_Card.mp4
+videos/project-cards/kling_Exterior_Morning.mp4 | kling_Exterior_Morning.mp4

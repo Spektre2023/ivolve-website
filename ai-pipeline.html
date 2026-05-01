@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Pipeline — Ivolve Studios</title>
+<meta name="description" content="How Ivolve Studios has integrated artificial intelligence at every stage of architectural visualisation — from masterplanning to marketing CGI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060606;--bg2:#090909;--surface:#0f0f0f;--border:rgba(255,255,255,0.06);--text:#ede9e3;--text-muted:#7a7570;--text-dim:#464340;--accent:#b8966a;--accent2:#d4b98a;--font-display:'Cormorant Garamond',serif;--font-ui:'Syne',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;overflow-x:hidden;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-ui);font-size:15px;line-height:1.65;cursor:none}
+.cursor{position:fixed;width:7px;height:7px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(184,150,106,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,6,6,.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text);text-decoration:none}
+.nav-back{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color .2s}
+.nav-back:hover{color:var(--accent)}
+.nav-back svg{transition:transform .2s}
+.nav-back:hover svg{transform:translateX(-4px)}
+/* HERO */
+.article-hero{padding:140px 56px 72px;border-bottom:1px solid var(--border);max-width:1000px;margin:0 auto}
+.article-kicker{font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.article-title{font-family:var(--font-display);font-size:clamp(42px,6vw,84px);font-weight:300;line-height:.95;letter-spacing:-.02em;margin-bottom:28px}
+.article-title em{font-style:italic;color:var(--accent2)}
+.article-lede{font-size:18px;line-height:1.8;color:var(--text-muted);font-weight:300;border-left:2px solid var(--accent);padding-left:24px;margin-bottom:40px}
+.article-meta{display:flex;gap:40px;padding-top:28px;border-top:1px solid var(--border)}
+.meta-label{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px}
+.meta-value{font-size:13px;color:var(--text-muted)}
+/* SECTION CARDS */
+.sections-wrap{max-width:1200px;margin:0 auto;padding:80px 56px 120px}
+.section-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);margin-bottom:2px;overflow:hidden;transition:border-color .3s}
+.section-card:hover{border-color:rgba(184,150,106,.2)}
+.section-card-img{position:relative;overflow:hidden;background:var(--surface);min-height:320px}
+.section-card-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85) saturate(.9);transition:transform .7s ease,filter .4s}
+.section-card:hover .section-card-img img{transform:scale(1.04);filter:brightness(.95) saturate(1)}
+.section-card-img-placeholder{width:100%;height:100%;min-height:320px;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
+.section-card-body{padding:48px;display:flex;flex-direction:column;justify-content:space-between;background:var(--bg);border-left:1px solid var(--border);transition:background .3s}
+.section-card:hover .section-card-body{background:var(--bg2)}
+.section-card-num{font-family:var(--font-display);font-size:11px;font-weight:300;color:var(--accent);opacity:.5;letter-spacing:.2em;margin-bottom:16px}
+.section-card-title{font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);font-weight:300;line-height:1.15;letter-spacing:-.01em;margin-bottom:18px}
+.section-card-excerpt{font-size:14px;line-height:1.8;color:var(--text-muted);margin-bottom:28px}
+.section-card-link{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:gap .2s;cursor:pointer;background:none;border:none;font-family:var(--font-ui);padding:0}
+.section-card-link:hover{gap:16px}
+.section-card-link svg{transition:transform .2s}
+.section-card-link:hover svg{transform:translateX(4px)}
+/* Alternating image position */
+.section-card.flip{direction:rtl}
+.section-card.flip .section-card-body{direction:ltr;border-left:none;border-right:1px solid var(--border)}
+.section-card.flip .section-card-img{direction:ltr}
+/* FULL ARTICLE MODAL */
+.article-modal{position:fixed;inset:0;background:rgba(3,3,3,.97);z-index:9500;display:flex;flex-direction:column;overflow:hidden;transform:translateY(100%);transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.article-modal.open{transform:translateY(0)}
+.modal-bar{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;border-bottom:1px solid var(--border);background:#030303}
+.modal-title{font-family:var(--font-display);font-size:20px;font-weight:300;letter-spacing:-.01em}
+.modal-close{background:none;border:1px solid var(--border);color:var(--text-muted);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .2s;font-family:var(--font-ui)}
+.modal-close:hover{color:var(--text);border-color:rgba(255,255,255,.25)}
+.modal-scroll{flex:1;overflow-y:auto;padding:64px 48px;max-width:800px;margin:0 auto;width:100%}
+.modal-scroll::-webkit-scrollbar{width:3px}
+.modal-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1)}
+.modal-scroll h2{font-family:var(--font-display);font-size:clamp(28px,4vw,48px);font-weight:300;line-height:1.1;letter-spacing:-.02em;margin-bottom:24px}
+.modal-scroll h2 em{font-style:italic;color:var(--accent2)}
+.modal-scroll p{font-size:15px;line-height:1.9;color:var(--text-muted);margin-bottom:22px}
+.modal-scroll p strong{color:var(--text);font-weight:600}
+.modal-scroll blockquote{margin:36px 0;padding:22px 28px;border-left:2px solid var(--accent);background:var(--surface)}
+.modal-scroll blockquote p{font-family:var(--font-display);font-size:22px;font-weight:300;font-style:italic;color:var(--text);margin:0;line-height:1.4}
+/* CTA */
+.article-cta{max-width:1200px;margin:0 auto 0;padding:0 56px 80px}
+.cta-inner{padding:48px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:40px}
+.cta-title{font-family:var(--font-display);font-size:30px;font-weight:300;letter-spacing:-.01em;margin-bottom:8px}
+.cta-sub{font-size:13px;color:var(--text-muted);line-height:1.7}
+.btn-gold{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--bg);background:var(--accent);text-decoration:none;padding:14px 28px;transition:background .25s;flex-shrink:0}
+.btn-gold:hover{background:var(--accent2)}
+.btn-gold svg{transition:transform .2s}
+.btn-gold:hover svg{transform:translateX(4px)}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 56px;display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:11px;color:var(--text-dim)}
+.footer-back{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
+.footer-back:hover{color:var(--accent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+  nav,footer{padding:18px 24px}
+  .article-hero{padding:120px 24px 56px}
+  .sections-wrap,.article-cta{padding-left:24px;padding-right:24px}
+  .section-card{grid-template-columns:1fr}.section-card-img{min-height:240px}
+  .section-card.flip{direction:ltr}.section-card.flip .section-card-body{border-right:none;border-top:1px solid var(--border)}
+  .section-card-body{padding:32px}
+  .cta-inner{flex-direction:column;align-items:flex-start}
+  .modal-scroll{padding:40px 24px}
+  .modal-bar{padding:16px 20px}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ARTICLE MODAL -->
+<div class="article-modal" id="articleModal">
+  <div class="modal-bar">
+    <div class="modal-title" id="modalTitle"></div>
+    <button class="modal-close" id="modalClose">✕</button>
+  </div>
+  <div class="modal-scroll" id="modalScroll"></div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Ivolve Studios</a>
+  <a href="index.html" class="nav-back">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Site
+  </a>
+</nav>
+
+<div class="article-hero reveal">
+  <div class="article-kicker">Feature — AI & Production</div>
+  <h1 class="article-title">How AI has transformed<br><em>every stage</em> of our<br>production pipeline</h1>
+  <p class="article-lede">Artificial intelligence is no longer a finishing tool for us. Since 2023, it has been embedded at every decision point in our workflow — from the first client briefing to final file delivery. The results are unlike anything we could produce before.</p>
+  <div class="article-meta">
+    <div><div class="meta-label">Studio</div><div class="meta-value">Ivolve Studios, Sydney</div></div>
+    <div><div class="meta-label">AI Integration</div><div class="meta-value">Since 2023</div></div>
+    <div><div class="meta-label">Pipeline</div><div class="meta-value">End-to-end AI-enhanced</div></div>
+  </div>
+</div>
+
+<div class="sections-wrap" id="sectionsWrap"></div>
+
+<div class="article-cta">
+  <div class="cta-inner reveal">
+    <div>
+      <div class="cta-title">Ready to see the difference?</div>
+      <div class="cta-sub">Explore our recent projects or get in touch to discuss how our AI-enhanced pipeline can serve your next development.</div>
+    </div>
+    <a href="index.html#contact" class="btn-gold">Start a Conversation <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</div>
+
+<footer>
+  <p class="footer-copy">© 2025 Ivolve Studios Pty Ltd · Sydney, Australia</p>
+  <a href="index.html" class="footer-back">← Back to Ivolve Studios</a>
+</footer>
+
+<script>
+const SECTIONS = [
+  {
+    num: '01',
+    title: 'Masterplanning — Giving Form to a Vision Before a Single Building Exists',
+    excerpt: 'The earliest stage of any major development is also the most consequential. When a client arrives with a masterplan, there are typically no buildings designed, no landscape locked in — just a boundary, a brief, and an ambition. This is precisely where 25 years of experience combined with AI produces something remarkable.',
+    image: null, // Replace with Dropbox scl/fi link when ready
+    imageAlt: 'Aerial masterplan vision at golden hour',
+    full: `<h2>Masterplanning — Giving Form to a Vision <em>Before a Single Building Exists</em></h2>
+<p>The earliest stage of any major development is also the most consequential — and the most underserved by traditional visualisation. When a client arrives with a masterplan, there are typically no buildings yet designed, no landscape locked in, and no architecture to model. What exists is a boundary, a brief, and an ambition.</p>
+<p>This is precisely where 25 years of project experience combined with the power of AI produces something remarkable. Drawing on our deep knowledge of how great precincts look, feel, and function — and using AI to generate, iterate, and refine imagery at a scale and speed previously impossible — we create city-scale masterplan visions that go far beyond a site plan with coloured zones.</p>
+<p>We produce genuinely inspiring imagery that communicates the potential of a place: its density, its character, its landscape, its life. From aerial perspectives showing a future city neighbourhood in full, to ground-level impressions of streets that don't yet exist, we turn a masterplan into a vision that can excite investors, engage councils, and galvanise communities.</p>
+<p>We then take those images further — converting them into cinematic video sequences that bring the future to life with movement, atmosphere, and narrative.</p>
+<blockquote><p>For developers seeking early funding, planning approval, or community engagement, this work is not decorative. It is the difference between a proposal that convinces and one that merely describes.</p></blockquote>`
+  },
+  {
+    num: '02',
+    title: 'Media Release & Community Engagement — Winning Hearts Before the First Sod is Turned',
+    excerpt: 'Few moments in a development\'s lifecycle are as delicate as the public reveal. The imagery must be compelling enough to generate excitement, yet measured enough not to trigger the organised resistance that ambitious projects so often attract. Our AI-supported work has proven transformative here.',
+    image: null,
+    imageAlt: 'Community engagement event with development renders',
+    full: `<h2>Media Release & Community Engagement — Winning Hearts <em>Before the First Sod is Turned</em></h2>
+<p>Few moments in a development's lifecycle are as delicate as the public reveal. The imagery released at this stage must do something genuinely difficult: it must be compelling enough to generate excitement and support, yet measured enough not to trigger the organised resistance that ambitious projects so often attract. Get the visuals wrong, and the narrative is lost before the development application is even lodged.</p>
+<p>Councils face the same challenge from the other side. Decision-makers need visual material that is credible, clear, and emotionally legible — imagery that helps a planning committee or elected councillor understand what a development will actually contribute to their community.</p>
+<p>This is where our AI-supported imagery and video work has proven transformative. The combination of photorealistic quality, atmospheric conviction, and extraordinary production speed means we can produce powerful, considered media release visuals that used to require weeks of production, in a fraction of that window.</p>
+<blockquote><p>Images that read as confident, polished, and real. Videos that make a future community feel inhabited and inevitable. Material that moves public sentiment rather than merely informing it.</p></blockquote>
+<p>In a regulatory and community engagement environment that is only becoming more complex, the quality and speed of this capability is no longer a luxury — it is a strategic asset.</p>`
+  },
+  {
+    num: '03',
+    title: 'Development Applications — Solving the Photomontage Problems That Used to Have No Good Answer',
+    excerpt: 'Accurate photomontages are a cornerstone of the DA process. But proficiency has always had a hard limit: the site photograph. When existing trees obscure key sightlines, or a structure slated for demolition still stands — the base photograph cannot show what the completed development will actually reveal. AI has changed this entirely.',
+    image: null,
+    imageAlt: 'Architectural photomontage on professional monitor',
+    full: `<h2>Development Applications — Solving the Photomontage Problems <em>That Used to Have No Good Answer</em></h2>
+<p>Accurate photomontages have long been a cornerstone of the development application process. Councils require them, planning consultants rely on them, and objectors scrutinise them. The standard is rigorous: the proposed development must be depicted with precision against what currently exists, so decision-makers can form a genuinely informed view of the impact on the surrounding streetscape and neighbourhood character.</p>
+<p>Over 25 years, we have become highly proficient at this work. But proficiency has always had a hard limit: the site photograph. When existing trees obscure key sightlines, when a structure slated for demolition still stands at the time of photography, or when neighbouring buildings that should be visible behind a cleared site are entirely hidden — the base photograph simply cannot show what the completed development will actually reveal.</p>
+<p>These scenarios used to present a stark choice: work around the constraint with a less accurate result, or commission expensive custom 3D modelling of every surrounding obstruction. Neither was satisfactory.</p>
+<blockquote><p>AI has resolved this. We can now reconstruct what a site will look like once a building is demolished, once mature trees are removed, or once a blocked sightline is opened — with a level of realism that would have required days of manual work to approximate.</p></blockquote>
+<p>Situations that were previously impractical to represent honestly are now handled efficiently, compliantly, and convincingly. For applicants navigating complex or contentious DA submissions, the visualisation is no longer constrained by what happens to be standing on the day the photographer visited.</p>`
+  },
+  {
+    num: '04',
+    title: 'Photography — When the Weather Won\'t Cooperate and the Drone Can\'t Fly',
+    excerpt: 'View photography is not decorative background — it is the foundation of accuracy in architectural CGI. Which makes its two most persistent problems particularly frustrating: weather that never cooperates, and airspace regulations that can make the ideal shot legally unavailable. AI has changed our relationship with both realities entirely.',
+    image: null,
+    imageAlt: 'Architectural photographer on Sydney rooftop at golden hour',
+    full: `<h2>Photography — When the Weather Won't Cooperate <em>and the Drone Can't Fly</em></h2>
+<p>View photography is not decorative background. It is the foundation of accuracy in architectural CGI. A development exists within a neighbourhood — within a specific streetscape, a particular skyline, a defined horizon. The view corridors that run through and around a site are often the primary driver of which camera positions are chosen and which images will carry the most weight with a buyer, a council, or an investor.</p>
+<p>Which makes the two most persistent problems in this discipline particularly frustrating. The first is weather. Shoot days are expensive and logistically complex, and the atmosphere has no interest in cooperating with project timelines.</p>
+<p>The second is airspace. Drone operations are subject to increasingly strict regulatory controls — flight permissions, exclusion zones, time-of-day restrictions, and proximity rules that can make the ideal shot legally unavailable on the day it is needed.</p>
+<p>AI has changed our relationship with both of these realities entirely. Unusable sections of a base photograph can now be reconstructed with a realism that would have required hours of skilled manual retouching. More remarkably, we can now shift the entire time of day of a photograph. A shot captured at midday can be translated into the quality of light that only exists at golden hour.</p>
+<blockquote><p>Having spent years doing this work the hard way — frame-by-frame, layer-by-layer — the speed and quality of what AI now makes possible is genuinely remarkable. What once took a day takes minutes. What was previously impossible is now routine.</p></blockquote>`
+  },
+  {
+    num: '05',
+    title: 'Marketing CGI — Why the Tool Is Never the Differentiator',
+    excerpt: 'The marketing image is where technical precision, artistic judgement, spatial storytelling, and commercial purpose converge in a single frame. Every element must be exactly right. This is the context in which the current AI moment is most frequently misunderstood — and most humbling for those who discover its limits.',
+    image: null,
+    imageAlt: 'Ultra-photorealistic luxury apartment interior at dusk',
+    full: `<h2>Marketing CGI — <em>Why the Tool Is Never the Differentiator</em></h2>
+<p>The marketing image is the summit of everything we do. It is where technical precision, artistic judgement, spatial storytelling, and commercial purpose converge in a single frame. Every element must be exactly right — not approximately right — because the image will be placed next to a price tag, submitted to a planning authority, or published to a market that will make purchasing decisions based on what they see.</p>
+<p>We hear it regularly. A client has been experimenting with AI image generation. They've produced some exciting results quickly, and begin to wonder whether they can handle more work internally. Then they reach what we call the AI Brick Wall.</p>
+<p>It arrives at the moment when the image is almost there. Something specific needs correcting. The prompt is refined. The AI responds — and fixes one thing while quietly changing three others. What was framed as a five-minute exercise becomes five hours of compounding frustration.</p>
+<p>We have been there. Not as observers — as practitioners. Understanding this is not a complaint about the technology. It is the central insight required to use it effectively. The skill lies in knowing how much latitude to allow, when to constrain it, and when to abandon the prompt entirely and reach for a different approach.</p>
+<blockquote><p>Every serious practitioner has access to the same headline tools. The differentiator is the knowledge of how to direct them, constrain them, override them, and combine them with decades of craft experience that no prompt can replicate.</p></blockquote>
+<p>And then there is creativity — which no tool addresses at all. Giving someone an exceptional instrument does not give them the musical sensibility to compose something worth hearing. The ideas behind a great image come from a trained creative eye, accumulated visual intelligence, and an understanding of what moves people and why. The tool is available to everyone. The knowledge of how to use it, and the creativity to use it well, are not.</p>`
+  },
+  {
+    num: '06',
+    title: 'Entourage & People — From the Most Complained-About Element to the Most Compelling',
+    excerpt: 'For as long as architectural CGI has existed, the people in the image have been its most contentious ingredient. The feedback was relentless: they don\'t look realistic, wrong demographic, distracting. AI has not merely improved this — it has inverted it entirely.',
+    image: null,
+    imageAlt: 'Affluent couple on luxury rooftop terrace at golden hour',
+    full: `<h2>Entourage & People — From the Most Complained-About Element <em>to the Most Compelling</em></h2>
+<p>For as long as architectural CGI has existed, the people in the image have been its most contentious ingredient. The feedback was relentless and consistent: they don't look realistic enough. The clothing is wrong. They're not the right demographic. They feel pasted in. They're distracting from the architecture.</p>
+<p>The criticism was fair. For years, the industry worked around the problem rather than solving it. We sourced acting talent, commissioned custom photography, spent hours in Photoshop cutting, grading, and compositing figures into scenes. The result, at best, addressed realism and scene integration. But demographics, body language, clothing style, cultural background, age, lifestyle — these remained stubborn sticking points.</p>
+<p>AI has not merely improved this. It has inverted it entirely.</p>
+<p>We can now generate custom people — bespoke acting talent — that address every single point of contention simultaneously. The right age. The right aesthetic. The right cultural background to speak to the specific buyer demographic a developer is targeting. The right clothing for the lifestyle the development is positioning itself within. The right interaction — staged and lit as though captured by a photographer on the day.</p>
+<blockquote><p>The people are no longer the thing a client has to apologise for in a presentation. They have become one of the most powerful narrative tools in the image.</p></blockquote>
+<p>Buyers are not just purchasing a floor plan or a view. They are purchasing a vision of their own life — a future they are being invited to imagine themselves inhabiting. The design earns their rational consideration. The people earn their emotional commitment. Done well, it is not decoration. It is the difference between an image that shows a building and one that sells a life.</p>`
+  }
+];
+
+// Build section cards
+const wrap = document.getElementById('sectionsWrap');
+SECTIONS.forEach((s, i) => {
+  const isFlip = i % 2 !== 0;
+  const card = document.createElement('div');
+  card.className = 'section-card reveal' + (isFlip ? ' flip' : '');
+  card.style.transitionDelay = '0.05s';
+  const imgHtml = s.image
+    ? `<img src="${s.image}" alt="${s.imageAlt}" loading="lazy">`
+    : `<div class="section-card-img-placeholder">Image coming soon</div>`;
+  card.innerHTML = `
+    <div class="section-card-img">${imgHtml}</div>
+    <div class="section-card-body">
+      <div>
+        <div class="section-card-num">Chapter ${s.num}</div>
+        <div class="section-card-title">${s.title}</div>
+        <div class="section-card-excerpt">${s.excerpt}</div>
+      </div>
+      <button class="section-card-link" onclick="openModal(${i})">
+        Read Full Story
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>`;
+  wrap.appendChild(card);
+});
+
+// Modal
+function openModal(idx) {
+  const s = SECTIONS[idx];
+  document.getElementById('modalTitle').textContent = 'Chapter ' + s.num;
+  document.getElementById('modalScroll').innerHTML = s.full;
+  document.getElementById('modalScroll').scrollTop = 0;
+  document.getElementById('articleModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('articleModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Cursor
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='46px';ring.style.height='46px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='7px';cur.style.height='7px';ring.style.width='32px';ring.style.height='32px';});
+});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.06,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>
