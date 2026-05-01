@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<!-- Ivolve Studios v14 | Built 2026-05-01 13:50:31 -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ivolve Studios — Architectural Visualisation & AI-Enhanced CGI, Sydney</title>
+<meta name="description" content="Sydney's most experienced architectural visualisation studio. Photorealistic CGI, animation and AI-enhanced imagery for Australia's leading developers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* GOLD SHIMMER ANIMATION */
+@keyframes goldShimmer {
+  0%,30%{background-position:200% center}
+  100%{background-position:-200% center}
+}
+/* Base shimmer class */
+.shimmer-gold{
+  background:linear-gradient(105deg,var(--accent) 0%,var(--accent) 35%,#e8c97a 44%,#fff8dc 50%,#e8c97a 56%,var(--accent) 65%,var(--accent) 100%);
+  background-size:250% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:goldShimmer 5s ease-in-out infinite;
+  display:inline-block;
+}
+/* Each element gets a different delay and duration for random feel */
+.shimmer-gold:nth-child(1){animation-duration:4.7s;animation-delay:0s}
+.shimmer-gold:nth-child(2){animation-duration:6.3s;animation-delay:-2.1s}
+.shimmer-gold:nth-child(3){animation-duration:5.1s;animation-delay:-4.3s}
+.shimmer-gold:nth-child(4){animation-duration:7.2s;animation-delay:-1.5s}
+.shimmer-gold:nth-child(5){animation-duration:4.4s;animation-delay:-3.7s}
+.shimmer-gold:nth-child(6){animation-duration:6.8s;animation-delay:-0.9s}
+/* Override with CSS custom property for more specific targeting */
+h1 .shimmer-gold{animation-duration:6s;animation-delay:-1.3s}
+h2 .shimmer-gold{animation-duration:5.5s;animation-delay:-3.1s}
+blockquote .shimmer-gold{animation-duration:7s;animation-delay:-2.5s}
+.hero-title .shimmer-gold{animation-duration:7.5s;animation-delay:-0.7s}
+.display-title .shimmer-gold{animation-duration:5.2s;animation-delay:-4s}
+.about-quote .shimmer-gold{animation-duration:8.1s;animation-delay:-2.9s}
+.contact-title .shimmer-gold{animation-duration:6.4s;animation-delay:-1.8s}
+:root{--bg:#060606;--bg2:#090909;--surface:#0f0f0f;--border:rgba(255,255,255,0.06);--border-light:rgba(255,255,255,0.1);--text:#ede9e3;--text-muted:#7a7570;--text-dim:#464340;--accent:#b8966a;--accent2:#d4b98a;--font-display:'Cormorant Garamond',serif;--font-ui:'Syne',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-ui);font-size:15px;line-height:1.65;overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:7px;height:7px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(184,150,106,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:32px 56px;display:flex;align-items:center;justify-content:space-between;transition:all .5s}
+nav.scrolled{background:rgba(6,6,6,.95);backdrop-filter:blur(24px);padding:18px 56px;border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text);text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.nav-links{display:flex;gap:48px;list-style:none}
+.nav-links a{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(237,233,227,.72);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);text-decoration:none;padding:9px 18px;border:1px solid rgba(184,150,106,.35);transition:all .3s}
+.nav-cta:hover{border-color:var(--accent);background:rgba(184,150,106,.08)}
+/* HERO */
+.hero{position:relative;height:100vh;min-height:680px;overflow:hidden}
+.hero-video-wrap{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;overflow:hidden}
+.hero-video-wrap video{position:absolute;top:50%;left:50%;width:100%;height:100%;min-width:100%;min-height:100%;object-fit:cover;transform:translate(-50%,-50%)}
+.hero-fallback{position:absolute;inset:0;background:#080604}
+.hero-fallback::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 40%,rgba(184,150,106,.05) 0%,transparent 60%)}
+.hero-vignette{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,6,6,.25) 0%,rgba(6,6,6,0) 30%,rgba(6,6,6,0) 55%,rgba(6,6,6,.85) 85%,rgba(6,6,6,.98) 100%)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 56px 72px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-left{max-width:800px}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;opacity:0;animation:fadeUp .9s ease .4s forwards}
+h1.hero-title{font-family:var(--font-display);font-size:clamp(56px,8vw,108px);font-weight:300;line-height:.93;letter-spacing:-.02em;opacity:0;animation:fadeUp .9s ease .6s forwards}
+h1.hero-title em{font-style:italic;color:var(--accent2)}
+.hero-right{text-align:center;opacity:0;animation:fadeIn 1s ease 1.2s forwards;margin-top:28px}
+.hero-right p{font-size:14px;line-height:1.8;color:var(--text-muted);max-width:380px;margin:0 auto 28px}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--text);text-decoration:none;padding:14px 28px;border:1px solid rgba(255,255,255,.2);transition:all .3s}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost svg{transition:transform .2s}
+.btn-ghost:hover svg{transform:translateX(4px)}
+.hero-scroll{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 1.6s forwards}
+.hero-scroll span{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--text-dim);writing-mode:vertical-rl;transform:rotate(180deg)}
+.hero-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollDrop 2s ease-in-out infinite}
+@keyframes scrollDrop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* MARQUEE */
+.marquee-band{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;background:var(--bg)}
+.marquee-inner{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
+.marquee-inner span{font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--text-dim);padding:0 40px}
+.marquee-inner span.a{color:var(--accent);opacity:.4}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* PORTFOLIO */
+.portfolio-section{padding:100px 0 0;background:var(--bg)}
+.portfolio-header{padding:0 56px;margin-bottom:56px;display:flex;align-items:flex-end;justify-content:space-between}
+.eyebrow{font-size:10px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.display-title{font-family:var(--font-display);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-.02em}
+.display-title em{font-style:italic;color:var(--accent2)}
+.project-card{display:grid;grid-template-columns:1fr 380px;min-height:520px;border-top:1px solid var(--border);cursor:pointer;overflow:hidden}
+.project-card:last-child{border-bottom:1px solid var(--border)}
+.project-card-media{position:relative;overflow:hidden;background:var(--surface)}
+.project-card-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 8s ease}
+.project-card:hover .project-card-img-bg{transform:scale(1.04)}
+.project-card-media-overlay{position:absolute;inset:0;background:rgba(6,6,6,.12);transition:background .4s}
+.project-card:hover .project-card-media-overlay{background:rgba(6,6,6,.03)}
+.project-card-number{position:absolute;top:28px;left:32px;font-family:var(--font-display);font-size:13px;font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.1em}
+.project-card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;z-index:1}
+.project-card-img-bg{z-index:0}
+.project-card-media-overlay{z-index:2}
+.project-card-number{z-index:3}
+.video-note{position:absolute;bottom:16px;right:16px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.18);background:rgba(6,6,6,.5);padding:5px 9px;pointer-events:none}
+.project-card-info{padding:48px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--border);background:var(--bg);transition:background .3s}
+.project-card:hover .project-card-info{background:var(--bg2)}
+.project-card-label{font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px}
+.project-card-name{font-family:var(--font-display);font-size:clamp(22px,2.5vw,32px);font-weight:300;line-height:1.2;letter-spacing:-.01em;margin-bottom:14px}
+.project-card-desc{font-size:14px;line-height:1.8;color:var(--text-muted);margin-bottom:24px}
+.project-card-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:0}
+.tag{font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border:1px solid var(--border);padding:5px 9px}
+.project-card-link{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);transition:gap .2s}
+.project-card:hover .project-card-link{gap:16px}
+.project-card-link svg{transition:transform .2s}
+.project-card:hover .project-card-link svg{transform:translateX(4px)}
+/* GALLERY — full screen vertical scroll */
+.gallery-drawer{position:fixed;inset:0;z-index:9500;transform:translateY(100%);transition:transform .6s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;background:#030303}
+.gallery-drawer.open{transform:translateY(0)}
+/* Bar — fixed at top */
+.gallery-bar{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid rgba(255,255,255,.06);background:#030303;position:relative;z-index:2}
+.gallery-bar-left{display:flex;align-items:baseline;gap:18px}
+.gallery-proj-name{font-family:var(--font-display);font-size:21px;font-weight:300;letter-spacing:-.01em;color:var(--text)}
+.gallery-count{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
+.gallery-close{background:none;border:1px solid rgba(255,255,255,.12);color:rgba(237,233,227,.5);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .2s;font-family:var(--font-ui)}
+.gallery-close:hover{color:var(--text);border-color:rgba(255,255,255,.3)}
+/* Scroll container — fills remaining height, scrolls vertically */
+.gallery-scroll{flex:1;overflow-y:scroll;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:#030303}
+.gallery-scroll::-webkit-scrollbar{width:3px}
+.gallery-scroll::-webkit-scrollbar-track{background:transparent}
+.gallery-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
+/* Each media item: full viewport width */
+.gallery-item{width:100%;display:block;position:relative;line-height:0}
+.gallery-item img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(255,255,255,.03)}
+.gallery-item video{width:100%;height:auto;display:block;border-bottom:1px solid rgba(255,255,255,.03)}
+.gallery-item-caption{padding:10px 24px 14px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(237,233,227,.3);background:#030303;line-height:1}
+/* Back to top button */
+.gallery-top-btn{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:rgba(3,3,3,.9);border:1px solid rgba(255,255,255,.12);color:rgba(237,233,227,.5);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .25s;z-index:9600;opacity:0;pointer-events:none;border-radius:0}
+.gallery-top-btn.visible{opacity:1;pointer-events:auto}
+.gallery-top-btn:hover{color:var(--accent);border-color:rgba(184,150,106,.4)}
+/* SERVICES */
+.services-section{padding:120px 56px;background:var(--bg2);border-top:1px solid var(--border)}
+.services-inner{max-width:1400px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:64px}
+.service-icon-img{width:100%;aspect-ratio:1;object-fit:cover;display:block;opacity:.85;transition:opacity .3s;margin-bottom:28px;border-bottom:1px solid var(--border)}
+.service-card:hover .service-icon-img{opacity:1}
+.service-card{background:var(--bg2);padding:44px 36px;transition:background .3s;position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.service-card:hover{background:var(--surface)}
+.service-card:hover::after{transform:scaleX(1)}
+.service-num{font-family:var(--font-display);font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px}
+.service-name{font-family:var(--font-display);font-size:25px;font-weight:300;line-height:1.2;margin-bottom:14px}
+.service-desc{font-size:13.5px;line-height:1.8;color:var(--text-muted)}
+/* ABOUT */
+.about-section{padding:120px 56px;background:var(--bg);border-top:1px solid var(--border)}
+.about-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.about-quote{font-family:var(--font-display);font-size:clamp(30px,3.5vw,48px);font-weight:300;line-height:1.25;letter-spacing:-.02em;margin-bottom:40px}
+.about-quote em{font-style:italic;color:var(--accent2)}
+.about-body p{font-size:15px;line-height:1.9;color:var(--text-muted);margin-bottom:18px}
+.about-sig{margin-top:40px;padding-top:28px;border-top:1px solid var(--border)}
+.about-sig-name{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--text);margin-bottom:4px}
+.about-sig-role{font-size:11px;color:var(--text-dim);letter-spacing:.1em}
+.value-item{padding:22px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:24px 1fr;gap:16px}
+.value-item:first-child{border-top:1px solid var(--border)}
+.value-n{font-family:var(--font-display);font-size:14px;font-weight:300;color:var(--accent);opacity:.5;padding-top:1px}
+.value-text strong{display:block;font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:4px;letter-spacing:.04em}
+.value-text p{font-size:13.5px;color:var(--text-muted);line-height:1.65}
+/* CONTACT */
+.contact-section{padding:120px 56px;background:var(--bg2);border-top:1px solid var(--border)}
+.contact-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:360px 1fr;gap:100px;align-items:start}
+.contact-title{font-family:var(--font-display);font-size:clamp(38px,4vw,60px);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-bottom:22px}
+.contact-title em{font-style:italic;color:var(--accent2)}
+.contact-blurb{font-size:15px;line-height:1.85;color:var(--text-muted);margin-bottom:36px}
+.contact-detail{padding:20px 0;border-top:1px solid var(--border)}
+.contact-detail-label{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-bottom:7px}
+.contact-detail-val{font-size:14px;color:var(--text-muted)}
+.contact-detail-val a{color:var(--accent);text-decoration:none;transition:opacity .2s}
+.contact-detail-val a:hover{opacity:.75}
+/* FORM */
+.fsec{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-top:32px;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.fsec:first-child{margin-top:0}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
+.frow.full{grid-template-columns:1fr}
+.ff{display:flex;flex-direction:column;gap:5px}
+.ff label{font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim)}
+.ff input,.ff select,.ff textarea{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-ui);font-size:14px;padding:11px 13px;outline:none;transition:border-color .2s;width:100%;appearance:none}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:rgba(184,150,106,.35)}
+.ff select option{background:var(--surface)}
+.ff textarea{resize:vertical;min-height:88px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)}
+.svc-item{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);cursor:pointer;transition:background .2s}
+.svc-item:nth-child(even){border-right:none}
+.svc-item:nth-last-child(-n+2){border-bottom:none}
+.svc-item:hover{background:rgba(184,150,106,.04)}
+.svc-item input[type=checkbox]{accent-color:var(--accent);width:13px;height:13px;flex-shrink:0;cursor:pointer}
+.svc-item label{font-size:12.5px;color:var(--text-muted);cursor:pointer;line-height:1.4}
+.file-wrap{position:relative}
+.file-input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.file-display{background:var(--surface);border:1px dashed var(--border-light);padding:18px 16px;display:flex;align-items:center;gap:12px;color:var(--text-dim);font-size:12px;cursor:pointer;transition:border-color .2s}
+.file-wrap:hover .file-display{border-color:rgba(184,150,106,.3)}
+.file-display svg{flex-shrink:0}
+.file-name{font-size:11px;color:var(--accent);margin-top:5px}
+.form-submit{margin-top:22px;padding:15px;background:var(--accent);color:var(--bg);border:none;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;transition:all .25s;width:100%}
+.form-submit:hover{background:var(--accent2)}
+.form-submit:disabled{opacity:.55;cursor:not-allowed}
+.fmsg{display:none;margin-top:12px;padding:13px 15px;font-size:12px;text-align:center;letter-spacing:.03em}
+.fmsg.ok{background:rgba(61,107,79,.15);border:1px solid rgba(61,107,79,.3);color:#7dbf8f;display:block}
+.fmsg.err{background:rgba(160,60,60,.12);border:1px solid rgba(160,60,60,.25);color:#d08080;display:block}
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px 32px}
+.footer-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:44px}
+.footer-brand{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px}
+.footer-tagline{font-size:13px;line-height:1.7;color:var(--text-dim);max-width:260px}
+.footer-col-title{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+.footer-bottom{max-width:1400px;margin:0 auto;padding-top:22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:11px;color:var(--text-dim)}
+.footer-social{display:flex;gap:24px}
+.footer-social a{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .2s}
+.footer-social a:hover{color:var(--accent)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+/* AI ARTICLE EXPAND */
+.ai-article-section{padding:100px 0 80px;background:var(--bg);border-top:1px solid var(--border)}
+.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:0}
+.ai-grid-card{background:var(--bg);overflow:hidden;display:flex;flex-direction:column;transition:background .3s;cursor:pointer;position:relative}
+.ai-grid-card:hover{background:var(--bg2)}
+.ai-grid-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.85);transition:filter .4s,transform .5s}
+.ai-grid-card:hover .ai-grid-card-img{filter:brightness(1);transform:scale(1.02)}
+.ai-grid-card-img-wrap{overflow:hidden;position:relative}
+.ai-grid-dual-img{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.ai-grid-dual-img img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;filter:brightness(.85);transition:filter .4s}
+.ai-grid-card:hover .ai-grid-dual-img img{filter:brightness(1)}
+.ai-grid-card-body{padding:24px 28px 28px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.ai-grid-card-num{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);opacity:.5;margin-bottom:8px}
+.ai-grid-card-title{font-family:var(--font-display);font-size:20px;font-weight:300;line-height:1.2;letter-spacing:-.01em;margin-bottom:10px}
+.ai-grid-card-excerpt{font-size:12px;line-height:1.75;color:var(--text-muted);margin-bottom:16px;flex:1}
+.ai-grid-card-btn{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:none;border:none;cursor:pointer;font-family:var(--font-ui);padding:0;display:inline-flex;align-items:center;gap:7px;transition:gap .2s}
+.ai-grid-card-btn svg{transition:transform .2s}
+.ai-grid-card:hover .ai-grid-card-btn{gap:11px}
+.ai-grid-card:hover .ai-grid-card-btn svg{transform:translateX(3px)}
+/* Expand panel - spans full width below each row */
+.ai-expand-panel{grid-column:1/-1;background:var(--surface);border-top:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.4,0,.2,1)}
+.ai-expand-panel.open{max-height:3000px}
+.ai-expand-inner{padding:56px 64px 64px;display:block;width:100%}
+.ai-expand-inner h2{font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-bottom:32px;max-width:900px}
+.ai-expand-inner h2 em{font-style:italic;color:var(--accent2)}
+.ai-expand-inner p{font-size:17px;line-height:1.9;color:var(--text-muted);margin-bottom:22px;max-width:880px}
+.ai-expand-inner blockquote{border-left:2px solid var(--accent);padding:22px 32px;background:var(--bg);margin:32px 0;max-width:880px}
+.ai-expand-inner blockquote p{font-family:var(--font-display);font-size:24px;font-weight:300;font-style:italic;color:var(--text);margin:0;line-height:1.4;max-width:none}
+.ai-expand-close{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);background:none;border:none;cursor:pointer;font-family:var(--font-ui);padding:0;display:inline-flex;align-items:center;gap:7px;margin-top:20px;transition:color .2s}
+.ai-expand-close:hover{color:var(--accent)}
+@media(max-width:900px){.ai-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ai-grid{grid-template-columns:1fr}}
+.ai-article-header{padding:0 56px;margin-bottom:56px}
+.ai-cards-wrap{max-width:100%;margin:0}.ai-card{display:none}
+.ai-card:last-child{border-bottom:1px solid var(--border)}
+.ai-card:hover{background:var(--bg2)}
+.ai-card-trigger{display:grid;grid-template-columns:1fr 420px;cursor:pointer;transition:all .3s}
+.ai-card-media{position:relative;overflow:hidden;background:var(--surface);min-height:340px}
+.ai-card-media img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82);transition:transform .7s ease,filter .4s}
+.ai-card:hover .ai-card-media img{transform:scale(1.04);filter:brightness(.95)}
+.ai-card-media-placeholder{width:100%;height:100%;min-height:340px;background:linear-gradient(135deg,var(--surface) 0%,var(--bg2) 100%);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--text-dim)}
+.ai-card-num{position:absolute;top:24px;left:28px;font-family:var(--font-display);font-size:13px;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em}
+.ai-card-summary{padding:48px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--border);background:var(--bg);transition:background .3s}
+.ai-card:hover .ai-card-summary{background:var(--bg2)}
+.ai-card-chapter{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);opacity:.6;margin-bottom:14px}
+.ai-card-title{font-family:var(--font-display);font-size:clamp(20px,2.2vw,28px);font-weight:300;line-height:1.2;letter-spacing:-.01em;margin-bottom:16px}
+.ai-card-excerpt{font-size:13.5px;line-height:1.8;color:var(--text-muted);margin-bottom:28px;flex:1}
+.ai-card-btn{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:none;border:none;cursor:pointer;font-family:var(--font-ui);padding:0;transition:gap .2s}
+.ai-card.expanded .ai-card-btn{color:var(--text-muted)}
+.ai-card-btn svg{transition:transform .3s}
+.ai-card.expanded .ai-card-btn svg{transform:rotate(90deg)}
+/* Expandable body */
+.ai-card-body{max-height:0;overflow:hidden;transition:max-height .7s cubic-bezier(.4,0,.2,1)}
+.ai-card.expanded .ai-card-body{max-height:3000px}
+.ai-card-body-inner{padding:56px 56px 64px;max-width:820px;border-top:1px solid var(--border);background:var(--surface)}
+.ai-card-body-inner h2{font-family:var(--font-display);font-size:clamp(26px,3.5vw,42px);font-weight:300;line-height:1.1;letter-spacing:-.02em;margin-bottom:24px}
+.ai-card-body-inner h2 em{font-style:italic;color:var(--accent2)}
+.ai-card-body-inner p{font-size:15px;line-height:1.9;color:var(--text-muted);margin-bottom:22px}
+.ai-card-body-inner p strong{color:var(--text);font-weight:600}
+.ai-card-body-inner blockquote{margin:36px 0;padding:22px 28px;border-left:2px solid var(--accent);background:var(--bg)}
+.ai-card-body-inner blockquote p{font-family:var(--font-display);font-size:22px;font-weight:300;font-style:italic;color:var(--text);margin:0;line-height:1.45}
+.ai-card-close{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);background:none;border:none;cursor:pointer;font-family:var(--font-ui);margin-top:8px;transition:color .2s;padding:0}
+.ai-card-close:hover{color:var(--accent)}
+/* alternating flip */
+.ai-card.flip .ai-card-trigger{direction:rtl}
+.ai-card.flip .ai-card-summary{direction:ltr;border-left:none;border-right:1px solid var(--border)}
+.ai-card.flip .ai-card-media{direction:ltr}
+@media(max-width:1000px){
+  .ai-card-trigger{grid-template-columns:1fr}.ai-card-media{min-height:260px}
+  .ai-card.flip .ai-card-trigger{direction:ltr}.ai-card.flip .ai-card-summary{border-right:none;border-top:1px solid var(--border)}
+  .ai-card-summary{padding:32px}
+  .ai-article-header{padding:0 24px}
+  .ai-card-body-inner{padding:36px 24px 48px}
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:1100px){
+  nav,nav.scrolled{padding:20px 32px}
+  .hero-content{padding:0 32px 56px}
+  
+  .portfolio-header{padding:0 32px}
+  .project-card{grid-template-columns:1fr;min-height:auto}
+  .project-card-media{height:380px}
+  .project-card-info{border-left:none;border-top:1px solid var(--border);padding:32px}
+  .gallery-arrow-next{right:8px}
+  .gallery-side-info{display:none}
+  .services-section,.about-section,.contact-section{padding:80px 32px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .about-inner,.contact-inner{grid-template-columns:1fr;gap:48px}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:36px}
+  footer{padding:44px 32px 28px}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  h1.hero-title{font-size:clamp(40px,11vw,62px)}
+  .hero-right{display:none}
+  .services-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-item{border-right:none}
+  .svc-item:nth-child(even){border-right:none}
+  .svc-item:nth-last-child(-n+2){border-bottom:1px solid var(--border)}
+  .svc-item:last-child{border-bottom:none}
+  .frow{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .gallery-bar{padding:14px 18px}
+  .gallery-thumbs{padding:10px 16px}
+}
+/* ── TABLET 1100px ── */
+@media(max-width:1100px){
+  nav,nav.scrolled{padding:20px 28px}
+  .hero-content{padding:0 28px 56px}
+  .portfolio-header{padding:0 28px}
+  .project-card{grid-template-columns:1fr;min-height:auto}
+  .project-card-media{height:340px}
+  .project-card-info{border-left:none;border-top:1px solid var(--border);padding:28px}
+  .gallery-side-info{display:none}
+  .services-section,.about-section,.contact-section{padding:72px 28px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .about-inner,.contact-inner{grid-template-columns:1fr;gap:44px}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
+  footer{padding:40px 28px 24px}
+  .ai-grid{grid-template-columns:1fr 1fr}
+  .ai-article-header{padding:0 28px}
+  .ai-expand-inner{padding:28px 20px 40px}
+}
+/* ── MOBILE 768px ── */
+@media(max-width:768px){
+  /* NAV */
+  nav,nav.scrolled{padding:16px 20px}
+  .nav-links{display:none}
+  .nav-cta{font-size:10px;padding:7px 14px}
+  /* HERO */
+  .hero{min-height:100svh}
+  h1.hero-title{font-size:clamp(38px,12vw,58px);line-height:.95}
+  .hero-eyebrow{font-size:9px;margin-bottom:16px}
+  .hero-content{padding:0 20px 40px;align-items:center;text-align:center}
+  .hero-right{display:none}
+  .hero-scroll{display:none}
+  /* MARQUEE */
+  .marquee-band{padding:10px 0}
+  .marquee-inner span{font-size:9px;padding:0 20px}
+  /* AI ADVANTAGE */
+  .ai-article-section{padding:60px 0 48px}
+  .ai-article-header{padding:0 20px;margin-bottom:28px}
+  .ai-article-header .display-title{font-size:clamp(28px,9vw,44px)}
+  .ai-grid{grid-template-columns:1fr}
+  .ai-grid-card-body{padding:18px 20px 22px}
+  .ai-grid-card-title{font-size:18px}
+  .ai-grid-card-excerpt{font-size:12px;display:none}
+  .ai-expand-inner{padding:28px 20px 36px}
+  .ai-expand-inner h2{font-size:22px;margin-bottom:16px}
+  .ai-expand-inner p{font-size:13px}
+  /* PORTFOLIO */
+  .portfolio-section{padding:60px 0 0}
+  .portfolio-header{padding:0 20px;margin-bottom:32px;flex-direction:column;gap:8px;align-items:flex-start}
+  .portfolio-header p{display:none}
+  .project-card{grid-template-columns:1fr}
+  .project-card-media{height:260px}
+  .project-card-info{padding:20px;border-left:none;border-top:1px solid var(--border)}
+  .project-card-name{font-size:20px}
+  .project-card-desc{font-size:13px;margin-bottom:16px}
+  .project-card-tags{gap:5px}
+  .tag{font-size:8px;padding:4px 7px}
+  /* GALLERY */
+  .gallery-bar{padding:14px 16px}
+  .gallery-proj-name{font-size:16px}
+  .gallery-thumbs{padding:8px 12px;gap:4px}
+  .gallery-thumb{width:52px;height:36px}
+  .gallery-close{width:36px;height:36px;font-size:14px}
+  /* SERVICES */
+  .services-section{padding:60px 20px}
+  .services-grid{grid-template-columns:1fr}
+  .service-card{padding:28px 20px}
+  .service-name{font-size:20px}
+  .service-icon-img{aspect-ratio:16/9}
+  /* ABOUT */
+  .about-section{padding:60px 20px}
+  .about-inner{grid-template-columns:1fr;gap:36px}
+  .about-quote{font-size:clamp(22px,7vw,32px)}
+  .about-body p{font-size:13px}
+  /* CONTACT */
+  .contact-section{padding:60px 20px}
+  .contact-inner{grid-template-columns:1fr;gap:40px}
+  .contact-title{font-size:clamp(28px,9vw,42px)}
+  .contact-blurb{font-size:13px}
+  .frow{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-item{border-right:none}
+  .svc-item:nth-last-child(-n+2){border-bottom:1px solid var(--border)}
+  .svc-item:last-child{border-bottom:none}
+  /* FOOTER */
+  footer{padding:40px 20px 24px}
+  .footer-inner{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+  /* FORM */
+  .contact-detail{padding:14px 0}
+  .contact-detail-val{font-size:13px}
+  .form-submit{padding:14px;font-size:9px}
+}
+/* ── SMALL MOBILE 480px ── */
+@media(max-width:480px){
+  h1.hero-title{font-size:clamp(34px,13vw,50px)}
+  .nav-logo{font-size:10px;letter-spacing:.2em}
+  .project-card-media{height:220px}
+  .ai-grid-card-img{aspect-ratio:4/3}
+  .display-title{font-size:clamp(26px,8vw,38px)}
+}
+
+/* IMAGE LOADING OPTIMISATION */
+img{color:transparent} /* hide broken img alt text */
+.img-wrap{position:relative;background:var(--surface);overflow:hidden}
+.img-wrap::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--surface) 25%,rgba(255,255,255,.04) 50%,var(--surface) 75%);background-size:200% 100%;animation:skeleton 1.6s ease-in-out infinite;z-index:1}
+.img-wrap img{position:relative;z-index:2;transition:opacity .4s ease}
+.img-wrap img.loading{opacity:0}
+.img-wrap img.loaded{opacity:1}
+.img-wrap.done::before{display:none}
+@keyframes skeleton{0%{background-position:200% 0}100%{background-position:-200% 0}}
+/* Fade in images as they load */
+.ai-grid-card-img{opacity:0;transition:opacity .5s ease}
+.ai-grid-card-img.loaded{opacity:1}
+.project-card-img-bg{transition:opacity .5s ease}
+.service-icon-img{opacity:0;transition:opacity .5s ease}
+.service-icon-img.loaded{opacity:1}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">Ivolve Studios</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#ai-advantage">The AI Advantage</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-video-wrap">
+    <!-- Vimeo background player: background=1 = autoplay, muted, looped, no controls, no login required -->
+    <div id="heroVimeoWrap" style="position:absolute;top:50%;left:50%;width:177.78vh;min-width:100%;height:56.25vw;min-height:100%;transform:translate(-50%,-50%);pointer-events:none;overflow:hidden">
+      <iframe id="heroVimeoIframe"
+        src="https://player.vimeo.com/video/1188385856?background=1&autoplay=1&mute=1&loop=1&byline=0&title=0&portrait=0&badge=0&autopause=0&app_id=58479"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <div class="hero-fallback" id="heroFallback" style="display:none"></div>
+  </div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Sydney · Est. 2000 · AI-Enhanced</div>
+      <h1 class="hero-title">Vision<br>made <em class="shimmer-gold">real</em></h1>
+    </div>
+    <div class="hero-right">
+      <p>The most experienced architectural visualisation studio in Australia. Now AI-enhanced. Every image a considered act.</p>
+      <a href="#work" class="btn-ghost">View Our Work <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<div class="marquee-band">
+  <div class="marquee-inner">
+    <span>Architectural CGI</span><span class="a">·</span><span>Animation & Film</span><span class="a">·</span><span>AI Enhancement</span><span class="a">·</span><span>Virtual Reality</span><span class="a">·</span><span>Masterplan Concepts</span><span class="a">·</span><span>View Impact Analysis</span><span class="a">·</span><span>Council 3D Models</span><span class="a">·</span><span>Product Rendering</span><span class="a">·</span><span>Architectural CGI</span><span class="a">·</span><span>Animation & Film</span><span class="a">·</span><span>AI Enhancement</span><span class="a">·</span><span>Virtual Reality</span><span class="a">·</span><span>Masterplan Concepts</span><span class="a">·</span><span>View Impact Analysis</span><span class="a">·</span><span>Council 3D Models</span><span class="a">·</span><span>Product Rendering</span><span class="a">·</span>
+  </div>
+</div>
+
+
+<!-- AI ADVANTAGE SECTION -->
+<section class="ai-article-section" id="ai-advantage">
+  <div class="ai-article-header" style="padding:0 56px;margin-bottom:48px">
+    <div class="eyebrow" style="margin-bottom:14px">Feature</div>
+    <h2 class="display-title">The AI <em class="shimmer-gold">Advantage</em></h2>
+    <p style="font-size:15px;line-height:1.8;color:var(--text-muted);max-width:600px;margin-top:16px">How artificial intelligence has transformed every stage of our production pipeline. Click any chapter to read the full story.</p>
+  </div>
+
+  <div class="ai-grid" id="aiGrid">
+
+    <!-- ROW 1 -->
+    <div class="ai-grid-card" onclick="toggleExpand('exp1',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/masterplan.jpeg" alt="Masterplanning" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 01</div>
+          <div class="ai-grid-card-title">Masterplanning</div>
+          <div class="ai-grid-card-excerpt">City-scale visions before a single building is designed. AI lets us create astonishing masterplan imagery at a scale and speed previously impossible.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <div class="ai-grid-card" onclick="toggleExpand('exp1',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/Media_Release.png" alt="Media Release" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 02</div>
+          <div class="ai-grid-card-title">Media Release &amp; Community Engagement</div>
+          <div class="ai-grid-card-excerpt">Powerful, considered visuals at extraordinary speed — moving public sentiment at the most delicate stage of a development&apos;s lifecycle.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <div class="ai-grid-card" onclick="toggleExpand('exp1',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/Development_Applications.png" alt="Development Applications" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 03</div>
+          <div class="ai-grid-card-title">Development Applications</div>
+          <div class="ai-grid-card-excerpt">AI reconstructs demolished buildings and removed trees in photomontages — solving DA scenarios that were previously impossible to represent accurately.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <!-- EXPAND PANEL ROW 1 -->
+    <div class="ai-expand-panel" id="exp1">
+      <div class="ai-expand-inner" id="exp1-content">
+        <!-- content injected by JS based on which card was clicked -->
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="ai-grid-card" onclick="toggleExpand('exp2',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/Photography.jpg" alt="Photography" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 04</div>
+          <div class="ai-grid-card-title">Photography</div>
+          <div class="ai-grid-card-excerpt">AI fixes unusable base photos, shifts time of day, and reconstructs obstructed sightlines — no matter what the weather or airspace restrictions did to the shoot.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <div class="ai-grid-card" onclick="toggleExpand('exp2',this)">
+      <div class="ai-grid-card-img-wrap">
+        <div class="ai-grid-dual-img">
+          <img decoding="async" src="images/ai-advantage/Marketing_1.png" alt="Marketing CGI" loading="lazy">
+          <img decoding="async" src="images/ai-advantage/Marketing_2.jpg" alt="Marketing CGI" loading="lazy">
+        </div>
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 05</div>
+          <div class="ai-grid-card-title">Marketing CGI</div>
+          <div class="ai-grid-card-excerpt">The tool is never the differentiator. Knowledge, experience, and creative vision are what separate results that sell from results that merely look impressive.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <div class="ai-grid-card" onclick="toggleExpand('exp2',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/Entourage.png" alt="Entourage & People" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 06</div>
+          <div class="ai-grid-card-title">Entourage &amp; People</div>
+          <div class="ai-grid-card-excerpt">From the most complained-about element to the most compelling. AI-generated talent matched to your buyer demographic — the people now carry the narrative.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <!-- EXPAND PANEL ROW 2 -->
+    <div class="ai-expand-panel" id="exp2">
+      <div class="ai-expand-inner" id="exp2-content">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="portfolio-section" id="work">
+  <div class="portfolio-header reveal">
+    <div><div class="eyebrow">Selected Work</div><h2 class="display-title">Recent <em class="shimmer-gold">Projects</em></h2></div>
+    <p style="font-size:12px;color:var(--text-dim);max-width:200px;text-align:right;line-height:1.7">Click any project to explore the full gallery</p>
+  </div>
+  <div id="projectCards"></div>
+</section>
+
+<div class="gallery-drawer" id="galleryDrawer">
+  <div class="gallery-bar">
+    <div class="gallery-bar-left">
+      <div class="gallery-proj-name" id="galleryTitle"></div>
+      <div class="gallery-proj-sub" id="galleryCount"></div>
+    </div>
+    <button class="gallery-close" id="galleryClose">✕</button>
+  </div>
+  <div class="gallery-scroll" id="galleryScroll">
+    <!-- items injected by JS -->
+  </div>
+</div>
+<button class="gallery-top-btn" id="galleryTopBtn" title="Back to top">↑</button>
+
+<section class="services-section" id="services">
+  <div class="services-inner">
+    <div class="reveal"><div class="eyebrow">What We Deliver</div><h2 class="display-title">Full-Spectrum<br><em class="shimmer-gold">Visual Production</em></h2></div>
+    <div class="services-grid reveal" style="transition-delay:.1s">
+      <div class="service-card"><img decoding="async" class="service-icon-img" src="images/icons/icon_01_architectural_viz.png" alt="Architectural Visualisation icon" loading="lazy"><div class="service-num">01</div><h3 class="service-name">Architectural Visualisation</h3><p class="service-desc">Photorealistic exterior and interior CGIs — AI-enhanced to a level of detail, light, and life that exceeds traditional rendering.</p></div>
+      <div class="service-card"><img decoding="async" class="service-icon-img" src="images/icons/icon_02_animation_film.png" alt="Cinematic Animation & Film icon" loading="lazy"><div class="service-num">02</div><h3 class="service-name">Cinematic Animation & Film</h3><p class="service-desc">Architectural fly-throughs and lifestyle films with AI-generated talent matched to your buyer demographic.</p></div>
+      <div class="service-card"><img decoding="async" class="service-icon-img" src="images/icons/icon_03_ai_enhancement.png" alt="AI Enhancement icon" loading="lazy"><div class="service-num">03</div><h3 class="service-name">AI Enhancement</h3><p class="service-desc">Our proprietary pipeline lifts existing renders to a higher tier of realism. Faster delivery, sharper results, lower cost.</p></div>
+      <div class="service-card"><img decoding="async" class="service-icon-img" src="images/icons/icon_04_virtual_reality.png" alt="Virtual Reality & Interactive icon" loading="lazy"><div class="service-num">04</div><h3 class="service-name">Virtual Reality & Interactive</h3><p class="service-desc">Immersive VR walkthroughs and interactive digital experiences for sales suites. Pioneering real-time 3D since 2004.</p></div>
+      <div class="service-card"><img decoding="async" class="service-icon-img" src="images/icons/icon_05_masterplan.png" alt="Masterplan Concepts icon" loading="lazy"><div class="service-num">05</div><h3 class="service-name">Masterplan Concepts</h3><p class="service-desc">Engaging concept imagery for large-scale precincts that unlocks planning, funding, and buyer confidence.</p></div>
+      <div class="service-card"><img decoding="async" class="service-icon-img" src="images/icons/icon_06_view_impact.png" alt="View Impact & Council Models icon" loading="lazy"><div class="service-num">06</div><h3 class="service-name">View Impact & Council Models</h3><p class="service-desc">Accurate 3D models and view impact analyses for council submissions and development approvals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="reveal">
+      <div class="eyebrow" style="margin-bottom:20px">About</div>
+      <blockquote class="about-quote">"We evolve our techniques so frequently that what we've produced for clients <em>3–6 months ago is already superseded.</em>"</blockquote>
+      <div class="about-body">
+        <p>Ivolve Studios was founded in Sydney in 2000 — before most of our competitors existed. Over 25 years we've built an unmatched depth of technical and visual knowledge across architectural visualisation, animation, VR, and now AI-enhanced content production.</p>
+        <p>You work directly with the people producing your work. No account managers, no predetermined direction. We bring our full expertise, then we listen.</p>
+        <p>Many clients return to us after working with larger studios, discovering that reputation doesn't always translate into genuine care for their outcome. We're fiercely proud of every project we deliver.</p>
+      </div>
+      <div class="about-sig"><div class="about-sig-name">Sunny — Founder & Director</div><div class="about-sig-role">Ivolve Studios · Sydney, NSW</div></div>
+    </div>
+    <div class="reveal" style="transition-delay:.15s">
+      <div class="value-item"><div class="value-n">I</div><div class="value-text"><strong>Innovate First</strong><p>We adopt new technology years before our competitors — driven by genuine passion, not peer pressure.</p></div></div>
+      <div class="value-item"><div class="value-n">II</div><div class="value-text"><strong>Collaborate Deeply</strong><p>Your vision is the brief. Extra feedback rounds aren't a variation charge — they're part of doing the job properly.</p></div></div>
+      <div class="value-item"><div class="value-n">III</div><div class="value-text"><strong>Evolve Constantly</strong><p>The pipeline we use today is better than last month's. That constant evolution is our most powerful offering.</p></div></div>
+      <div class="value-item"><div class="value-n">IV</div><div class="value-text"><strong>Deliver Outcomes</strong><p>Does this imagery sell the project, win the approval, inspire the investor? That's the only measure.</p></div></div>
+      <div class="value-item"><div class="value-n">V</div><div class="value-text"><strong>No Ego</strong><p>We'd rather you walk away with a result you love than be impressed by our reputation.</p></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <h2 class="contact-title">Let's make something <em class="shimmer-gold">remarkable</em></h2>
+      <p class="contact-blurb">Whether you're at concept stage, approaching pre-sales, or looking to upgrade existing visuals — we'd love to hear about your project.</p>
+      <div class="contact-detail"><div class="contact-detail-label">Studio</div><div class="contact-detail-val">Level 7, 135 King Street<br>Sydney NSW 2000</div></div>
+      <div class="contact-detail"><div class="contact-detail-label">Email</div><div class="contact-detail-val"><a href="mailto:mail@ivolvestudios.com">mail@ivolvestudios.com</a></div></div>
+    </div>
+    <div class="reveal" style="transition-delay:.12s">
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="fsec">Your Details</div>
+        <div class="frow">
+          <div class="ff"><label>Name *</label><input type="text" name="name" placeholder="Full name" required></div>
+          <div class="ff"><label>Company</label><input type="text" name="company" placeholder="Company name"></div>
+        </div>
+        <div class="frow">
+          <div class="ff"><label>Email *</label><input type="email" name="email" placeholder="your@email.com" required></div>
+          <div class="ff"><label>Phone</label><input type="tel" name="phone" placeholder="+61"></div>
+        </div>
+        <div class="frow full">
+          <div class="ff"><label>Your Role</label>
+            <select name="role">
+              <option value="" disabled selected>Select your role</option>
+              <option>Developer</option><option>Architect</option><option>Interior Designer</option>
+              <option>Landscape Architect</option><option>City Planner</option><option>Council</option>
+              <option>Project Manager</option><option>Asset Manager</option>
+              <option>Marketing / Branding Agency</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="frow full" id="otherRoleRow" style="display:none">
+          <div class="ff"><label>Please specify</label><input type="text" name="role_other" placeholder="Your role"></div>
+        </div>
+        <div class="fsec">Services Required</div>
+        <div class="svc-grid">
+          <label class="svc-item"><input type="checkbox" name="services" value="Development Application CGIs"><label>Development Application CGIs</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="Marketing CGIs"><label>Marketing CGIs</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="Competition CGIs"><label>Competition CGIs</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="Concept Presentation CGIs"><label>Concept Presentation CGIs</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="Marketing Animation"><label>Marketing Animation</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="Virtual Reality"><label>Virtual Reality</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="View Impact Analysis"><label>View Impact Analysis</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="Council 3D Models"><label>Council 3D Models</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="AI Enhanced Imagery"><label>AI Enhanced Imagery</label></label>
+          <label class="svc-item"><input type="checkbox" name="services" value="Other / Not Listed"><label>Other</label></label>
+        </div>
+        <div class="fsec">Project Details</div>
+        <div class="frow full"><div class="ff"><label>About Your Project</label><textarea name="message" placeholder="Brief description, location, timeline, specific requirements..."></textarea></div></div>
+        <div class="frow full">
+          <div class="ff"><label>Upload Project Material (optional)</label>
+            <div class="file-wrap">
+              <input type="file" id="fileInput" name="attachment" class="file-input" accept=".pdf,.dwg,.jpg,.jpeg,.png,.zip,.docx,.pptx" onchange="updateFileName(this)">
+              <div class="file-display">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Plans, images, briefs — PDF, DWG, JPG, ZIP accepted</span>
+              </div>
+              <div class="file-name" id="fileName"></div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
+        <div class="fmsg" id="formSuccess">✓ Message sent — we'll be in touch within one business day.</div>
+        <div class="fmsg" id="formError">Something went wrong. Email us directly at <a href="mailto:mail@ivolvestudios.com" style="color:var(--accent)">mail@ivolvestudios.com</a></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-brand">Ivolve Studios</div><p class="footer-tagline">Sydney's most experienced architectural visualisation studio. AI-enhanced. Collaboratively led. Est. 2000.</p></div>
+    <div><div class="footer-col-title">Services</div><ul class="footer-links"><li><a href="#services">Architectural CGI</a></li><li><a href="#services">Animation & Film</a></li><li><a href="#services">AI Enhancement</a></li><li><a href="#services">Virtual Reality</a></li><li><a href="#services">Masterplan Concepts</a></li><li><a href="#services">View Impact Analysis</a></li></ul></div>
+    <div><div class="footer-col-title">Studio</div><ul class="footer-links"><li><a href="#about">About</a></li><li><a href="#work">Our Work</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div><div class="footer-col-title">Contact</div><ul class="footer-links"><li><a href="mailto:mail@ivolvestudios.com">mail@ivolvestudios.com</a></li><li><a href="#contact">Level 7, 135 King St</a></li><li><a href="#contact">Sydney NSW 2000</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Ivolve Studios Pty Ltd · Sydney, Australia</p>
+    <div class="footer-social"><a href="#" target="_blank">LinkedIn</a><a href="#" target="_blank">Instagram</a><a href="#" target="_blank">Vimeo</a></div>
+  </div>
+</footer>
+
+<script>
+const FORMSPREE_ID = 'xeenqpyw';
+
+const PROJECTS = [
+  {
+    key:'pacific', displayName:'688 Pacific Highway', location:'Chatswood, NSW',
+    description:'Premium residential development. Penthouse interiors, kitchen joinery, and hero streetscape.',
+    tags:['Residential','Penthouse','Interior CGI','Streetscape'],
+    heroVideo:'videos/project-cards/kling_Exterior_Morning.mp4',
+    heroImage:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View01E_Streetscape_FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View01E_Streetscape_FINAL.jpg',label:'Streetscape'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View025E_Apt501_Penthouse_FINAL.jpg',label:'Penthouse Living'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View15C_Apt501_Kitchen_Joinery%20FINAL.jpg',label:'Kitchen & Joinery'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View15C4_Apt501_Kitchen_Joinery_Vignette%20FINAL.jpg',label:'Kitchen Detail'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View16C_Apt501_Fireplace%20FINAL.jpg',label:'Fireplace'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View11B_Apt501_Master_Bedroom%20FINAL.jpg',label:'Master Bedroom'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View21B2_Apt502_Kitchen%20FINAL.jpg',label:'Apt 502 Kitchen'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View24C_Apt502_Study_FINAL.jpg',label:'Study'},
+      {type:'video',url:'videos/project-cards/kling_Exterior_Morning.mp4',label:'Exterior — Morning Animation'}
+    ]
+  },
+  {
+    key:'beauchamp', displayName:'Beauchamp — 107 High Street', location:'North Sydney, NSW',
+    description:'Luxury residential development. CGI covering exterior architecture, communal landscape, and premium apartment interiors.',
+    tags:['Residential','Exterior CGI','Interior CGI','Landscape'],
+    heroVideo:null,
+    heroImage:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View10C_Hero_Street%20FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View10C_Hero_Street%20FINAL.jpg',label:'Street Elevation'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View11A_Building_Entry%20FINAL%20v2.jpg',label:'Building Entry — Day'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View11A_Building_Entry%20Dusk%20FINAL.jpg',label:'Building Entry — Dusk'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View01A_G02_Section%20FINAL.jpg',label:'Section View'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View02B_Apt201_Living_to_View%20Final%20V2.jpg',label:'Living to View'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View03A_Apt202_Living_to_Balcony%20FINAL.jpg',label:'Living to Balcony'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View14A_G02_Kitchen%20FINAL.jpg',label:'Kitchen'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View04A_APTG02_Bedroom%20FINAL%20v2.jpg',label:'Bedroom'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View05A_APTG02_Ensuite%20FINAL.jpg',label:'Ensuite'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View07A_Apt_G02_Entry%20FINAL.jpg',label:'Entry'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View08A_G02_Garden%20FINAL%20v2.jpg',label:'Garden'}
+    ]
+  },
+  {
+    key:'hume', displayName:'Hume Place', location:'Crows Nest, NSW',
+    description:'High-density residential tower. Comprehensive CGI suite covering penthouses, sub-penthouses, and typical apartments with city views.',
+    tags:['Residential','High-Rise','Interior CGI','City Views'],
+    heroVideo:'videos/project-cards/Hume_Place_Preview_Card.mp4',
+    heroImage:'images/projects/Hume_Place_Crows%20Nest/HumePL_View21B_A1501_Superman_to_City%20FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View21B_A1501_Superman_to_City%20FINAL.jpg',label:'Superman to City'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View22C9_A2003_Upper_Pent_Kitchen_LIGHT_FINAL.jpg',label:'Upper Penthouse Kitchen'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View17A2_A1902_Sub_Pent_Living_to_Kitchen%20FINAL.jpg',label:'Sub-Penthouse Living'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View32B_A2007_PH_Rooftop%20FINAL.jpg',label:'Penthouse Rooftop'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View41L_Entry_LookingUP%20Redesign%20Final.jpg',label:'Entry Looking Up'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View04B2_A1806_Living_to_View%20FINAL.jpg',label:'Living to View'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View04B3_A1806_Living_Vignette%20FINAL.jpg',label:'Living Vignette'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View05A2_A1805_Living_to_View%20FINAL.jpg',label:'Living to View — Alt'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View37C_A1506_Living_Kitchen_WG%20FINAL.jpg',label:'Living & Kitchen'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View02C_A0801_Typical_Kitchen%20FINAL.jpg',label:'Typical Kitchen'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View14B_A2003_Bedroom_and_WIR%20FINAL.jpg',label:'Bedroom & WIR'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View11B2_A1810_Bedroom_to_View%20FINAL.jpg',label:'Bedroom to View'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View08C_A1810_Typical_Bathroom_LIGHT%20Door%20FINAL.jpg',label:'Bathroom'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View12A2_A1806_Balcony_Facing_West%20FINAL.jpg',label:'Balcony West'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View12C_A1806_Balcony_Facing_West%20FINAL.jpg',label:'Balcony West — Alt'}
+    ]
+  },
+  {
+    key:'origami', displayName:'Origami — 55 Grafton Street', location:'Bondi Junction, NSW',
+    description:'Architecturally distinctive residential development in Bondi Junction. Penthouse, sub-penthouse, and apartment CGI suite.',
+    tags:['Residential','Penthouse','Interior CGI','Eastern Suburbs'],
+    heroVideo:null,
+    heroImage:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View1Q_Hero%20Day_FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View1Q_Hero%20Day_FINAL.jpg',label:'Hero — Day'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View2D_Apt1604_Superman_FINAL.jpg',label:'Superman View'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View06F_Apt1701_Living_To_View%20FINAL2.jpg',label:'Apt 1701 — Living'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View10A2_Apt1701_Kitchen_Dark_FINAL2.jpg',label:'Kitchen — Dark'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View10A2_Apt1701_Kitchen_Light_FINAL3.jpg',label:'Kitchen — Light'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View11C_Apt1801_Scullery_Kit_FINAL2.jpg',label:'Scullery Kitchen'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55Grafton_View26C_Apt1501_Fireplace_to_Balcony_FINAL.jpg',label:'Fireplace to Balcony'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View18D7_Apt1403_Living%20to%20View_FINAL2.jpg',label:'Apt 1403 — Living'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View19C_Apt1403_Ensuite%2BWiR_FINAL2.jpg',label:'Ensuite & WIR'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View33_Penthouse_Master_Bed_WiR_R6.jpg',label:'Penthouse Master Bed'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View07B_Apt1702_Bedroom_FINAL2.jpg',label:'Bedroom'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View06I5_Apt1702_WIR%20FINAL2.jpg',label:'WIR'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55Grafton_View28A_Apt1201_Bedroom_FINAL3.jpg',label:'Apt 1201 Bedroom'}
+    ]
+  },
+  {
+    key:'queensgate', displayName:'Queensgate — 18-32A Darlinghurst Road', location:'Potts Point, NSW',
+    description:'Landmark mixed-use development in Potts Point. Aerial, streetscape, and premium residential apartment interiors.',
+    tags:['Residential','Mixed-Use','Aerial CGI','Inner Sydney'],
+    heroVideo:null,
+    heroImage:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight%20Aerial_FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight%20Aerial_FINAL.jpg',label:'Twilight Aerial'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_03C_Hero%20FINAL.jpg',label:'Hero Exterior'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_05D_Laneway_FINAL.jpg',label:'Laneway'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_28C_Street_Level_FINAL.jpg',label:'Street Level'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_10A_R22_Living%20FINAL.jpg',label:'R22 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_12C_B22_Living%20Final_CorrectView.jpg',label:'B22 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_13B_E51_Living%20FINAL.jpg',label:'E51 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_43Ab_AptC501_Kitchen_Living%20FINAL.jpg',label:'C501 Kitchen & Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_45A_AptS301_Living%20FINAL.jpg',label:'S301 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_14D_L62_Bedroom_FINAL.jpg',label:'L62 Bedroom'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_32B_Walk%20In%20Robe_FINAL.jpg',label:'Walk-In Robe'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_29N_135mm_View_Corridor_R51%20R8.jpg',label:'View Corridor'}
+    ]
+  }
+];
+
+// Build project cards
+const cc = document.getElementById('projectCards');
+PROJECTS.forEach((proj, pi) => {
+  const num = String(pi+1).padStart(2,'0');
+  const card = document.createElement('div');
+  card.className = 'project-card reveal';
+  card.style.transitionDelay = (pi * 0.07) + 's';
+
+  // Media area: video autoplay if heroVideo, else static image
+  let mediaHtml = '';
+  if (proj.heroVideo) {
+    mediaHtml = `<video class="project-card-video" autoplay muted loop playsinline>
+      <source src="${proj.heroVideo}" type="video/mp4">
+    </video>
+    <div class="project-card-img-bg" style="background-image:url('${proj.heroImage}')"></div>`;
+  } else {
+    mediaHtml = `<div class="project-card-img-bg" style="background-image:url('${proj.heroImage}')"></div>`;
+  }
+
+  card.innerHTML = `
+    <div class="project-card-media">
+      ${mediaHtml}
+      <div class="project-card-media-overlay"></div>
+      <div class="project-card-number">${num}</div>
+    </div>
+    <div class="project-card-info">
+      <div>
+        <div class="project-card-label">${proj.location || 'Sydney, NSW'}</div>
+        <div class="project-card-name">${proj.displayName}</div>
+        <div class="project-card-desc">${proj.description}</div>
+        <div class="project-card-tags">${proj.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>
+      <div class="project-card-link" style="margin-top:32px">
+        View Gallery
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </div>`;
+  card.addEventListener('click', () => openGallery(pi));
+  // Fade in video over image
+  const vid = card.querySelector('.project-card-video');
+  if (vid) vid.addEventListener('canplay', () => { vid.style.opacity='1'; });
+  cc.appendChild(card);
+});
+
+// Gallery — vertical scroll
+let gPi = 0, gOpen = false;
+
+function openGallery(pi) {
+  gPi = pi; gOpen = true;
+  const proj = PROJECTS[pi];
+  document.getElementById('galleryTitle').textContent = proj.displayName + (proj.location ? ' — ' + proj.location : '');
+  document.getElementById('galleryCount').textContent = proj.media.length + ' images';
+  buildScrollGallery(proj);
+  const drawer = document.getElementById('galleryDrawer');
+  drawer.classList.add('open');
+  document.getElementById('galleryScroll').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeGallery() {
+  document.getElementById('galleryDrawer').classList.remove('open');
+  document.body.style.overflow = '';
+  gOpen = false;
+  // Pause any playing videos
+  document.querySelectorAll('.gallery-scroll video').forEach(v => v.pause());
+}
+
+function buildScrollGallery(proj) {
+  const scroll = document.getElementById('galleryScroll');
+  scroll.innerHTML = '';
+  proj.media.forEach((item) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'gallery-item';
+    if (item.type === 'video') {
+      const vid = document.createElement('video');
+      vid.src = item.url;
+      vid.controls = true;
+      vid.loop = true;
+      vid.playsInline = true;
+      vid.setAttribute('preload', 'metadata');
+      wrap.appendChild(vid);
+    } else {
+      const img = document.createElement('img');
+      img.src = item.url;
+      img.alt = item.label;
+      img.loading = 'lazy';
+      wrap.appendChild(img);
+    }
+    if (item.label) {
+      const cap = document.createElement('div');
+      cap.className = 'gallery-item-caption';
+      cap.textContent = item.label;
+      wrap.appendChild(cap);
+    }
+    scroll.appendChild(wrap);
+  });
+}
+
+document.getElementById('galleryClose').addEventListener('click', closeGallery);
+
+// Scroll-to-top button
+const scrollEl = document.getElementById('galleryScroll');
+const topBtn = document.getElementById('galleryTopBtn');
+scrollEl.addEventListener('scroll', () => {
+  topBtn.classList.toggle('visible', scrollEl.scrollTop > 600);
+});
+topBtn.addEventListener('click', () => scrollEl.scrollTo({top:0, behavior:'smooth'}));
+
+document.addEventListener('keydown', e => {
+  if (!gOpen) return;
+  if (e.key === 'Escape') closeGallery();
+});
+
+// Form
+document.querySelector('select[name=role]').addEventListener('change', function(){
+  document.getElementById('otherRoleRow').style.display = this.value==='Other'?'grid':'none';
+});
+function updateFileName(input) {
+  document.getElementById('fileName').textContent = input.files.length ? '✓ '+input.files[0].name : '';
+}
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  document.getElementById('formSuccess').style.display='none';
+  document.getElementById('formError').style.display='none';
+  btn.textContent='Sending…'; btn.disabled=true;
+  const checked = [...document.querySelectorAll('input[name=services]:checked')].map(c=>c.value);
+  const fd = new FormData(e.target);
+  fd.delete('services');
+  fd.append('services', checked.join(', ')||'Not specified');
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`,{method:'POST',body:fd,headers:{'Accept':'application/json'}});
+    if (res.ok) {
+      e.target.reset();
+      document.getElementById('fileName').textContent='';
+      document.getElementById('otherRoleRow').style.display='none';
+      document.getElementById('formSuccess').className='fmsg ok';
+    } else throw new Error();
+  } catch { document.getElementById('formError').className='fmsg err'; }
+  btn.textContent='Send Enquiry →'; btn.disabled=false;
+}
+
+// Vimeo background player — random start time via Player API
+window.addEventListener('load', () => {
+  const iframe = document.getElementById('heroVimeoIframe');
+  if (!iframe) return;
+  try {
+    const player = new Vimeo.Player(iframe);
+    player.getDuration().then(dur => {
+      if (dur && dur > 10) {
+        const hourSeed = new Date().getHours() / 24;
+        const rand = (Math.sin(Date.now() * 0.001) * 0.5 + 0.5);
+        const startTime = ((hourSeed * 0.6 + rand * 0.4) % 1) * dur;
+        player.setCurrentTime(startTime).catch(()=>{});
+      }
+    }).catch(()=>{});
+  } catch(e) {}
+});
+
+// Cursor
+
+document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.svc-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='46px';ring.style.height='46px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='7px';cur.style.height='7px';ring.style.width='32px';ring.style.height='32px';});
+});
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>60));
+// AI cards rendered as static HTML — no JS build needed
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}}));
+
+
+// Cursor
+const cur=document.getElementById('cursor'), ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.svc-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='46px';ring.style.height='46px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='7px';cur.style.height='7px';ring.style.width='32px';ring.style.height='32px';});
+});
+
+// ── AI ADVANTAGE EXPAND/COLLAPSE ─────────────────────────────
+const ROW1_CONTENT = {
+  '0': { title:'Masterplanning', sub:'Giving Form to a Vision Before a Single Building Exists',
+    body:`<p>The earliest stage of any major development is also the most consequential — and the most underserved by traditional visualisation. When a client arrives with a masterplan, there are typically no buildings yet designed, no landscape locked in, and no architecture to model. What exists is a boundary, a brief, and an ambition.</p><p>This is precisely where 25 years of project experience combined with the power of AI produces something remarkable. Drawing on our deep knowledge of how great precincts look, feel, and function — and using AI to generate, iterate, and refine imagery at a scale and speed previously impossible — we create city-scale masterplan visions that go far beyond a site plan with coloured zones.</p><p>We produce genuinely inspiring imagery that communicates the potential of a place: its density, its character, its landscape, its life. We then convert those images into cinematic video sequences that bring the future to life with movement, atmosphere, and narrative.</p><blockquote><p>For developers seeking early funding, planning approval, or community engagement, this work is not decorative. It is the difference between a proposal that convinces and one that merely describes.</p></blockquote>`},
+  '1': { title:'Media Release &amp; Community Engagement', sub:'Winning Hearts Before the First Sod is Turned',
+    body:`<p>Few moments in a development’s lifecycle are as delicate as the public reveal. The imagery must be compelling enough to generate excitement and support, yet measured enough not to trigger the organised resistance that ambitious projects so often attract.</p><p>Councils face the same challenge. Decision-makers need visual material that is credible, clear, and emotionally legible — imagery that helps a planning committee understand what a development will actually contribute to their community.</p><p>This is where our AI-supported imagery and video work has proven transformative. The combination of photorealistic quality, atmospheric conviction, and extraordinary production speed means we can produce powerful media release visuals that used to require weeks of production, in a fraction of that window.</p><blockquote><p>Images that read as confident, polished, and real. Videos that make a future community feel inhabited and inevitable. Material that moves public sentiment rather than merely informing it.</p></blockquote>`},
+  '2': { title:'Development Applications', sub:'Solving the Photomontage Problems That Used to Have No Good Answer',
+    body:`<p>Accurate photomontages have long been a cornerstone of the development application process. The standard is rigorous: the proposed development must be depicted with precision against what currently exists, so decision-makers can form a genuinely informed view of the impact on the surrounding streetscape.</p><p>Over 25 years, we have become highly proficient at this work. But proficiency has always had a hard limit: the site photograph. When existing trees obscure key sightlines, when a structure slated for demolition still stands at the time of photography — the base photograph cannot show what the completed development will actually reveal.</p><blockquote><p>AI has resolved this. We can now reconstruct what a site will look like once a building is demolished, once mature trees are removed, or once a blocked sightline is opened — with a level of realism that would have required days of manual work to approximate.</p></blockquote><p>Situations that were previously impractical to represent honestly are now handled efficiently, compliantly, and convincingly.</p>`}
+};
+const ROW2_CONTENT = {
+  '0': { title:'Photography', sub:"When the Weather Won’t Cooperate and the Drone Can’t Fly",
+    body:`<p>View photography is not decorative background. It is the foundation of accuracy in architectural CGI. The view corridors that run through and around a site are often the primary driver of which camera positions are chosen and which images carry the most weight.</p><p>The two most persistent problems: weather that never cooperates with project timelines, and airspace regulations that make the ideal drone shot legally unavailable on the day it is needed.</p><p>AI has changed our relationship with both realities entirely. Unusable sections of a base photograph can now be reconstructed with realism that would have required hours of skilled manual retouching. We can now shift the entire time of day of a photograph — a midday shot translated into golden hour quality of light.</p><blockquote><p>Having spent years doing this work the hard way — frame-by-frame, layer-by-layer — the speed and quality of what AI now makes possible is genuinely remarkable. What once took a day takes minutes.</p></blockquote>`},
+  '1': { title:'Marketing CGI', sub:'Why the Tool Is Never the Differentiator',
+    body:`<p>The marketing image is the summit of everything we do. Every element must be exactly right — because the image will be placed next to a price tag, submitted to a planning authority, or published to a market making purchasing decisions based on what they see.</p><p>We hear it regularly. A client has been experimenting with AI image generation and hits the AI Brick Wall — the moment when fixing one thing quietly changes three others. What was framed as a five-minute exercise becomes five hours of compounding frustration.</p><blockquote><p>Every serious practitioner has access to the same headline tools. The differentiator is the knowledge of how to direct them, constrain them, override them, and combine them with decades of craft experience that no prompt can replicate.</p></blockquote><p>And then there is creativity — which no tool addresses at all. The ideas behind a great image come from a trained creative eye, accumulated visual intelligence, and an understanding of what moves people and why.</p>`},
+  '2': { title:'Entourage &amp; People', sub:'From the Most Complained-About Element to the Most Compelling',
+    body:`<p>For as long as architectural CGI has existed, the people in the image have been its most contentious ingredient. Wrong demographic, wrong clothing, distracting from the architecture. The criticism was fair.</p><p>AI has not merely improved this. It has inverted it entirely. We can now generate custom people that address every point simultaneously — the right age, aesthetic, cultural background, clothing, and interaction, staged and lit as though captured by a photographer on the day.</p><blockquote><p>The people are no longer the thing a client has to apologise for in a presentation. They have become one of the most powerful narrative tools in the image.</p></blockquote><p>Buyers are not just purchasing a floor plan. They are purchasing a vision of their own life — a future they are invited to imagine themselves inhabiting. Done well, it is the difference between an image that shows a building and one that sells a life.</p>`}
+};
+
+let _activePanel=null, _activeCardIdx=null, _activeRow=null;
+
+function toggleExpand(panelId, clickedCard) {
+  const panel = document.getElementById(panelId);
+  if(!panel) return;
+  const contentEl = document.getElementById(panelId+'-content');
+  const row = panelId==='exp1' ? 1 : 2;
+  const contentMap = row===1 ? ROW1_CONTENT : ROW2_CONTENT;
+  const grid = document.getElementById('aiGrid');
+  const allCards = [...grid.querySelectorAll('.ai-grid-card')];
+  const rowCards = row===1 ? allCards.slice(0,3) : allCards.slice(3,6);
+  const cardIdx = rowCards.indexOf(clickedCard);
+  const data = contentMap[String(cardIdx)];
+
+  // Same card clicked again — close
+  if(_activePanel===panelId && _activeCardIdx===cardIdx) {
+    panel.classList.remove('open');
+    rowCards.forEach(c=>c.style.outline='');
+    _activePanel=null; _activeCardIdx=null; _activeRow=null;
+    return;
+  }
+  // Close any other open panel
+  if(_activePanel) {
+    document.getElementById(_activePanel).classList.remove('open');
+    const pr=_activeRow===1?allCards.slice(0,3):allCards.slice(3,6);
+    pr.forEach(c=>c.style.outline='');
+  }
+  if(!data) return;
+  contentEl.innerHTML=`
+    <h2>${data.title}<br><em>${data.sub}</em></h2>
+    <div>${data.body}</div>
+    <div></div>
+    <button class="ai-expand-close" onclick="event.stopPropagation();_closeExpand('${panelId}',${row})">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg> Close
+    </button>`;
+  panel.classList.add('open');
+  clickedCard.style.outline='1px solid rgba(184,150,106,.4)';
+  _activePanel=panelId; _activeCardIdx=cardIdx; _activeRow=row;
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+}
+
+function _closeExpand(panelId, row) {
+  const panel=document.getElementById(panelId);
+  if(panel) panel.classList.remove('open');
+  const grid=document.getElementById('aiGrid');
+  if(grid) {
+    const allCards=[...grid.querySelectorAll('.ai-grid-card')];
+    const rc=row===1?allCards.slice(0,3):allCards.slice(3,6);
+    rc.forEach(c=>c.style.outline='');
+  }
+  _activePanel=null; _activeCardIdx=null; _activeRow=null;
+}
+
+
+// ── IMAGE LOADING OPTIMISATION ────────────────────────────────────────────
+// Fade in images as they load, remove skeleton when done
+function setupImageLoading() {
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    img.classList.add('loading');
+    if (img.complete && img.naturalWidth > 0) {
+      img.classList.remove('loading');
+      img.classList.add('loaded');
+      if (img.closest('.img-wrap')) img.closest('.img-wrap').classList.add('done');
+    } else {
+      img.addEventListener('load', () => {
+        img.classList.remove('loading');
+        img.classList.add('loaded');
+        if (img.closest('.img-wrap')) img.closest('.img-wrap').classList.add('done');
+      });
+      img.addEventListener('error', () => {
+        img.classList.remove('loading');
+        if (img.closest('.img-wrap')) img.closest('.img-wrap').classList.add('done');
+      });
+    }
+  });
+
+  // Use IntersectionObserver to trigger lazy load only when near viewport
+  if ('IntersectionObserver' in window) {
+    const imgObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          }
+          imgObs.unobserve(img);
+        }
+      });
+    }, { rootMargin: '200px 0px' }); // start loading 200px before visible
+
+    // Convert background-image divs — trigger CSS bg only when near viewport
+    document.querySelectorAll('.project-card-img-bg[style*="url"]').forEach(div => {
+      const style = div.getAttribute('style');
+      div.dataset.bg = style;
+      div.style.backgroundImage = 'none';
+      div.style.opacity = '0';
+      const bgObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute('style', entry.target.dataset.bg);
+            entry.target.style.opacity = '1';
+            bgObs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '150px 0px' });
+      bgObs.observe(div);
+    });
+  }
+}
+
+// Stagger Dropbox image requests to avoid throttling (max 4 concurrent)
+function staggerDropboxImages() {
+  const imgs = [...document.querySelectorAll('img[src*="dropbox.com"]')];
+  // First 4 load immediately, rest stagger by 300ms each
+  imgs.forEach((img, i) => {
+    if (i < 4) return; // first 4 load immediately
+    const originalSrc = img.src;
+    img.src = '';
+    setTimeout(() => { img.src = originalSrc; }, (i - 4) * 280);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupImageLoading();
+  staggerDropboxImages();
+});
+</script>
+</body>
+</html>
