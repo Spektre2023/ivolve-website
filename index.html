@@ -91,6 +91,7 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .display-title em{font-style:italic;color:var(--accent2)}
 .project-card{display:grid;grid-template-columns:1fr 380px;min-height:520px;border-top:1px solid var(--border);cursor:pointer;overflow:hidden}
 .project-card:last-child{border-bottom:1px solid var(--border)}
+.project-card-vimeo-wrap{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;background:#000}
 .project-card-media{position:relative;overflow:hidden;background:var(--surface)}
 .project-card-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 8s ease}
 .project-card:hover .project-card-img-bg{transform:scale(1.04)}
@@ -766,11 +767,11 @@ const PROJECTS = [
     media:[
       {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View01E_Streetscape_FINAL.jpg',label:'Streetscape'},
       {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View025E_Apt501_Penthouse_FINAL.jpg',label:'Penthouse Living'},
-      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View15C_Apt501_Kitchen_Joinery%20FINAL.jpg',label:'Kitchen & Joinery'},
-      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View15C4_Apt501_Kitchen_Joinery_Vignette%20FINAL.jpg',label:'Kitchen Detail'},
-      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View16C_Apt501_Fireplace%20FINAL.jpg',label:'Fireplace'},
-      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View11B_Apt501_Master_Bedroom%20FINAL.jpg',label:'Master Bedroom'},
-      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View21B2_Apt502_Kitchen%20FINAL.jpg',label:'Apt 502 Kitchen'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View15C_Apt501_Kitchen_Joinery_FINAL.jpg',label:'Kitchen & Joinery'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View15C4_Apt501_Kitchen_Joinery_Vignette_FINAL.jpg',label:'Kitchen Detail'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View16C_Apt501_Fireplace_FINAL.jpg',label:'Fireplace'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View11B_Apt501_Master_Bedroom_FINAL.jpg',label:'Master Bedroom'},
+      {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View21B2_Apt502_Kitchen_FINAL.jpg',label:'Apt 502 Kitchen'},
       {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View24C_Apt502_Study_FINAL.jpg',label:'Study'},
       {type:'video',url:'https://player.vimeo.com/video/1189015778?background=1&autoplay=1&mute=1&loop=1&byline=0&title=0',label:'Exterior — Morning Animation'}
     ]
@@ -780,19 +781,19 @@ const PROJECTS = [
     description:'Luxury residential development. CGI covering exterior architecture, communal landscape, and premium apartment interiors.',
     tags:['Residential','Exterior CGI','Interior CGI','Landscape'],
     heroVideo:null,
-    heroImage:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View10C_Hero_Street%20FINAL.jpg',
+    heroImage:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View10C_Hero_Street_FINAL.jpg',
     media:[
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View10C_Hero_Street%20FINAL.jpg',label:'Street Elevation'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View11A_Building_Entry%20FINAL%20v2.jpg',label:'Building Entry — Day'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View11A_Building_Entry%20Dusk%20FINAL.jpg',label:'Building Entry — Dusk'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View01A_G02_Section%20FINAL.jpg',label:'Section View'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View02B_Apt201_Living_to_View%20Final%20V2.jpg',label:'Living to View'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View03A_Apt202_Living_to_Balcony%20FINAL.jpg',label:'Living to Balcony'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View14A_G02_Kitchen%20FINAL.jpg',label:'Kitchen'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View04A_APTG02_Bedroom%20FINAL%20v2.jpg',label:'Bedroom'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View05A_APTG02_Ensuite%20FINAL.jpg',label:'Ensuite'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View07A_Apt_G02_Entry%20FINAL.jpg',label:'Entry'},
-      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View08A_G02_Garden%20FINAL%20v2.jpg',label:'Garden'}
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View10C_Hero_Street_FINAL.jpg',label:'Street Elevation'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View11A_Building_Entry_FINAL_v2.jpg',label:'Building Entry — Day'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View11A_Building_Entry_Dusk_FINAL.jpg',label:'Building Entry — Dusk'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View01A_G02_Section_FINAL.jpg',label:'Section View'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View02B_Apt201_Living_to_View_Final_V2.jpg',label:'Living to View'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View03A_Apt202_Living_to_Balcony_FINAL.jpg',label:'Living to Balcony'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View14A_G02_Kitchen_FINAL.jpg',label:'Kitchen'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View04A_APTG02_Bedroom_FINAL_v2.jpg',label:'Bedroom'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View05A_APTG02_Ensuite_FINAL.jpg',label:'Ensuite'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View07A_Apt_G02_Entry_FINAL.jpg',label:'Entry'},
+      {type:'img',url:'images/projects/Beauchamp%20-%20107%20High%20St%20North%20Sydney/107High_View08A_G02_Garden_FINAL_v2.jpg',label:'Garden'}
     ]
   },
   {
@@ -800,23 +801,23 @@ const PROJECTS = [
     description:'High-density residential tower. Comprehensive CGI suite covering penthouses, sub-penthouses, and typical apartments with city views.',
     tags:['Residential','High-Rise','Interior CGI','City Views'],
     heroVideo:'https://player.vimeo.com/video/1189016402?background=1&autoplay=1&mute=1&loop=1&byline=0&title=0',
-    heroImage:'images/projects/Hume_Place_Crows%20Nest/HumePL_View21B_A1501_Superman_to_City%20FINAL.jpg',
+    heroImage:'images/projects/Hume_Place_Crows%20Nest/HumePL_View21B_A1501_Superman_to_City_FINAL.jpg',
     media:[
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View21B_A1501_Superman_to_City%20FINAL.jpg',label:'Superman to City'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View21B_A1501_Superman_to_City_FINAL.jpg',label:'Superman to City'},
       {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View22C9_A2003_Upper_Pent_Kitchen_LIGHT_FINAL.jpg',label:'Upper Penthouse Kitchen'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View17A2_A1902_Sub_Pent_Living_to_Kitchen%20FINAL.jpg',label:'Sub-Penthouse Living'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View32B_A2007_PH_Rooftop%20FINAL.jpg',label:'Penthouse Rooftop'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View41L_Entry_LookingUP%20Redesign%20Final.jpg',label:'Entry Looking Up'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View04B2_A1806_Living_to_View%20FINAL.jpg',label:'Living to View'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View04B3_A1806_Living_Vignette%20FINAL.jpg',label:'Living Vignette'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View05A2_A1805_Living_to_View%20FINAL.jpg',label:'Living to View — Alt'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View37C_A1506_Living_Kitchen_WG%20FINAL.jpg',label:'Living & Kitchen'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View02C_A0801_Typical_Kitchen%20FINAL.jpg',label:'Typical Kitchen'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View14B_A2003_Bedroom_and_WIR%20FINAL.jpg',label:'Bedroom & WIR'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View11B2_A1810_Bedroom_to_View%20FINAL.jpg',label:'Bedroom to View'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View08C_A1810_Typical_Bathroom_LIGHT%20Door%20FINAL.jpg',label:'Bathroom'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View12A2_A1806_Balcony_Facing_West%20FINAL.jpg',label:'Balcony West'},
-      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View12C_A1806_Balcony_Facing_West%20FINAL.jpg',label:'Balcony West — Alt'}
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View17A2_A1902_Sub_Pent_Living_to_Kitchen_FINAL.jpg',label:'Sub-Penthouse Living'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View32B_A2007_PH_Rooftop_FINAL.jpg',label:'Penthouse Rooftop'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View41L_Entry_LookingUP_Redesign_Final.jpg',label:'Entry Looking Up'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View04B2_A1806_Living_to_View_FINAL.jpg',label:'Living to View'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View04B3_A1806_Living_Vignette_FINAL.jpg',label:'Living Vignette'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View05A2_A1805_Living_to_View_FINAL.jpg',label:'Living to View — Alt'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View37C_A1506_Living_Kitchen_WG_FINAL.jpg',label:'Living & Kitchen'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View02C_A0801_Typical_Kitchen_FINAL.jpg',label:'Typical Kitchen'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View14B_A2003_Bedroom_and_WIR_FINAL.jpg',label:'Bedroom & WIR'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View11B2_A1810_Bedroom_to_View_FINAL.jpg',label:'Bedroom to View'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View08C_A1810_Typical_Bathroom_LIGHT_Door_FINAL.jpg',label:'Bathroom'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View12A2_A1806_Balcony_Facing_West_FINAL.jpg',label:'Balcony West'},
+      {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View12C_A1806_Balcony_Facing_West_FINAL.jpg',label:'Balcony West — Alt'}
     ]
   },
   {
@@ -824,20 +825,20 @@ const PROJECTS = [
     description:'Architecturally distinctive residential development in Bondi Junction. Penthouse, sub-penthouse, and apartment CGI suite.',
     tags:['Residential','Penthouse','Interior CGI','Eastern Suburbs'],
     heroVideo:null,
-    heroImage:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View1Q_Hero%20Day_FINAL.jpg',
+    heroImage:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View1Q_Hero_Day_FINAL.jpg',
     media:[
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View1Q_Hero%20Day_FINAL.jpg',label:'Hero — Day'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View1Q_Hero_Day_FINAL.jpg',label:'Hero — Day'},
       {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View2D_Apt1604_Superman_FINAL.jpg',label:'Superman View'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View06F_Apt1701_Living_To_View%20FINAL2.jpg',label:'Apt 1701 — Living'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View06F_Apt1701_Living_To_View_FINAL2.jpg',label:'Apt 1701 — Living'},
       {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View10A2_Apt1701_Kitchen_Dark_FINAL2.jpg',label:'Kitchen — Dark'},
       {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View10A2_Apt1701_Kitchen_Light_FINAL3.jpg',label:'Kitchen — Light'},
       {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View11C_Apt1801_Scullery_Kit_FINAL2.jpg',label:'Scullery Kitchen'},
       {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55Grafton_View26C_Apt1501_Fireplace_to_Balcony_FINAL.jpg',label:'Fireplace to Balcony'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View18D7_Apt1403_Living%20to%20View_FINAL2.jpg',label:'Apt 1403 — Living'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View19C_Apt1403_Ensuite%2BWiR_FINAL2.jpg',label:'Ensuite & WIR'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View18D7_Apt1403_Living_to_View_FINAL2.jpg',label:'Apt 1403 — Living'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View19C_Apt1403_Ensuite+WiR_FINAL2.jpg',label:'Ensuite & WIR'},
       {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View33_Penthouse_Master_Bed_WiR_R6.jpg',label:'Penthouse Master Bed'},
       {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View07B_Apt1702_Bedroom_FINAL2.jpg',label:'Bedroom'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View06I5_Apt1702_WIR%20FINAL2.jpg',label:'WIR'},
+      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View06I5_Apt1702_WIR_FINAL2.jpg',label:'WIR'},
       {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55Grafton_View28A_Apt1201_Bedroom_FINAL3.jpg',label:'Apt 1201 Bedroom'}
     ]
   },
@@ -846,20 +847,20 @@ const PROJECTS = [
     description:'Landmark mixed-use development in Potts Point. Aerial, streetscape, and premium residential apartment interiors.',
     tags:['Residential','Mixed-Use','Aerial CGI','Inner Sydney'],
     heroVideo:null,
-    heroImage:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight%20Aerial_FINAL.jpg',
+    heroImage:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight_Aerial_FINAL.jpg',
     media:[
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight%20Aerial_FINAL.jpg',label:'Twilight Aerial'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_03C_Hero%20FINAL.jpg',label:'Hero Exterior'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight_Aerial_FINAL.jpg',label:'Twilight Aerial'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_03C_Hero_FINAL.jpg',label:'Hero Exterior'},
       {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_05D_Laneway_FINAL.jpg',label:'Laneway'},
       {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_28C_Street_Level_FINAL.jpg',label:'Street Level'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_10A_R22_Living%20FINAL.jpg',label:'R22 Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_12C_B22_Living%20Final_CorrectView.jpg',label:'B22 Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_13B_E51_Living%20FINAL.jpg',label:'E51 Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_43Ab_AptC501_Kitchen_Living%20FINAL.jpg',label:'C501 Kitchen & Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_45A_AptS301_Living%20FINAL.jpg',label:'S301 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_10A_R22_Living_FINAL.jpg',label:'R22 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_12C_B22_Living_Final_CorrectView.jpg',label:'B22 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_13B_E51_Living_FINAL.jpg',label:'E51 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_43Ab_AptC501_Kitchen_Living_FINAL.jpg',label:'C501 Kitchen & Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_45A_AptS301_Living_FINAL.jpg',label:'S301 Living'},
       {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_14D_L62_Bedroom_FINAL.jpg',label:'L62 Bedroom'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_32B_Walk%20In%20Robe_FINAL.jpg',label:'Walk-In Robe'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_29N_135mm_View_Corridor_R51%20R8.jpg',label:'View Corridor'}
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_32B_Walk_In_Robe_FINAL.jpg',label:'Walk-In Robe'},
+      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_29N_135mm_View_Corridor_R51_R8.jpg',label:'View Corridor'}
     ]
   }
 ];
@@ -875,11 +876,14 @@ PROJECTS.forEach((proj, pi) => {
   // Media area: video autoplay if heroVideo, else static image
   let mediaHtml = '';
   if (proj.heroVideo) {
-    mediaHtml = `<video class="project-card-video" autoplay muted loop playsinline>
-      <source src="${proj.heroVideo}" type="video/mp4">
-    </video>
-    <div class="project-card-img-bg" style="background-image:url('${proj.heroImage}')"></div>`;
-  } else {
+    mediaHtml = `<div class="project-card-vimeo-wrap"><iframe
+      src="${proj.heroVideo}"
+      style="position:absolute;top:50%;left:50%;width:177.78%;height:177.78%;transform:translate(-50%,-50%);border:none;pointer-events:none"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe></div>`;
+    } else {
     mediaHtml = `<div class="project-card-img-bg" style="background-image:url('${proj.heroImage}')"></div>`;
   }
 
