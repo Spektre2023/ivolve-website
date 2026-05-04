@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v14 | Built 2026-05-01 13:50:31 -->
+<!-- Ivolve Studios v15 | Built 2026-05-04 | Static project hero images, scroll indicator, copyright 2026, Sunny Chan -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -62,7 +62,7 @@ nav.scrolled{background:rgba(6,6,6,.95);backdrop-filter:blur(24px);padding:18px 
 .hero-fallback{position:absolute;inset:0;background:#080604}
 .hero-fallback::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 40%,rgba(184,150,106,.05) 0%,transparent 60%)}
 .hero-vignette{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,6,6,.25) 0%,rgba(6,6,6,0) 30%,rgba(6,6,6,0) 55%,rgba(6,6,6,.85) 85%,rgba(6,6,6,.98) 100%)}
-.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 56px 72px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 56px 140px;display:flex;flex-direction:column;align-items:center;text-align:center}
 .hero-left{max-width:800px}
 .hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;opacity:0;animation:fadeUp .9s ease .4s forwards}
 h1.hero-title{font-family:var(--font-display);font-size:clamp(56px,8vw,108px);font-weight:300;line-height:.93;letter-spacing:-.02em;opacity:0;animation:fadeUp .9s ease .6s forwards}
@@ -73,10 +73,12 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 .btn-ghost svg{transition:transform .2s}
 .btn-ghost:hover svg{transform:translateX(4px)}
-.hero-scroll{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 1.6s forwards}
-.hero-scroll span{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--text-dim);writing-mode:vertical-rl;transform:rotate(180deg)}
-.hero-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollDrop 2s ease-in-out infinite}
-@keyframes scrollDrop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeIn 1s ease 1.6s forwards;z-index:5;pointer-events:none}
+.hero-scroll-mouse{width:22px;height:34px;border:1.5px solid rgba(184,150,106,.85);border-radius:12px;position:relative;display:flex;justify-content:center;padding-top:6px}
+.hero-scroll-mouse::before{content:'';width:2px;height:6px;background:var(--accent);border-radius:2px;animation:scrollWheel 1.6s ease-in-out infinite}
+@keyframes scrollWheel{0%{transform:translateY(0);opacity:1}60%{transform:translateY(10px);opacity:0}100%{transform:translateY(0);opacity:0}}
+.hero-scroll-label{font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);text-shadow:0 1px 8px rgba(0,0,0,.7);animation:scrollNudge 2.4s ease-in-out infinite}
+@keyframes scrollNudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 /* MARQUEE */
 .marquee-band{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;background:var(--bg)}
 .marquee-inner{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
@@ -300,7 +302,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @media(max-width:1100px){
   nav,nav.scrolled{padding:20px 32px}
-  .hero-content{padding:0 32px 56px}
+  .hero-content{padding:0 32px 130px}
   
   .portfolio-header{padding:0 32px}
   .project-card{grid-template-columns:1fr;min-height:auto}
@@ -333,7 +335,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
 /* ── TABLET 1100px ── */
 @media(max-width:1100px){
   nav,nav.scrolled{padding:20px 28px}
-  .hero-content{padding:0 28px 56px}
+  .hero-content{padding:0 28px 130px}
   .portfolio-header{padding:0 28px}
   .project-card{grid-template-columns:1fr;min-height:auto}
   .project-card-media{height:340px}
@@ -358,9 +360,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
   .hero{min-height:100svh}
   h1.hero-title{font-size:clamp(38px,12vw,58px);line-height:.95}
   .hero-eyebrow{font-size:9px;margin-bottom:16px}
-  .hero-content{padding:0 20px 40px;align-items:center;text-align:center}
+  .hero-content{padding:0 20px 110px;align-items:center;text-align:center}
   .hero-right{display:none}
-  .hero-scroll{display:none}
+  .hero-scroll{bottom:22px;gap:8px}
+  .hero-scroll-mouse{width:20px;height:30px}
+  .hero-scroll-label{font-size:9px;letter-spacing:.28em}
   /* MARQUEE */
   .marquee-band{padding:10px 0}
   .marquee-inner span{font-size:9px;padding:0 20px}
@@ -489,7 +493,7 @@ img{color:transparent} /* hide broken img alt text */
       <a href="#work" class="btn-ghost">View Our Work <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
-  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+  <div class="hero-scroll"><div class="hero-scroll-mouse"></div><div class="hero-scroll-label">Scroll to Explore</div></div>
 </section>
 
 <div class="marquee-band">
@@ -660,7 +664,7 @@ img{color:transparent} /* hide broken img alt text */
         <p>You work directly with the people producing your work. No account managers, no predetermined direction. We bring our full expertise, then we listen.</p>
         <p>Many clients return to us after working with larger studios, discovering that reputation doesn't always translate into genuine care for their outcome. We're fiercely proud of every project we deliver.</p>
       </div>
-      <div class="about-sig"><div class="about-sig-name">Sunny — Founder & Director</div><div class="about-sig-role">Ivolve Studios · Sydney, NSW</div></div>
+      <div class="about-sig"><div class="about-sig-name">Sunny Chan — Founder & Director</div><div class="about-sig-role">Ivolve Studios · Sydney, NSW</div></div>
     </div>
     <div class="reveal" style="transition-delay:.15s">
       <div class="value-item"><div class="value-n">I</div><div class="value-text"><strong>Innovate First</strong><p>We adopt new technology years before our competitors — driven by genuine passion, not peer pressure.</p></div></div>
@@ -749,7 +753,7 @@ img{color:transparent} /* hide broken img alt text */
     <div><div class="footer-col-title">Contact</div><ul class="footer-links"><li><a href="mailto:mail@ivolvestudios.com">mail@ivolvestudios.com</a></li><li><a href="#contact">Level 7, 135 King St</a></li><li><a href="#contact">Sydney NSW 2000</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 Ivolve Studios Pty Ltd · Sydney, Australia</p>
+    <p class="footer-copy">© 2026 Ivolve Studios Pty Ltd · Sydney, Australia</p>
     <div class="footer-social"><a href="#" target="_blank">LinkedIn</a><a href="#" target="_blank">Instagram</a><a href="#" target="_blank">Vimeo</a></div>
   </div>
 </footer>
@@ -762,7 +766,7 @@ const PROJECTS = [
     key:'pacific', displayName:'688 Pacific Highway', location:'Chatswood, NSW',
     description:'Premium residential development. Penthouse interiors, kitchen joinery, and hero streetscape.',
     tags:['Residential','Penthouse','Interior CGI','Streetscape'],
-    heroVideo:'https://player.vimeo.com/video/1189015778?background=1&autoplay=1&mute=1&loop=1&byline=0&title=0',
+    heroVideo:null,
     heroImage:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View01E_Streetscape_FINAL.jpg',
     media:[
       {type:'img',url:'images/projects/688%20Pacific%20Highway%20-%20Chatswood/688PacificHwy_View01E_Streetscape_FINAL.jpg',label:'Streetscape'},
@@ -800,7 +804,7 @@ const PROJECTS = [
     key:'hume', displayName:'Hume Place', location:'Crows Nest, NSW',
     description:'High-density residential tower. Comprehensive CGI suite covering penthouses, sub-penthouses, and typical apartments with city views.',
     tags:['Residential','High-Rise','Interior CGI','City Views'],
-    heroVideo:'https://player.vimeo.com/video/1189016402?background=1&autoplay=1&mute=1&loop=1&byline=0&title=0',
+    heroVideo:null,
     heroImage:'images/projects/Hume_Place_Crows%20Nest/HumePL_View21B_A1501_Superman_to_City_FINAL.jpg',
     media:[
       {type:'img',url:'images/projects/Hume_Place_Crows%20Nest/HumePL_View21B_A1501_Superman_to_City_FINAL.jpg',label:'Superman to City'},
