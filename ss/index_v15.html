@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v17 | Built 2026-05-05 | Logo image, brighter cursor, AI 2.5:1 + full-width text + reordered chapters, Trusted Clients & Partners section -->
+<!-- Ivolve Studios v15 | Built 2026-05-04 | Static project hero images, scroll indicator, copyright 2026, Sunny Chan -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -39,18 +39,17 @@ blockquote .shimmer-gold{animation-duration:7s;animation-delay:-2.5s}
 .display-title .shimmer-gold{animation-duration:5.2s;animation-delay:-4s}
 .about-quote .shimmer-gold{animation-duration:8.1s;animation-delay:-2.9s}
 .contact-title .shimmer-gold{animation-duration:6.4s;animation-delay:-1.8s}
-:root{--bg:#060606;--bg2:#090909;--surface:#0f0f0f;--border:rgba(255,255,255,0.08);--border-light:rgba(255,255,255,0.14);--text:#f4f1ec;--text-muted:#c9c5bf;--text-dim:#9b958d;--accent:#c9a87c;--accent2:#e0c89a;--font-display:'Cormorant Garamond',serif;--font-ui:'Syne',sans-serif}
+:root{--bg:#060606;--bg2:#090909;--surface:#0f0f0f;--border:rgba(255,255,255,0.06);--border-light:rgba(255,255,255,0.1);--text:#ede9e3;--text-muted:#7a7570;--text-dim:#464340;--accent:#b8966a;--accent2:#d4b98a;--font-display:'Cormorant Garamond',serif;--font-ui:'Syne',sans-serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;overflow-x:hidden}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font-ui);font-size:15px;line-height:1.65;overflow-x:hidden;cursor:none}
-.cursor{position:fixed;width:10px;height:10px;background:var(--accent);border:1.5px solid #fff;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;box-shadow:0 0 0 1px rgba(0,0,0,.5),0 2px 8px rgba(0,0,0,.55)}
-.cursor-ring{position:fixed;width:38px;height:38px;border:1.5px solid rgba(201,168,124,.75);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.cursor{position:fixed;width:7px;height:7px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(184,150,106,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
 nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:32px 56px;display:flex;align-items:center;justify-content:space-between;transition:all .5s}
 nav.scrolled{background:rgba(6,6,6,.95);backdrop-filter:blur(24px);padding:18px 56px;border-bottom:1px solid var(--border)}
-.nav-logo{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text);text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.6);display:inline-flex;align-items:center}
-.nav-logo img{height:36px;width:auto;display:block;filter:drop-shadow(0 1px 4px rgba(0,0,0,.5))}
+.nav-logo{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text);text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .nav-links{display:flex;gap:48px;list-style:none}
 .nav-links a{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(237,233,227,.72);text-decoration:none;transition:color .3s}
 .nav-links a:hover{color:var(--text)}
@@ -69,7 +68,7 @@ nav.scrolled{background:rgba(6,6,6,.95);backdrop-filter:blur(24px);padding:18px 
 h1.hero-title{font-family:var(--font-display);font-size:clamp(56px,8vw,108px);font-weight:300;line-height:.93;letter-spacing:-.02em;opacity:0;animation:fadeUp .9s ease .6s forwards}
 h1.hero-title em{font-style:italic;color:var(--accent2)}
 .hero-right{text-align:center;opacity:0;animation:fadeIn 1s ease 1.2s forwards;margin-top:28px}
-.hero-right p{font-size:16px;line-height:1.7;color:var(--text-muted);max-width:420px;margin:0 auto 28px}
+.hero-right p{font-size:14px;line-height:1.8;color:var(--text-muted);max-width:380px;margin:0 auto 28px}
 .btn-ghost{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--text);text-decoration:none;padding:14px 28px;border:1px solid rgba(255,255,255,.2);transition:all .3s}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 .btn-ghost svg{transition:transform .2s}
@@ -83,41 +82,40 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 /* MARQUEE */
 .marquee-band{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;background:var(--bg)}
 .marquee-inner{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
-.marquee-inner span{font-size:13px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--text-muted);padding:0 40px}
+.marquee-inner span{font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--text-dim);padding:0 40px}
 .marquee-inner span.a{color:var(--accent);opacity:.4}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* TRUSTED CLIENTS & PARTNERS */
-.trust-section{padding:88px 56px 72px;background:var(--bg);border-bottom:1px solid var(--border);text-align:center}
-.trust-inner{max-width:1200px;margin:0 auto}
-.trust-title{font-family:var(--font-display);font-size:clamp(34px,4.2vw,56px);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-bottom:18px;color:var(--text)}
-.trust-title em{font-style:italic;color:var(--accent2)}
-.trust-blurb{font-size:16px;line-height:1.7;color:var(--text-muted);max-width:620px;margin:0 auto 56px}
-.trust-wall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 28px;column-gap:28px}
-.trust-wall span{font-family:var(--font-ui);font-size:14px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text);transition:color .25s,opacity .25s;opacity:.85;cursor:default;position:relative;padding:8px 0}
-.trust-wall span:hover{color:var(--accent);opacity:1}
-.trust-wall span:not(.trust-divider):not(:last-child)::after{content:'';position:absolute;right:-15px;top:50%;transform:translateY(-50%);width:3px;height:3px;background:var(--accent);border-radius:50%;opacity:.5}
-.trust-divider{flex-basis:100%;font-family:var(--font-display)!important;font-style:italic;font-size:18px!important;letter-spacing:.04em!important;text-transform:none!important;color:var(--accent)!important;opacity:.7!important;margin:18px 0 4px;padding:0!important;text-align:center}
-.trust-divider::after{display:none!important}
 /* PORTFOLIO */
 .portfolio-section{padding:100px 0 0;background:var(--bg)}
 .portfolio-header{padding:0 56px;margin-bottom:56px;display:flex;align-items:flex-end;justify-content:space-between}
 .eyebrow{font-size:10px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
 .display-title{font-family:var(--font-display);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-.02em}
 .display-title em{font-style:italic;color:var(--accent2)}
-/* PORTFOLIO — Featured Projects 3-col grid */
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:0 56px}
-.project-card{display:flex;flex-direction:column;cursor:pointer;background:transparent;overflow:hidden;transition:transform .35s ease}
-.project-card:hover{transform:translateY(-4px)}
-.project-card-media{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
-.project-card-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s ease;z-index:0}
+.project-card{display:grid;grid-template-columns:1fr 380px;min-height:520px;border-top:1px solid var(--border);cursor:pointer;overflow:hidden}
+.project-card:last-child{border-bottom:1px solid var(--border)}
+.project-card-vimeo-wrap{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;background:#000}
+.project-card-media{position:relative;overflow:hidden;background:var(--surface)}
+.project-card-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 8s ease}
 .project-card:hover .project-card-img-bg{transform:scale(1.04)}
-.project-card-media-overlay{position:absolute;inset:0;background:rgba(6,6,6,.18);transition:background .4s;z-index:2}
-.project-card:hover .project-card-media-overlay{background:rgba(6,6,6,.04)}
-.project-card-number{position:absolute;top:18px;left:22px;font-family:var(--font-display);font-size:14px;font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.1em;z-index:3}
-.project-card-info{padding:20px 4px 8px;text-align:left}
-.project-card-name{font-family:var(--font-display);font-size:22px;font-weight:300;line-height:1.25;letter-spacing:-.005em;color:var(--text);margin-bottom:6px}
-.project-card-label{font-family:var(--font-ui);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0}
+.project-card-media-overlay{position:absolute;inset:0;background:rgba(6,6,6,.12);transition:background .4s}
+.project-card:hover .project-card-media-overlay{background:rgba(6,6,6,.03)}
+.project-card-number{position:absolute;top:28px;left:32px;font-family:var(--font-display);font-size:13px;font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.1em}
+.project-card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;z-index:1}
+.project-card-img-bg{z-index:0}
+.project-card-media-overlay{z-index:2}
+.project-card-number{z-index:3}
+.video-note{position:absolute;bottom:16px;right:16px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.18);background:rgba(6,6,6,.5);padding:5px 9px;pointer-events:none}
+.project-card-info{padding:48px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--border);background:var(--bg);transition:background .3s}
+.project-card:hover .project-card-info{background:var(--bg2)}
+.project-card-label{font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px}
+.project-card-name{font-family:var(--font-display);font-size:clamp(22px,2.5vw,32px);font-weight:300;line-height:1.2;letter-spacing:-.01em;margin-bottom:14px}
+.project-card-desc{font-size:14px;line-height:1.8;color:var(--text-muted);margin-bottom:24px}
+.project-card-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:0}
+.tag{font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border:1px solid var(--border);padding:5px 9px}
+.project-card-link{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);transition:gap .2s}
+.project-card:hover .project-card-link{gap:16px}
+.project-card-link svg{transition:transform .2s}
+.project-card:hover .project-card-link svg{transform:translateX(4px)}
 /* GALLERY — full screen vertical scroll */
 .gallery-drawer{position:fixed;inset:0;z-index:9500;transform:translateY(100%);transition:transform .6s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;background:#030303}
 .gallery-drawer.open{transform:translateY(0)}
@@ -152,45 +150,41 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s}
 .service-card:hover{background:var(--surface)}
 .service-card:hover::after{transform:scaleX(1)}
-.service-num{font-family:var(--font-display);font-size:15px;font-weight:300;color:var(--text-dim);margin-bottom:20px}
+.service-num{font-family:var(--font-display);font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px}
 .service-name{font-family:var(--font-display);font-size:25px;font-weight:300;line-height:1.2;margin-bottom:14px}
-.service-desc{font-size:15.5px;line-height:1.75;color:var(--text-muted)}
+.service-desc{font-size:13.5px;line-height:1.8;color:var(--text-muted)}
 /* ABOUT */
 .about-section{padding:120px 56px;background:var(--bg);border-top:1px solid var(--border)}
 .about-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
 .about-quote{font-family:var(--font-display);font-size:clamp(30px,3.5vw,48px);font-weight:300;line-height:1.25;letter-spacing:-.02em;margin-bottom:40px}
 .about-quote em{font-style:italic;color:var(--accent2)}
-.about-body p{font-size:17px;line-height:1.85;color:var(--text-muted);margin-bottom:18px}
+.about-body p{font-size:15px;line-height:1.9;color:var(--text-muted);margin-bottom:18px}
 .about-sig{margin-top:40px;padding-top:28px;border-top:1px solid var(--border)}
 .about-sig-name{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--text);margin-bottom:4px}
-.about-sig-role{font-size:13px;color:var(--text-dim);letter-spacing:.1em}
+.about-sig-role{font-size:11px;color:var(--text-dim);letter-spacing:.1em}
 .value-item{padding:22px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:24px 1fr;gap:16px}
 .value-item:first-child{border-top:1px solid var(--border)}
 .value-n{font-family:var(--font-display);font-size:14px;font-weight:300;color:var(--accent);opacity:.5;padding-top:1px}
 .value-text strong{display:block;font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:4px;letter-spacing:.04em}
-.value-text p{font-size:15.5px;color:var(--text-muted);line-height:1.65}
+.value-text p{font-size:13.5px;color:var(--text-muted);line-height:1.65}
 /* CONTACT */
 .contact-section{padding:120px 56px;background:var(--bg2);border-top:1px solid var(--border)}
 .contact-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:360px 1fr;gap:100px;align-items:start}
 .contact-title{font-family:var(--font-display);font-size:clamp(38px,4vw,60px);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-bottom:22px}
 .contact-title em{font-style:italic;color:var(--accent2)}
-.contact-blurb{font-size:17px;line-height:1.75;color:var(--text-muted);margin-bottom:36px}
+.contact-blurb{font-size:15px;line-height:1.85;color:var(--text-muted);margin-bottom:36px}
 .contact-detail{padding:20px 0;border-top:1px solid var(--border)}
-.contact-detail-label{font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
-.contact-detail-val{font-size:16px;color:var(--text)}
+.contact-detail-label{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-bottom:7px}
+.contact-detail-val{font-size:14px;color:var(--text-muted)}
 .contact-detail-val a{color:var(--accent);text-decoration:none;transition:opacity .2s}
 .contact-detail-val a:hover{opacity:.75}
-.contact-map{position:relative;margin-top:28px;width:100%;max-width:320px;aspect-ratio:1/1;border:1px solid var(--border);overflow:hidden;background:var(--surface)}
-.contact-map iframe{width:100%;height:100%;border:0;filter:grayscale(.45) contrast(.95) brightness(.92)}
-.contact-map-link{position:absolute;bottom:12px;right:12px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:rgba(6,6,6,.82);backdrop-filter:blur(4px);color:var(--accent);font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border-light);transition:background .2s,color .2s}
-.contact-map-link:hover{background:rgba(6,6,6,.95);color:var(--accent2)}
 /* FORM */
-.fsec{font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-top:32px;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.fsec{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-top:32px;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border)}
 .fsec:first-child{margin-top:0}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
 .frow.full{grid-template-columns:1fr}
 .ff{display:flex;flex-direction:column;gap:5px}
-.ff label{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted)}
+.ff label{font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim)}
 .ff input,.ff select,.ff textarea{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-ui);font-size:14px;padding:11px 13px;outline:none;transition:border-color .2s;width:100%;appearance:none}
 .ff input:focus,.ff select:focus,.ff textarea:focus{border-color:rgba(184,150,106,.35)}
 .ff select option{background:var(--surface)}
@@ -201,10 +195,10 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .svc-item:nth-last-child(-n+2){border-bottom:none}
 .svc-item:hover{background:rgba(184,150,106,.04)}
 .svc-item input[type=checkbox]{accent-color:var(--accent);width:13px;height:13px;flex-shrink:0;cursor:pointer}
-.svc-item label{font-size:14.5px;color:var(--text);cursor:pointer;line-height:1.4}
+.svc-item label{font-size:12.5px;color:var(--text-muted);cursor:pointer;line-height:1.4}
 .file-wrap{position:relative}
 .file-input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.file-display{background:var(--surface);border:1px dashed var(--border-light);padding:18px 16px;display:flex;align-items:center;gap:12px;color:var(--text-muted);font-size:14px;cursor:pointer;transition:border-color .2s}
+.file-display{background:var(--surface);border:1px dashed var(--border-light);padding:18px 16px;display:flex;align-items:center;gap:12px;color:var(--text-dim);font-size:12px;cursor:pointer;transition:border-color .2s}
 .file-wrap:hover .file-display{border-color:rgba(184,150,106,.3)}
 .file-display svg{flex-shrink:0}
 .file-name{font-size:11px;color:var(--accent);margin-top:5px}
@@ -218,49 +212,49 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px 32px}
 .footer-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:44px}
 .footer-brand{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px}
-.footer-tagline{font-size:15px;line-height:1.7;color:var(--text-muted);max-width:300px}
-.footer-col-title{font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.footer-tagline{font-size:13px;line-height:1.7;color:var(--text-dim);max-width:260px}
+.footer-col-title{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
-.footer-links a{font-size:15px;color:var(--text-muted);text-decoration:none;transition:color .2s}
+.footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--accent)}
 .footer-bottom{max-width:1400px;margin:0 auto;padding-top:22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.footer-copy{font-size:13px;color:var(--text-muted)}
+.footer-copy{font-size:11px;color:var(--text-dim)}
 .footer-social{display:flex;gap:24px}
-.footer-social a{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
+.footer-social a{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .2s}
 .footer-social a:hover{color:var(--accent)}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
 /* AI ARTICLE EXPAND */
-/* AI CASE STUDIES — slideshow banner + chapter selector + article */
 .ai-article-section{padding:100px 0 80px;background:var(--bg);border-top:1px solid var(--border)}
-.ai-slideshow{position:relative;width:calc(100% - 112px);margin:0 56px 0;aspect-ratio:2.5/1;overflow:hidden;background:var(--surface);border:1px solid var(--border)}
-.ai-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease-in-out}
-.ai-slide.active{opacity:1}
-.ai-slideshow-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,6,.15) 0%,rgba(6,6,6,0) 50%,rgba(6,6,6,.55) 100%);pointer-events:none;z-index:2}
-.ai-slideshow-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
-.ai-slideshow-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:background .3s,transform .3s;border:none;padding:0}
-.ai-slideshow-dot.active{background:var(--accent);transform:scale(1.25)}
-.ai-slideshow-dot:hover{background:rgba(255,255,255,.7)}
-
-.ai-chapter-nav{padding:0 56px;margin-top:36px;display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--border);position:relative}
-.ai-chapter-tab{flex:1;min-width:140px;padding:18px 14px 16px;background:none;border:none;cursor:pointer;font-family:var(--font-ui);text-align:center;color:var(--text-muted);transition:color .25s;position:relative;border-right:1px solid var(--border)}
-.ai-chapter-tab:last-child{border-right:none}
-.ai-chapter-tab:hover{color:var(--text)}
-.ai-chapter-tab.active{color:var(--accent)}
-.ai-chapter-tab.active::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--accent)}
-.ai-chapter-tab-num{font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;display:block;margin-bottom:6px;opacity:.7}
-.ai-chapter-tab-title{font-family:var(--font-display);font-size:17px;font-weight:300;line-height:1.2;letter-spacing:-.005em}
-
-.ai-article{padding:48px 56px 0;max-width:none;margin:0}
-.ai-article-content{display:none}
-.ai-article-content.active{display:block;animation:fadeUp .5s ease}
-.ai-article-sub{font-family:var(--font-display);font-size:clamp(28px,3.4vw,40px);font-weight:300;font-style:italic;line-height:1.18;letter-spacing:-.01em;color:var(--accent2);margin-bottom:28px}
-.ai-article-content p{font-size:17px;line-height:1.85;color:var(--text);margin-bottom:20px}
-.ai-article-content blockquote{border-left:2px solid var(--accent);padding:18px 28px;background:var(--bg2);margin:28px 0}
-.ai-article-content blockquote p{font-family:var(--font-display);font-size:21px;font-weight:300;font-style:italic;color:var(--text);margin:0;line-height:1.45}
-
-/* legacy compatibility — keep these so any old expand-panel or grid-card selectors don't error */
-.ai-expand-panel{display:none}
-.ai-grid{display:none}
+.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:0}
+.ai-grid-card{background:var(--bg);overflow:hidden;display:flex;flex-direction:column;transition:background .3s;cursor:pointer;position:relative}
+.ai-grid-card:hover{background:var(--bg2)}
+.ai-grid-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.85);transition:filter .4s,transform .5s}
+.ai-grid-card:hover .ai-grid-card-img{filter:brightness(1);transform:scale(1.02)}
+.ai-grid-card-img-wrap{overflow:hidden;position:relative}
+.ai-grid-dual-img{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.ai-grid-dual-img img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;filter:brightness(.85);transition:filter .4s}
+.ai-grid-card:hover .ai-grid-dual-img img{filter:brightness(1)}
+.ai-grid-card-body{padding:24px 28px 28px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.ai-grid-card-num{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);opacity:.5;margin-bottom:8px}
+.ai-grid-card-title{font-family:var(--font-display);font-size:20px;font-weight:300;line-height:1.2;letter-spacing:-.01em;margin-bottom:10px}
+.ai-grid-card-excerpt{font-size:12px;line-height:1.75;color:var(--text-muted);margin-bottom:16px;flex:1}
+.ai-grid-card-btn{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:none;border:none;cursor:pointer;font-family:var(--font-ui);padding:0;display:inline-flex;align-items:center;gap:7px;transition:gap .2s}
+.ai-grid-card-btn svg{transition:transform .2s}
+.ai-grid-card:hover .ai-grid-card-btn{gap:11px}
+.ai-grid-card:hover .ai-grid-card-btn svg{transform:translateX(3px)}
+/* Expand panel - spans full width below each row */
+.ai-expand-panel{grid-column:1/-1;background:var(--surface);border-top:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.4,0,.2,1)}
+.ai-expand-panel.open{max-height:3000px}
+.ai-expand-inner{padding:56px 64px 64px;display:block;width:100%}
+.ai-expand-inner h2{font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-bottom:32px;max-width:900px}
+.ai-expand-inner h2 em{font-style:italic;color:var(--accent2)}
+.ai-expand-inner p{font-size:17px;line-height:1.9;color:var(--text-muted);margin-bottom:22px;max-width:880px}
+.ai-expand-inner blockquote{border-left:2px solid var(--accent);padding:22px 32px;background:var(--bg);margin:32px 0;max-width:880px}
+.ai-expand-inner blockquote p{font-family:var(--font-display);font-size:24px;font-weight:300;font-style:italic;color:var(--text);margin:0;line-height:1.4;max-width:none}
+.ai-expand-close{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);background:none;border:none;cursor:pointer;font-family:var(--font-ui);padding:0;display:inline-flex;align-items:center;gap:7px;margin-top:20px;transition:color .2s}
+.ai-expand-close:hover{color:var(--accent)}
+@media(max-width:900px){.ai-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ai-grid{grid-template-columns:1fr}}
 .ai-article-header{padding:0 56px;margin-bottom:56px}
 .ai-cards-wrap{max-width:100%;margin:0}.ai-card{display:none}
 .ai-card:last-child{border-bottom:1px solid var(--border)}
@@ -343,19 +337,18 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
   nav,nav.scrolled{padding:20px 28px}
   .hero-content{padding:0 28px 130px}
   .portfolio-header{padding:0 28px}
-  .projects-grid{grid-template-columns:1fr 1fr;gap:28px;padding:0 28px}
+  .project-card{grid-template-columns:1fr;min-height:auto}
+  .project-card-media{height:340px}
+  .project-card-info{border-left:none;border-top:1px solid var(--border);padding:28px}
   .gallery-side-info{display:none}
   .services-section,.about-section,.contact-section{padding:72px 28px}
   .services-grid{grid-template-columns:1fr 1fr}
   .about-inner,.contact-inner{grid-template-columns:1fr;gap:44px}
   .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
   footer{padding:40px 28px 24px}
+  .ai-grid{grid-template-columns:1fr 1fr}
   .ai-article-header{padding:0 28px}
-  .ai-slideshow{width:calc(100% - 56px);margin:0 28px}
-  .ai-chapter-nav{padding:0 28px}
-  .ai-article{padding:36px 28px 0}
-  .ai-chapter-tab{min-width:120px;padding:14px 10px 12px}
-  .ai-chapter-tab-title{font-size:15px}
+  .ai-expand-inner{padding:28px 20px 40px}
 }
 /* ── MOBILE 768px ── */
 @media(max-width:768px){
@@ -374,36 +367,29 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
   .hero-scroll-label{font-size:9px;letter-spacing:.28em}
   /* MARQUEE */
   .marquee-band{padding:10px 0}
-  .marquee-inner span{font-size:11px;padding:0 20px}
-  /* TRUST */
-  .trust-section{padding:60px 20px 52px}
-  .trust-blurb{font-size:14.5px;margin-bottom:36px}
-  .trust-wall{gap:8px 18px}
-  .trust-wall span{font-size:12px;letter-spacing:.12em;padding:5px 0}
-  .trust-wall span:not(.trust-divider):not(:last-child)::after{right:-10px;width:2px;height:2px}
-  .trust-divider{font-size:15px!important;margin:12px 0 4px}
+  .marquee-inner span{font-size:9px;padding:0 20px}
   /* AI ADVANTAGE */
   .ai-article-section{padding:60px 0 48px}
-  .ai-article-header{padding:0 20px;margin-bottom:24px}
+  .ai-article-header{padding:0 20px;margin-bottom:28px}
   .ai-article-header .display-title{font-size:clamp(28px,9vw,44px)}
-  .ai-slideshow{width:calc(100% - 40px);margin:0 20px;aspect-ratio:16/10}
-  .ai-chapter-nav{padding:0 20px;flex-wrap:wrap}
-  .ai-chapter-tab{min-width:0;flex:1 1 33.333%;padding:11px 6px 9px;border-bottom:1px solid var(--border)}
-  .ai-chapter-tab:nth-child(3n){border-right:none}
-  .ai-chapter-tab-num{font-size:9px;letter-spacing:.18em;margin-bottom:3px}
-  .ai-chapter-tab-title{font-size:13px;line-height:1.15}
-  .ai-article{padding:32px 20px 0}
-  .ai-article-sub{font-size:24px;margin-bottom:20px}
-  .ai-article-content p{font-size:15.5px}
-  .ai-article-content blockquote{padding:14px 20px;margin:22px 0}
-  .ai-article-content blockquote p{font-size:18px}
+  .ai-grid{grid-template-columns:1fr}
+  .ai-grid-card-body{padding:18px 20px 22px}
+  .ai-grid-card-title{font-size:18px}
+  .ai-grid-card-excerpt{font-size:12px;display:none}
+  .ai-expand-inner{padding:28px 20px 36px}
+  .ai-expand-inner h2{font-size:22px;margin-bottom:16px}
+  .ai-expand-inner p{font-size:13px}
   /* PORTFOLIO */
   .portfolio-section{padding:60px 0 0}
   .portfolio-header{padding:0 20px;margin-bottom:32px;flex-direction:column;gap:8px;align-items:flex-start}
   .portfolio-header p{display:none}
-  .projects-grid{grid-template-columns:1fr;gap:32px;padding:0 20px}
-  .project-card-name{font-size:22px}
-  .project-card-label{font-size:12px}
+  .project-card{grid-template-columns:1fr}
+  .project-card-media{height:260px}
+  .project-card-info{padding:20px;border-left:none;border-top:1px solid var(--border)}
+  .project-card-name{font-size:20px}
+  .project-card-desc{font-size:13px;margin-bottom:16px}
+  .project-card-tags{gap:5px}
+  .tag{font-size:8px;padding:4px 7px}
   /* GALLERY */
   .gallery-bar{padding:14px 16px}
   .gallery-proj-name{font-size:16px}
@@ -420,12 +406,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
   .about-section{padding:60px 20px}
   .about-inner{grid-template-columns:1fr;gap:36px}
   .about-quote{font-size:clamp(22px,7vw,32px)}
-  .about-body p{font-size:15.5px}
+  .about-body p{font-size:13px}
   /* CONTACT */
   .contact-section{padding:60px 20px}
   .contact-inner{grid-template-columns:1fr;gap:40px}
   .contact-title{font-size:clamp(28px,9vw,42px)}
-  .contact-blurb{font-size:15.5px}
+  .contact-blurb{font-size:13px}
   .frow{grid-template-columns:1fr}
   .svc-grid{grid-template-columns:1fr}
   .svc-item{border-right:none}
@@ -443,7 +429,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
 /* ── SMALL MOBILE 480px ── */
 @media(max-width:480px){
   h1.hero-title{font-size:clamp(34px,13vw,50px)}
-  .nav-logo img{height:26px}
+  .nav-logo{font-size:10px;letter-spacing:.2em}
+  .project-card-media{height:220px}
+  .ai-grid-card-img{aspect-ratio:4/3}
   .display-title{font-size:clamp(26px,8vw,38px)}
 }
 
@@ -457,6 +445,8 @@ img{color:transparent} /* hide broken img alt text */
 .img-wrap.done::before{display:none}
 @keyframes skeleton{0%{background-position:200% 0}100%{background-position:-200% 0}}
 /* Fade in images as they load */
+.ai-grid-card-img{opacity:0;transition:opacity .5s ease}
+.ai-grid-card-img.loaded{opacity:1}
 .project-card-img-bg{transition:opacity .5s ease}
 .service-icon-img{opacity:0;transition:opacity .5s ease}
 .service-icon-img.loaded{opacity:1}
@@ -467,12 +457,12 @@ img{color:transparent} /* hide broken img alt text */
 <div class="cursor-ring" id="cursorRing"></div>
 
 <nav id="navbar">
-  <a href="#" class="nav-logo" aria-label="Ivolve Studios — home"><img src="images/ivolve-logo.png" alt="Ivolve Studios" loading="eager"></a>
+  <a href="#" class="nav-logo">Ivolve Studios</a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#ai-advantage">AI Case Studies</a></li>
+    <li><a href="#ai-advantage">The AI Advantage</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in Touch</a>
 </nav>
@@ -496,7 +486,7 @@ img{color:transparent} /* hide broken img alt text */
   <div class="hero-content">
     <div class="hero-left">
       <div class="hero-eyebrow">Sydney · Est. 2000 · AI-Enhanced</div>
-      <h1 class="hero-title">Visions<br>made <em class="shimmer-gold">real</em></h1>
+      <h1 class="hero-title">Vision<br>made <em class="shimmer-gold">real</em></h1>
     </div>
     <div class="hero-right">
       <p>The most experienced architectural visualisation studio in Australia. Now AI-enhanced. Every image a considered act.</p>
@@ -512,133 +502,128 @@ img{color:transparent} /* hide broken img alt text */
   </div>
 </div>
 
-<!-- TRUSTED CLIENTS & PARTNERS -->
-<section class="trust-section reveal" id="trust">
-  <div class="trust-inner">
-    <div class="eyebrow" style="text-align:center;margin-bottom:16px">Trusted Clients & Partners</div>
-    <h2 class="trust-title">25 years. <em class="shimmer-gold">A reputation built quietly.</em></h2>
-    <p class="trust-blurb">A selection of the developers, architects, and groups whose work we've had the privilege of visualising.</p>
-    <div class="trust-wall">
-      <span>Lendlease</span>
-      <span>Stockland</span>
-      <span>Mirvac</span>
-      <span>Frasers Property</span>
-      <span>Meriton</span>
-      <span>Walker Corporation</span>
-      <span>Landcom</span>
-      <span>Deicorp</span>
-      <span>Thirdi Group</span>
-      <span>Woolworths Group</span>
-      <span>Scentre Group</span>
-      <span>Greenland</span>
-      <span>JQZ Group</span>
-      <span>Decode</span>
-      <span>Iris Capital</span>
-      <span>Barings</span>
-      <span>Bridgestone Projects</span>
-      <span>FK Australia</span>
-      <span class="trust-divider">— Architects & Studios —</span>
-      <span>PTW Architects</span>
-      <span>Koichi Takada Architects</span>
-      <span>SJB Architects</span>
-      <span>Williams Ross Architects</span>
-      <span>PBD Architects</span>
-      <span>Plus Architecture</span>
-      <span>MHNDU</span>
-      <span>Turner Studios</span>
-      <span>DBI Design</span>
-      <span>Futurespace</span>
-      <span>The Property Agency</span>
-      <span>Delivery Agency</span>
-    </div>
-  </div>
-</section>
 
-
-<!-- AI CASE STUDIES SECTION -->
+<!-- AI ADVANTAGE SECTION -->
 <section class="ai-article-section" id="ai-advantage">
-  <div class="ai-article-header" style="padding:0 56px;margin-bottom:40px">
+  <div class="ai-article-header" style="padding:0 56px;margin-bottom:48px">
     <div class="eyebrow" style="margin-bottom:14px">Feature</div>
-    <h2 class="display-title">AI <em class="shimmer-gold">Case Studies</em></h2>
-    <p style="font-size:16px;line-height:1.7;color:var(--text-muted);max-width:680px;margin-top:16px">How artificial intelligence has transformed every stage of our production pipeline — from masterplan to marketing.</p>
+    <h2 class="display-title">The AI <em class="shimmer-gold">Advantage</em></h2>
+    <p style="font-size:15px;line-height:1.8;color:var(--text-muted);max-width:600px;margin-top:16px">How artificial intelligence has transformed every stage of our production pipeline. Click any chapter to read the full story.</p>
   </div>
 
-  <!-- 2:1 slideshow banner — auto-cycles through AI imagery -->
-  <div class="ai-slideshow" id="aiSlideshow">
-    <div class="ai-slide active" style="background-image:url('images/ai-advantage/masterplan.jpeg')"></div>
-    <div class="ai-slide" style="background-image:url('images/ai-advantage/Media_Release.png')"></div>
-    <div class="ai-slide" style="background-image:url('images/ai-advantage/Development_Applications.png')"></div>
-    <div class="ai-slide" style="background-image:url('images/ai-advantage/Photography.jpg')"></div>
-    <div class="ai-slide" style="background-image:url('images/ai-advantage/Marketing_1.png')"></div>
-    <div class="ai-slide" style="background-image:url('images/ai-advantage/Marketing_2.jpg')"></div>
-    <div class="ai-slide" style="background-image:url('images/ai-advantage/Entourage.png')"></div>
-    <div class="ai-slideshow-overlay"></div>
-    <div class="ai-slideshow-dots" id="aiSlideshowDots"></div>
-  </div>
+  <div class="ai-grid" id="aiGrid">
 
-  <!-- Chapter tab selector -->
-  <div class="ai-chapter-nav" id="aiChapterNav">
-    <button class="ai-chapter-tab active" data-chapter="marketing"><span class="ai-chapter-tab-num">Ch 01</span><span class="ai-chapter-tab-title">Marketing CGI</span></button>
-    <button class="ai-chapter-tab" data-chapter="da"><span class="ai-chapter-tab-num">Ch 02</span><span class="ai-chapter-tab-title">Development Apps</span></button>
-    <button class="ai-chapter-tab" data-chapter="masterplan"><span class="ai-chapter-tab-num">Ch 03</span><span class="ai-chapter-tab-title">Masterplanning</span></button>
-    <button class="ai-chapter-tab" data-chapter="media"><span class="ai-chapter-tab-num">Ch 04</span><span class="ai-chapter-tab-title">Media & Community</span></button>
-    <button class="ai-chapter-tab" data-chapter="people"><span class="ai-chapter-tab-num">Ch 05</span><span class="ai-chapter-tab-title">People & Entourage</span></button>
-    <button class="ai-chapter-tab" data-chapter="photo"><span class="ai-chapter-tab-num">Ch 06</span><span class="ai-chapter-tab-title">Photography</span></button>
-  </div>
+    <!-- ROW 1 -->
+    <div class="ai-grid-card" onclick="toggleExpand('exp1',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/masterplan.jpeg" alt="Masterplanning" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 01</div>
+          <div class="ai-grid-card-title">Masterplanning</div>
+          <div class="ai-grid-card-excerpt">City-scale visions before a single building is designed. AI lets us create astonishing masterplan imagery at a scale and speed previously impossible.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
 
-  <!-- Article body — populated by JS based on which chapter tab is active -->
-  <div class="ai-article" id="aiArticle">
-    <div class="ai-article-content" data-chapter="masterplan">
-      <div class="ai-article-sub">Giving Form to a Vision Before a Single Building Exists</div>
-      <p>The earliest stage of any major development is also the most consequential — and the most underserved by traditional visualisation. When a client arrives with a masterplan, there are typically no buildings yet designed, no landscape locked in, and no architecture to model. What exists is a boundary, a brief, and an ambition.</p>
-      <p>This is precisely where 25 years of project experience combined with the power of AI produces something remarkable. Drawing on our deep knowledge of how great precincts look, feel, and function — and using AI to generate, iterate, and refine imagery at a scale and speed previously impossible — we create city-scale masterplan visions that go far beyond a site plan with coloured zones.</p>
-      <p>We produce genuinely inspiring imagery that communicates the potential of a place: its density, its character, its landscape, its life. We then convert those images into cinematic video sequences that bring the future to life with movement, atmosphere, and narrative.</p>
-      <blockquote><p>For developers seeking early funding, planning approval, or community engagement, this work is not decorative. It is the difference between a proposal that convinces and one that merely describes.</p></blockquote>
+    <div class="ai-grid-card" onclick="toggleExpand('exp1',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/Media_Release.png" alt="Media Release" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 02</div>
+          <div class="ai-grid-card-title">Media Release &amp; Community Engagement</div>
+          <div class="ai-grid-card-excerpt">Powerful, considered visuals at extraordinary speed — moving public sentiment at the most delicate stage of a development&apos;s lifecycle.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
-    <div class="ai-article-content" data-chapter="media">
-      <div class="ai-article-sub">Winning Hearts Before the First Sod is Turned</div>
-      <p>Few moments in a development's lifecycle are as delicate as the public reveal. The imagery must be compelling enough to generate excitement and support, yet measured enough not to trigger the organised resistance that ambitious projects so often attract.</p>
-      <p>Councils face the same challenge. Decision-makers need visual material that is credible, clear, and emotionally legible — imagery that helps a planning committee understand what a development will actually contribute to their community.</p>
-      <p>This is where our AI-supported imagery and video work has proven transformative. The combination of photorealistic quality, atmospheric conviction, and extraordinary production speed means we can produce powerful media release visuals that used to require weeks of production, in a fraction of that window.</p>
-      <blockquote><p>Images that read as confident, polished, and real. Videos that make a future community feel inhabited and inevitable. Material that moves public sentiment rather than merely informing it.</p></blockquote>
+
+    <div class="ai-grid-card" onclick="toggleExpand('exp1',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/Development_Applications.png" alt="Development Applications" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 03</div>
+          <div class="ai-grid-card-title">Development Applications</div>
+          <div class="ai-grid-card-excerpt">AI reconstructs demolished buildings and removed trees in photomontages — solving DA scenarios that were previously impossible to represent accurately.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
-    <div class="ai-article-content" data-chapter="da">
-      <div class="ai-article-sub">Solving the Photomontage Problems That Used to Have No Good Answer</div>
-      <p>Accurate photomontages have long been a cornerstone of the development application process. The standard is rigorous: the proposed development must be depicted with precision against what currently exists, so decision-makers can form a genuinely informed view of the impact on the surrounding streetscape.</p>
-      <p>Over 25 years, we have become highly proficient at this work. But proficiency has always had a hard limit: the site photograph. When existing trees obscure key sightlines, when a structure slated for demolition still stands at the time of photography — the base photograph cannot show what the completed development will actually reveal.</p>
-      <blockquote><p>AI has resolved this. We can now reconstruct what a site will look like once a building is demolished, once mature trees are removed, or once a blocked sightline is opened — with a level of realism that would have required days of manual work to approximate.</p></blockquote>
-      <p>Situations that were previously impractical to represent honestly are now handled efficiently, compliantly, and convincingly.</p>
+
+    <!-- EXPAND PANEL ROW 1 -->
+    <div class="ai-expand-panel" id="exp1">
+      <div class="ai-expand-inner" id="exp1-content">
+        <!-- content injected by JS based on which card was clicked -->
+      </div>
     </div>
-    <div class="ai-article-content" data-chapter="photo">
-      <div class="ai-article-sub">When the Weather Won't Cooperate and the Drone Can't Fly</div>
-      <p>View photography is not decorative background. It is the foundation of accuracy in architectural CGI. The view corridors that run through and around a site are often the primary driver of which camera positions are chosen and which images carry the most weight.</p>
-      <p>The two most persistent problems: weather that never cooperates with project timelines, and airspace regulations that make the ideal drone shot legally unavailable on the day it is needed.</p>
-      <p>AI has changed our relationship with both realities entirely. Unusable sections of a base photograph can now be reconstructed with realism that would have required hours of skilled manual retouching. We can now shift the entire time of day of a photograph — a midday shot translated into golden hour quality of light.</p>
-      <blockquote><p>Having spent years doing this work the hard way — frame-by-frame, layer-by-layer — the speed and quality of what AI now makes possible is genuinely remarkable. What once took a day takes minutes.</p></blockquote>
+
+    <!-- ROW 2 -->
+    <div class="ai-grid-card" onclick="toggleExpand('exp2',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/Photography.jpg" alt="Photography" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 04</div>
+          <div class="ai-grid-card-title">Photography</div>
+          <div class="ai-grid-card-excerpt">AI fixes unusable base photos, shifts time of day, and reconstructs obstructed sightlines — no matter what the weather or airspace restrictions did to the shoot.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
-    <div class="ai-article-content active" data-chapter="marketing">
-      <div class="ai-article-sub">Why the Tool Is Never the Differentiator</div>
-      <p>The marketing image is the summit of everything we do. Every element must be exactly right — because the image will be placed next to a price tag, submitted to a planning authority, or published to a market making purchasing decisions based on what they see.</p>
-      <p>We hear it regularly. A client has been experimenting with AI image generation and hits the AI Brick Wall — the moment when fixing one thing quietly changes three others. What was framed as a five-minute exercise becomes five hours of compounding frustration.</p>
-      <blockquote><p>Every serious practitioner has access to the same headline tools. The differentiator is the knowledge of how to direct them, constrain them, override them, and combine them with decades of craft experience that no prompt can replicate.</p></blockquote>
-      <p>And then there is creativity — which no tool addresses at all. The ideas behind a great image come from a trained creative eye, accumulated visual intelligence, and an understanding of what moves people and why.</p>
+
+    <div class="ai-grid-card" onclick="toggleExpand('exp2',this)">
+      <div class="ai-grid-card-img-wrap">
+        <div class="ai-grid-dual-img">
+          <img decoding="async" src="images/ai-advantage/Marketing_1.png" alt="Marketing CGI" loading="lazy">
+          <img decoding="async" src="images/ai-advantage/Marketing_2.jpg" alt="Marketing CGI" loading="lazy">
+        </div>
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 05</div>
+          <div class="ai-grid-card-title">Marketing CGI</div>
+          <div class="ai-grid-card-excerpt">The tool is never the differentiator. Knowledge, experience, and creative vision are what separate results that sell from results that merely look impressive.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
-    <div class="ai-article-content" data-chapter="people">
-      <div class="ai-article-sub">From the Most Complained-About Element to the Most Compelling</div>
-      <p>For as long as architectural CGI has existed, the people in the image have been its most contentious ingredient. Wrong demographic, wrong clothing, distracting from the architecture. The criticism was fair.</p>
-      <p>AI has not merely improved this. It has inverted it entirely. We can now generate custom people that address every point simultaneously — the right age, aesthetic, cultural background, clothing, and interaction, staged and lit as though captured by a photographer on the day.</p>
-      <blockquote><p>The people are no longer the thing a client has to apologise for in a presentation. They have become one of the most powerful narrative tools in the image.</p></blockquote>
-      <p>Buyers are not just purchasing a floor plan. They are purchasing a vision of their own life — a future they are invited to imagine themselves inhabiting. Done well, it is the difference between an image that shows a building and one that sells a life.</p>
+
+    <div class="ai-grid-card" onclick="toggleExpand('exp2',this)">
+      <div class="ai-grid-card-img-wrap">
+        <img decoding="async" class="ai-grid-card-img" src="images/ai-advantage/Entourage.png" alt="Entourage & People" loading="lazy">
+      </div>
+      <div class="ai-grid-card-body">
+        <div>
+          <div class="ai-grid-card-num">Chapter 06</div>
+          <div class="ai-grid-card-title">Entourage &amp; People</div>
+          <div class="ai-grid-card-excerpt">From the most complained-about element to the most compelling. AI-generated talent matched to your buyer demographic — the people now carry the narrative.</div>
+        </div>
+        <button class="ai-grid-card-btn">Read Full Story <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
+
+    <!-- EXPAND PANEL ROW 2 -->
+    <div class="ai-expand-panel" id="exp2">
+      <div class="ai-expand-inner" id="exp2-content">
+      </div>
+    </div>
+
   </div>
 </section>
 
 <section class="portfolio-section" id="work">
   <div class="portfolio-header reveal">
-    <div><div class="eyebrow">Featured Work</div><h2 class="display-title">Featured <em class="shimmer-gold">Projects</em></h2></div>
-    <p style="font-size:14px;color:var(--text-muted);max-width:240px;text-align:right;line-height:1.65">Click any project to explore the full gallery</p>
+    <div><div class="eyebrow">Selected Work</div><h2 class="display-title">Recent <em class="shimmer-gold">Projects</em></h2></div>
+    <p style="font-size:12px;color:var(--text-dim);max-width:200px;text-align:right;line-height:1.7">Click any project to explore the full gallery</p>
   </div>
-  <div class="projects-grid" id="projectCards"></div>
+  <div id="projectCards"></div>
 </section>
 
 <div class="gallery-drawer" id="galleryDrawer">
@@ -699,17 +684,6 @@ img{color:transparent} /* hide broken img alt text */
       <p class="contact-blurb">Whether you're at concept stage, approaching pre-sales, or looking to upgrade existing visuals — we'd love to hear about your project.</p>
       <div class="contact-detail"><div class="contact-detail-label">Studio</div><div class="contact-detail-val">Level 7, 135 King Street<br>Sydney NSW 2000</div></div>
       <div class="contact-detail"><div class="contact-detail-label">Email</div><div class="contact-detail-val"><a href="mailto:mail@ivolvestudios.com">mail@ivolvestudios.com</a></div></div>
-      <div class="contact-map">
-        <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=151.2050%2C-33.8705%2C151.2095%2C-33.8675&amp;layer=mapnik&amp;marker=-33.86895%2C151.2073"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Ivolve Studios — Level 7, 135 King Street, Sydney"></iframe>
-        <a class="contact-map-link" href="https://www.google.com/maps/place/135+King+St,+Sydney+NSW+2000" target="_blank" rel="noopener">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Open in Maps
-        </a>
-      </div>
     </div>
     <div class="reveal" style="transition-delay:.12s">
       <form id="contactForm" onsubmit="handleSubmit(event)">
@@ -895,7 +869,7 @@ const PROJECTS = [
   }
 ];
 
-// Build project cards — Featured Projects 3-col grid
+// Build project cards
 const cc = document.getElementById('projectCards');
 PROJECTS.forEach((proj, pi) => {
   const num = String(pi+1).padStart(2,'0');
@@ -903,17 +877,42 @@ PROJECTS.forEach((proj, pi) => {
   card.className = 'project-card reveal';
   card.style.transitionDelay = (pi * 0.07) + 's';
 
+  // Media area: video autoplay if heroVideo, else static image
+  let mediaHtml = '';
+  if (proj.heroVideo) {
+    mediaHtml = `<div class="project-card-vimeo-wrap"><iframe
+      src="${proj.heroVideo}"
+      style="position:absolute;top:50%;left:50%;width:177.78%;height:177.78%;transform:translate(-50%,-50%);border:none;pointer-events:none"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe></div>`;
+    } else {
+    mediaHtml = `<div class="project-card-img-bg" style="background-image:url('${proj.heroImage}')"></div>`;
+  }
+
   card.innerHTML = `
     <div class="project-card-media">
-      <div class="project-card-img-bg" style="background-image:url('${proj.heroImage}')"></div>
+      ${mediaHtml}
       <div class="project-card-media-overlay"></div>
       <div class="project-card-number">${num}</div>
     </div>
     <div class="project-card-info">
-      <div class="project-card-name">${proj.displayName}</div>
-      <div class="project-card-label">${proj.location || 'Sydney, NSW'}</div>
+      <div>
+        <div class="project-card-label">${proj.location || 'Sydney, NSW'}</div>
+        <div class="project-card-name">${proj.displayName}</div>
+        <div class="project-card-desc">${proj.description}</div>
+        <div class="project-card-tags">${proj.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>
+      <div class="project-card-link" style="margin-top:32px">
+        View Gallery
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
     </div>`;
   card.addEventListener('click', () => openGallery(pi));
+  // Fade in video over image
+  const vid = card.querySelector('.project-card-video');
+  if (vid) vid.addEventListener('canplay', () => { vid.style.opacity='1'; });
   cc.appendChild(card);
 });
 
@@ -1035,8 +1034,8 @@ window.addEventListener('load', () => {
 // Cursor
 
 document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.svc-item').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='16px';cur.style.height='16px';ring.style.width='54px';ring.style.height='54px';});
-  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='38px';ring.style.height='38px';});
+  el.addEventListener('mouseenter',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='46px';ring.style.height='46px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='7px';cur.style.height='7px';ring.style.width='32px';ring.style.height='32px';});
 });
 window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>60));
 // AI cards rendered as static HTML — no JS build needed
@@ -1052,59 +1051,80 @@ let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
 (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
 document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.svc-item').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='16px';cur.style.height='16px';ring.style.width='54px';ring.style.height='54px';});
-  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='38px';ring.style.height='38px';});
+  el.addEventListener('mouseenter',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='46px';ring.style.height='46px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='7px';cur.style.height='7px';ring.style.width='32px';ring.style.height='32px';});
 });
 
-// ── AI CASE STUDIES — slideshow + chapter tabs ─────────────────
-(function initAiCaseStudies(){
-  const slides = document.querySelectorAll('.ai-slide');
-  const dotsContainer = document.getElementById('aiSlideshowDots');
-  const tabs = document.querySelectorAll('.ai-chapter-tab');
-  const articles = document.querySelectorAll('.ai-article-content');
-  if(!slides.length || !tabs.length) return;
+// ── AI ADVANTAGE EXPAND/COLLAPSE ─────────────────────────────
+const ROW1_CONTENT = {
+  '0': { title:'Masterplanning', sub:'Giving Form to a Vision Before a Single Building Exists',
+    body:`<p>The earliest stage of any major development is also the most consequential — and the most underserved by traditional visualisation. When a client arrives with a masterplan, there are typically no buildings yet designed, no landscape locked in, and no architecture to model. What exists is a boundary, a brief, and an ambition.</p><p>This is precisely where 25 years of project experience combined with the power of AI produces something remarkable. Drawing on our deep knowledge of how great precincts look, feel, and function — and using AI to generate, iterate, and refine imagery at a scale and speed previously impossible — we create city-scale masterplan visions that go far beyond a site plan with coloured zones.</p><p>We produce genuinely inspiring imagery that communicates the potential of a place: its density, its character, its landscape, its life. We then convert those images into cinematic video sequences that bring the future to life with movement, atmosphere, and narrative.</p><blockquote><p>For developers seeking early funding, planning approval, or community engagement, this work is not decorative. It is the difference between a proposal that convinces and one that merely describes.</p></blockquote>`},
+  '1': { title:'Media Release &amp; Community Engagement', sub:'Winning Hearts Before the First Sod is Turned',
+    body:`<p>Few moments in a development’s lifecycle are as delicate as the public reveal. The imagery must be compelling enough to generate excitement and support, yet measured enough not to trigger the organised resistance that ambitious projects so often attract.</p><p>Councils face the same challenge. Decision-makers need visual material that is credible, clear, and emotionally legible — imagery that helps a planning committee understand what a development will actually contribute to their community.</p><p>This is where our AI-supported imagery and video work has proven transformative. The combination of photorealistic quality, atmospheric conviction, and extraordinary production speed means we can produce powerful media release visuals that used to require weeks of production, in a fraction of that window.</p><blockquote><p>Images that read as confident, polished, and real. Videos that make a future community feel inhabited and inevitable. Material that moves public sentiment rather than merely informing it.</p></blockquote>`},
+  '2': { title:'Development Applications', sub:'Solving the Photomontage Problems That Used to Have No Good Answer',
+    body:`<p>Accurate photomontages have long been a cornerstone of the development application process. The standard is rigorous: the proposed development must be depicted with precision against what currently exists, so decision-makers can form a genuinely informed view of the impact on the surrounding streetscape.</p><p>Over 25 years, we have become highly proficient at this work. But proficiency has always had a hard limit: the site photograph. When existing trees obscure key sightlines, when a structure slated for demolition still stands at the time of photography — the base photograph cannot show what the completed development will actually reveal.</p><blockquote><p>AI has resolved this. We can now reconstruct what a site will look like once a building is demolished, once mature trees are removed, or once a blocked sightline is opened — with a level of realism that would have required days of manual work to approximate.</p></blockquote><p>Situations that were previously impractical to represent honestly are now handled efficiently, compliantly, and convincingly.</p>`}
+};
+const ROW2_CONTENT = {
+  '0': { title:'Photography', sub:"When the Weather Won’t Cooperate and the Drone Can’t Fly",
+    body:`<p>View photography is not decorative background. It is the foundation of accuracy in architectural CGI. The view corridors that run through and around a site are often the primary driver of which camera positions are chosen and which images carry the most weight.</p><p>The two most persistent problems: weather that never cooperates with project timelines, and airspace regulations that make the ideal drone shot legally unavailable on the day it is needed.</p><p>AI has changed our relationship with both realities entirely. Unusable sections of a base photograph can now be reconstructed with realism that would have required hours of skilled manual retouching. We can now shift the entire time of day of a photograph — a midday shot translated into golden hour quality of light.</p><blockquote><p>Having spent years doing this work the hard way — frame-by-frame, layer-by-layer — the speed and quality of what AI now makes possible is genuinely remarkable. What once took a day takes minutes.</p></blockquote>`},
+  '1': { title:'Marketing CGI', sub:'Why the Tool Is Never the Differentiator',
+    body:`<p>The marketing image is the summit of everything we do. Every element must be exactly right — because the image will be placed next to a price tag, submitted to a planning authority, or published to a market making purchasing decisions based on what they see.</p><p>We hear it regularly. A client has been experimenting with AI image generation and hits the AI Brick Wall — the moment when fixing one thing quietly changes three others. What was framed as a five-minute exercise becomes five hours of compounding frustration.</p><blockquote><p>Every serious practitioner has access to the same headline tools. The differentiator is the knowledge of how to direct them, constrain them, override them, and combine them with decades of craft experience that no prompt can replicate.</p></blockquote><p>And then there is creativity — which no tool addresses at all. The ideas behind a great image come from a trained creative eye, accumulated visual intelligence, and an understanding of what moves people and why.</p>`},
+  '2': { title:'Entourage &amp; People', sub:'From the Most Complained-About Element to the Most Compelling',
+    body:`<p>For as long as architectural CGI has existed, the people in the image have been its most contentious ingredient. Wrong demographic, wrong clothing, distracting from the architecture. The criticism was fair.</p><p>AI has not merely improved this. It has inverted it entirely. We can now generate custom people that address every point simultaneously — the right age, aesthetic, cultural background, clothing, and interaction, staged and lit as though captured by a photographer on the day.</p><blockquote><p>The people are no longer the thing a client has to apologise for in a presentation. They have become one of the most powerful narrative tools in the image.</p></blockquote><p>Buyers are not just purchasing a floor plan. They are purchasing a vision of their own life — a future they are invited to imagine themselves inhabiting. Done well, it is the difference between an image that shows a building and one that sells a life.</p>`}
+};
 
-  // Build slideshow dots
-  let currentSlide = 0;
-  slides.forEach((s, i) => {
-    const d = document.createElement('button');
-    d.className = 'ai-slideshow-dot' + (i===0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Go to slide ' + (i+1));
-    d.addEventListener('click', () => goToSlide(i));
-    dotsContainer.appendChild(d);
-  });
-  const dots = document.querySelectorAll('.ai-slideshow-dot');
+let _activePanel=null, _activeCardIdx=null, _activeRow=null;
 
-  function goToSlide(idx) {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    currentSlide = idx;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+function toggleExpand(panelId, clickedCard) {
+  const panel = document.getElementById(panelId);
+  if(!panel) return;
+  const contentEl = document.getElementById(panelId+'-content');
+  const row = panelId==='exp1' ? 1 : 2;
+  const contentMap = row===1 ? ROW1_CONTENT : ROW2_CONTENT;
+  const grid = document.getElementById('aiGrid');
+  const allCards = [...grid.querySelectorAll('.ai-grid-card')];
+  const rowCards = row===1 ? allCards.slice(0,3) : allCards.slice(3,6);
+  const cardIdx = rowCards.indexOf(clickedCard);
+  const data = contentMap[String(cardIdx)];
+
+  // Same card clicked again — close
+  if(_activePanel===panelId && _activeCardIdx===cardIdx) {
+    panel.classList.remove('open');
+    rowCards.forEach(c=>c.style.outline='');
+    _activePanel=null; _activeCardIdx=null; _activeRow=null;
+    return;
   }
-  // Auto-advance every 5 seconds
-  let slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
-  // Pause auto-advance when hovering slideshow
-  const slideshow = document.getElementById('aiSlideshow');
-  if(slideshow){
-    slideshow.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    slideshow.addEventListener('mouseleave', () => {
-      slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
-    });
+  // Close any other open panel
+  if(_activePanel) {
+    document.getElementById(_activePanel).classList.remove('open');
+    const pr=_activeRow===1?allCards.slice(0,3):allCards.slice(3,6);
+    pr.forEach(c=>c.style.outline='');
   }
+  if(!data) return;
+  contentEl.innerHTML=`
+    <h2>${data.title}<br><em>${data.sub}</em></h2>
+    <div>${data.body}</div>
+    <div></div>
+    <button class="ai-expand-close" onclick="event.stopPropagation();_closeExpand('${panelId}',${row})">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg> Close
+    </button>`;
+  panel.classList.add('open');
+  clickedCard.style.outline='1px solid rgba(184,150,106,.4)';
+  _activePanel=panelId; _activeCardIdx=cardIdx; _activeRow=row;
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+}
 
-  // Chapter tabs — independent of slideshow
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const ch = tab.getAttribute('data-chapter');
-      tabs.forEach(t => t.classList.remove('active'));
-      articles.forEach(a => a.classList.remove('active'));
-      tab.classList.add('active');
-      const target = document.querySelector('.ai-article-content[data-chapter="'+ch+'"]');
-      if(target) target.classList.add('active');
-    });
-  });
-})();
+function _closeExpand(panelId, row) {
+  const panel=document.getElementById(panelId);
+  if(panel) panel.classList.remove('open');
+  const grid=document.getElementById('aiGrid');
+  if(grid) {
+    const allCards=[...grid.querySelectorAll('.ai-grid-card')];
+    const rc=row===1?allCards.slice(0,3):allCards.slice(3,6);
+    rc.forEach(c=>c.style.outline='');
+  }
+  _activePanel=null; _activeCardIdx=null; _activeRow=null;
+}
 
 
 // ── IMAGE LOADING OPTIMISATION ────────────────────────────────────────────
