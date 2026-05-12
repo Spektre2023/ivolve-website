@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v17 | Built 2026-05-05 | Logo image, brighter cursor, AI 2.5:1 + full-width text + reordered chapters, Trusted Clients & Partners section -->
+<!-- Ivolve Studios v24 | Built 2026-05-07 | Pan-on-hover effect, Marquet aerial hero, removed Turner Studios & Mary-Rhodes (6th project, 13 images) -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -47,10 +47,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-ui);font-size
 .cursor{position:fixed;width:10px;height:10px;background:var(--accent);border:1.5px solid #fff;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;box-shadow:0 0 0 1px rgba(0,0,0,.5),0 2px 8px rgba(0,0,0,.55)}
 .cursor-ring{position:fixed;width:38px;height:38px;border:1.5px solid rgba(201,168,124,.75);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
-nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:32px 56px;display:flex;align-items:center;justify-content:space-between;transition:all .5s}
-nav.scrolled{background:rgba(6,6,6,.95);backdrop-filter:blur(24px);padding:18px 56px;border-bottom:1px solid var(--border)}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:16px 56px;display:flex;align-items:center;justify-content:space-between;transition:all .5s}
+nav.scrolled{background:rgba(6,6,6,.95);backdrop-filter:blur(24px);padding:12px 56px;border-bottom:1px solid var(--border)}
 .nav-logo{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text);text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.6);display:inline-flex;align-items:center}
-.nav-logo img{height:36px;width:auto;display:block;filter:drop-shadow(0 1px 4px rgba(0,0,0,.5))}
+.nav-logo img{height:108px;width:auto;display:block;filter:drop-shadow(0 1px 4px rgba(0,0,0,.5))}
 .nav-links{display:flex;gap:48px;list-style:none}
 .nav-links a{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(237,233,227,.72);text-decoration:none;transition:color .3s}
 .nav-links a:hover{color:var(--text)}
@@ -93,11 +93,11 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .trust-title{font-family:var(--font-display);font-size:clamp(34px,4.2vw,56px);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-bottom:18px;color:var(--text)}
 .trust-title em{font-style:italic;color:var(--accent2)}
 .trust-blurb{font-size:16px;line-height:1.7;color:var(--text-muted);max-width:620px;margin:0 auto 56px}
-.trust-wall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 28px;column-gap:28px}
-.trust-wall span{font-family:var(--font-ui);font-size:14px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text);transition:color .25s,opacity .25s;opacity:.85;cursor:default;position:relative;padding:8px 0}
+.trust-wall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px 38px;column-gap:38px}
+.trust-wall span{font-family:var(--font-display);font-size:42px;font-weight:300;letter-spacing:-.005em;text-transform:none;color:var(--text);transition:color .25s,opacity .25s;opacity:.85;cursor:default;position:relative;padding:6px 0;line-height:1.05}
 .trust-wall span:hover{color:var(--accent);opacity:1}
-.trust-wall span:not(.trust-divider):not(:last-child)::after{content:'';position:absolute;right:-15px;top:50%;transform:translateY(-50%);width:3px;height:3px;background:var(--accent);border-radius:50%;opacity:.5}
-.trust-divider{flex-basis:100%;font-family:var(--font-display)!important;font-style:italic;font-size:18px!important;letter-spacing:.04em!important;text-transform:none!important;color:var(--accent)!important;opacity:.7!important;margin:18px 0 4px;padding:0!important;text-align:center}
+.trust-wall span:not(.trust-divider):not(:last-child)::after{content:'';position:absolute;right:-22px;top:50%;transform:translateY(-50%);width:5px;height:5px;background:var(--accent);border-radius:50%;opacity:.4}
+.trust-divider{flex-basis:100%;font-family:var(--font-ui)!important;font-style:normal!important;font-size:12px!important;font-weight:600!important;letter-spacing:.32em!important;text-transform:uppercase!important;color:var(--accent)!important;opacity:.85!important;margin:36px 0 20px;padding:0!important;text-align:center}
 .trust-divider::after{display:none!important}
 /* PORTFOLIO */
 .portfolio-section{padding:100px 0 0;background:var(--bg)}
@@ -110,8 +110,8 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .project-card{display:flex;flex-direction:column;cursor:pointer;background:transparent;overflow:hidden;transition:transform .35s ease}
 .project-card:hover{transform:translateY(-4px)}
 .project-card-media{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
-.project-card-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s ease;z-index:0}
-.project-card:hover .project-card-img-bg{transform:scale(1.04)}
+.project-card-img-bg{position:absolute;inset:0;background-size:cover;background-position:left center;transition:transform 8s ease-out;z-index:0;transform:scale(1.12) translateX(0%)}
+.project-card:hover .project-card-img-bg{transform:scale(1.12) translateX(-8%)}
 .project-card-media-overlay{position:absolute;inset:0;background:rgba(6,6,6,.18);transition:background .4s;z-index:2}
 .project-card:hover .project-card-media-overlay{background:rgba(6,6,6,.04)}
 .project-card-number{position:absolute;top:18px;left:22px;font-family:var(--font-display);font-size:14px;font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.1em;z-index:3}
@@ -250,13 +250,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
 .ai-chapter-tab-num{font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;display:block;margin-bottom:6px;opacity:.7}
 .ai-chapter-tab-title{font-family:var(--font-display);font-size:17px;font-weight:300;line-height:1.2;letter-spacing:-.005em}
 
-.ai-article{padding:48px 56px 0;max-width:none;margin:0}
+.ai-article{padding:56px 0 0;width:75%;max-width:1100px;margin:0 auto;text-align:center}
 .ai-article-content{display:none}
 .ai-article-content.active{display:block;animation:fadeUp .5s ease}
-.ai-article-sub{font-family:var(--font-display);font-size:clamp(28px,3.4vw,40px);font-weight:300;font-style:italic;line-height:1.18;letter-spacing:-.01em;color:var(--accent2);margin-bottom:28px}
-.ai-article-content p{font-size:17px;line-height:1.85;color:var(--text);margin-bottom:20px}
-.ai-article-content blockquote{border-left:2px solid var(--accent);padding:18px 28px;background:var(--bg2);margin:28px 0}
-.ai-article-content blockquote p{font-family:var(--font-display);font-size:21px;font-weight:300;font-style:italic;color:var(--text);margin:0;line-height:1.45}
+.ai-article-sub{font-family:var(--font-display);font-size:clamp(34px,4.2vw,52px);font-weight:300;font-style:italic;line-height:1.15;letter-spacing:-.012em;color:var(--accent2);margin-bottom:36px}
+.ai-article-content p{font-size:24px;line-height:1.55;color:var(--text);margin:0 auto;max-width:none;font-weight:300}
+.ai-article-content blockquote{display:none}
 
 /* legacy compatibility — keep these so any old expand-panel or grid-card selectors don't error */
 .ai-expand-panel{display:none}
@@ -307,7 +306,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @media(max-width:1100px){
-  nav,nav.scrolled{padding:20px 32px}
+  nav,nav.scrolled{padding:12px 32px}
   .hero-content{padding:0 32px 130px}
   
   .portfolio-header{padding:0 32px}
@@ -340,7 +339,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
 }
 /* ── TABLET 1100px ── */
 @media(max-width:1100px){
-  nav,nav.scrolled{padding:20px 28px}
+  nav,nav.scrolled{padding:12px 28px}
   .hero-content{padding:0 28px 130px}
   .portfolio-header{padding:0 28px}
   .projects-grid{grid-template-columns:1fr 1fr;gap:28px;padding:0 28px}
@@ -353,7 +352,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
   .ai-article-header{padding:0 28px}
   .ai-slideshow{width:calc(100% - 56px);margin:0 28px}
   .ai-chapter-nav{padding:0 28px}
-  .ai-article{padding:36px 28px 0}
+  .ai-article{padding:40px 28px 0;width:88%;max-width:none}
+  .ai-article-content p{font-size:21px}
   .ai-chapter-tab{min-width:120px;padding:14px 10px 12px}
   .ai-chapter-tab-title{font-size:15px}
 }
@@ -378,10 +378,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
   /* TRUST */
   .trust-section{padding:60px 20px 52px}
   .trust-blurb{font-size:14.5px;margin-bottom:36px}
-  .trust-wall{gap:8px 18px}
-  .trust-wall span{font-size:12px;letter-spacing:.12em;padding:5px 0}
-  .trust-wall span:not(.trust-divider):not(:last-child)::after{right:-10px;width:2px;height:2px}
-  .trust-divider{font-size:15px!important;margin:12px 0 4px}
+  .trust-wall{gap:10px 20px}
+  .trust-wall span{font-size:24px;letter-spacing:-.005em;padding:4px 0}
+  .trust-wall span:not(.trust-divider):not(:last-child)::after{right:-12px;width:3px;height:3px}
+  .trust-divider{font-size:11px!important;margin:24px 0 14px}
   /* AI ADVANTAGE */
   .ai-article-section{padding:60px 0 48px}
   .ai-article-header{padding:0 20px;margin-bottom:24px}
@@ -392,11 +392,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
   .ai-chapter-tab:nth-child(3n){border-right:none}
   .ai-chapter-tab-num{font-size:9px;letter-spacing:.18em;margin-bottom:3px}
   .ai-chapter-tab-title{font-size:13px;line-height:1.15}
-  .ai-article{padding:32px 20px 0}
-  .ai-article-sub{font-size:24px;margin-bottom:20px}
-  .ai-article-content p{font-size:15.5px}
-  .ai-article-content blockquote{padding:14px 20px;margin:22px 0}
-  .ai-article-content blockquote p{font-size:18px}
+  .ai-article{padding:32px 20px 0;width:100%}
+  .ai-article-sub{font-size:26px;margin-bottom:20px}
+  .ai-article-content p{font-size:17.5px;line-height:1.55}
   /* PORTFOLIO */
   .portfolio-section{padding:60px 0 0}
   .portfolio-header{padding:0 20px;margin-bottom:32px;flex-direction:column;gap:8px;align-items:flex-start}
@@ -443,7 +441,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
 /* ── SMALL MOBILE 480px ── */
 @media(max-width:480px){
   h1.hero-title{font-size:clamp(34px,13vw,50px)}
-  .nav-logo img{height:26px}
+  .nav-logo img{height:56px}
   .display-title{font-size:clamp(26px,8vw,38px)}
 }
 
@@ -457,7 +455,6 @@ img{color:transparent} /* hide broken img alt text */
 .img-wrap.done::before{display:none}
 @keyframes skeleton{0%{background-position:200% 0}100%{background-position:-200% 0}}
 /* Fade in images as they load */
-.project-card-img-bg{transition:opacity .5s ease}
 .service-icon-img{opacity:0;transition:opacity .5s ease}
 .service-icon-img.loaded{opacity:1}
 </style>
@@ -516,7 +513,7 @@ img{color:transparent} /* hide broken img alt text */
 <section class="trust-section reveal" id="trust">
   <div class="trust-inner">
     <div class="eyebrow" style="text-align:center;margin-bottom:16px">Trusted Clients & Partners</div>
-    <h2 class="trust-title">25 years. <em class="shimmer-gold">A reputation built quietly.</em></h2>
+    <h2 class="trust-title">Twenty-five years of <em class="shimmer-gold">earned trust.</em></h2>
     <p class="trust-blurb">A selection of the developers, architects, and groups whose work we've had the privilege of visualising.</p>
     <div class="trust-wall">
       <span>Lendlease</span>
@@ -537,7 +534,7 @@ img{color:transparent} /* hide broken img alt text */
       <span>Barings</span>
       <span>Bridgestone Projects</span>
       <span>FK Australia</span>
-      <span class="trust-divider">— Architects & Studios —</span>
+      <span class="trust-divider">Architects & Design Studios</span>
       <span>PTW Architects</span>
       <span>Koichi Takada Architects</span>
       <span>SJB Architects</span>
@@ -545,7 +542,6 @@ img{color:transparent} /* hide broken img alt text */
       <span>PBD Architects</span>
       <span>Plus Architecture</span>
       <span>MHNDU</span>
-      <span>Turner Studios</span>
       <span>DBI Design</span>
       <span>Futurespace</span>
       <span>The Property Agency</span>
@@ -572,6 +568,7 @@ img{color:transparent} /* hide broken img alt text */
     <div class="ai-slide" style="background-image:url('images/ai-advantage/Marketing_1.png')"></div>
     <div class="ai-slide" style="background-image:url('images/ai-advantage/Marketing_2.jpg')"></div>
     <div class="ai-slide" style="background-image:url('images/ai-advantage/Entourage.png')"></div>
+    <div class="ai-slide" style="background-image:url('images/ai-advantage/Rooftop_Landscape.jpg')"></div>
     <div class="ai-slideshow-overlay"></div>
     <div class="ai-slideshow-dots" id="aiSlideshowDots"></div>
   </div>
@@ -579,7 +576,7 @@ img{color:transparent} /* hide broken img alt text */
   <!-- Chapter tab selector -->
   <div class="ai-chapter-nav" id="aiChapterNav">
     <button class="ai-chapter-tab active" data-chapter="marketing"><span class="ai-chapter-tab-num">Ch 01</span><span class="ai-chapter-tab-title">Marketing CGI</span></button>
-    <button class="ai-chapter-tab" data-chapter="da"><span class="ai-chapter-tab-num">Ch 02</span><span class="ai-chapter-tab-title">Development Apps</span></button>
+    <button class="ai-chapter-tab" data-chapter="da"><span class="ai-chapter-tab-num">Ch 02</span><span class="ai-chapter-tab-title">Development Applications</span></button>
     <button class="ai-chapter-tab" data-chapter="masterplan"><span class="ai-chapter-tab-num">Ch 03</span><span class="ai-chapter-tab-title">Masterplanning</span></button>
     <button class="ai-chapter-tab" data-chapter="media"><span class="ai-chapter-tab-num">Ch 04</span><span class="ai-chapter-tab-title">Media & Community</span></button>
     <button class="ai-chapter-tab" data-chapter="people"><span class="ai-chapter-tab-num">Ch 05</span><span class="ai-chapter-tab-title">People & Entourage</span></button>
@@ -589,46 +586,28 @@ img{color:transparent} /* hide broken img alt text */
   <!-- Article body — populated by JS based on which chapter tab is active -->
   <div class="ai-article" id="aiArticle">
     <div class="ai-article-content" data-chapter="masterplan">
-      <div class="ai-article-sub">Giving Form to a Vision Before a Single Building Exists</div>
-      <p>The earliest stage of any major development is also the most consequential — and the most underserved by traditional visualisation. When a client arrives with a masterplan, there are typically no buildings yet designed, no landscape locked in, and no architecture to model. What exists is a boundary, a brief, and an ambition.</p>
-      <p>This is precisely where 25 years of project experience combined with the power of AI produces something remarkable. Drawing on our deep knowledge of how great precincts look, feel, and function — and using AI to generate, iterate, and refine imagery at a scale and speed previously impossible — we create city-scale masterplan visions that go far beyond a site plan with coloured zones.</p>
-      <p>We produce genuinely inspiring imagery that communicates the potential of a place: its density, its character, its landscape, its life. We then convert those images into cinematic video sequences that bring the future to life with movement, atmosphere, and narrative.</p>
-      <blockquote><p>For developers seeking early funding, planning approval, or community engagement, this work is not decorative. It is the difference between a proposal that convinces and one that merely describes.</p></blockquote>
+      <div class="ai-article-sub">Vision before a single building exists</div>
+      <p>When a client arrives with a masterplan, all that exists is a boundary, a brief, and an ambition. We combine 25 years of project experience with AI to create city-scale precinct visions — imagery and cinematic video that go far beyond a site plan with coloured zones.</p>
     </div>
     <div class="ai-article-content" data-chapter="media">
-      <div class="ai-article-sub">Winning Hearts Before the First Sod is Turned</div>
-      <p>Few moments in a development's lifecycle are as delicate as the public reveal. The imagery must be compelling enough to generate excitement and support, yet measured enough not to trigger the organised resistance that ambitious projects so often attract.</p>
-      <p>Councils face the same challenge. Decision-makers need visual material that is credible, clear, and emotionally legible — imagery that helps a planning committee understand what a development will actually contribute to their community.</p>
-      <p>This is where our AI-supported imagery and video work has proven transformative. The combination of photorealistic quality, atmospheric conviction, and extraordinary production speed means we can produce powerful media release visuals that used to require weeks of production, in a fraction of that window.</p>
-      <blockquote><p>Images that read as confident, polished, and real. Videos that make a future community feel inhabited and inevitable. Material that moves public sentiment rather than merely informing it.</p></blockquote>
+      <div class="ai-article-sub">Winning hearts before the first sod is turned</div>
+      <p>The public reveal is the most delicate moment in a development's lifecycle. AI lets us produce media release imagery and video with the photorealistic quality and atmospheric conviction it takes to move public sentiment — at a fraction of the time it used to require.</p>
     </div>
     <div class="ai-article-content" data-chapter="da">
-      <div class="ai-article-sub">Solving the Photomontage Problems That Used to Have No Good Answer</div>
-      <p>Accurate photomontages have long been a cornerstone of the development application process. The standard is rigorous: the proposed development must be depicted with precision against what currently exists, so decision-makers can form a genuinely informed view of the impact on the surrounding streetscape.</p>
-      <p>Over 25 years, we have become highly proficient at this work. But proficiency has always had a hard limit: the site photograph. When existing trees obscure key sightlines, when a structure slated for demolition still stands at the time of photography — the base photograph cannot show what the completed development will actually reveal.</p>
-      <blockquote><p>AI has resolved this. We can now reconstruct what a site will look like once a building is demolished, once mature trees are removed, or once a blocked sightline is opened — with a level of realism that would have required days of manual work to approximate.</p></blockquote>
-      <p>Situations that were previously impractical to represent honestly are now handled efficiently, compliantly, and convincingly.</p>
+      <div class="ai-article-sub">Solving photomontage problems that used to have no good answer</div>
+      <p>Trees obscuring key sightlines. Buildings still standing that are scheduled for demolition. AI now lets us reconstruct exactly what a site will reveal once it's cleared — with the realism that would previously have required days of skilled manual work to approximate.</p>
     </div>
     <div class="ai-article-content" data-chapter="photo">
-      <div class="ai-article-sub">When the Weather Won't Cooperate and the Drone Can't Fly</div>
-      <p>View photography is not decorative background. It is the foundation of accuracy in architectural CGI. The view corridors that run through and around a site are often the primary driver of which camera positions are chosen and which images carry the most weight.</p>
-      <p>The two most persistent problems: weather that never cooperates with project timelines, and airspace regulations that make the ideal drone shot legally unavailable on the day it is needed.</p>
-      <p>AI has changed our relationship with both realities entirely. Unusable sections of a base photograph can now be reconstructed with realism that would have required hours of skilled manual retouching. We can now shift the entire time of day of a photograph — a midday shot translated into golden hour quality of light.</p>
-      <blockquote><p>Having spent years doing this work the hard way — frame-by-frame, layer-by-layer — the speed and quality of what AI now makes possible is genuinely remarkable. What once took a day takes minutes.</p></blockquote>
+      <div class="ai-article-sub">When the weather won't cooperate and the drone can't fly</div>
+      <p>Site photography is the foundation of accurate CGI, but weather and airspace regulations rarely cooperate with project timelines. AI now reconstructs unusable sections of base photography and shifts the time of day from midday into golden hour — work that once took a day now takes minutes.</p>
     </div>
     <div class="ai-article-content active" data-chapter="marketing">
-      <div class="ai-article-sub">Why the Tool Is Never the Differentiator</div>
-      <p>The marketing image is the summit of everything we do. Every element must be exactly right — because the image will be placed next to a price tag, submitted to a planning authority, or published to a market making purchasing decisions based on what they see.</p>
-      <p>We hear it regularly. A client has been experimenting with AI image generation and hits the AI Brick Wall — the moment when fixing one thing quietly changes three others. What was framed as a five-minute exercise becomes five hours of compounding frustration.</p>
-      <blockquote><p>Every serious practitioner has access to the same headline tools. The differentiator is the knowledge of how to direct them, constrain them, override them, and combine them with decades of craft experience that no prompt can replicate.</p></blockquote>
-      <p>And then there is creativity — which no tool addresses at all. The ideas behind a great image come from a trained creative eye, accumulated visual intelligence, and an understanding of what moves people and why.</p>
+      <div class="ai-article-sub">Why the tool is never the differentiator</div>
+      <p>Every serious practitioner has access to the same headline AI tools. What separates results that sell from results that merely look impressive is decades of craft, the knowledge to direct and constrain those tools, and the creative eye no prompt can replicate.</p>
     </div>
     <div class="ai-article-content" data-chapter="people">
-      <div class="ai-article-sub">From the Most Complained-About Element to the Most Compelling</div>
-      <p>For as long as architectural CGI has existed, the people in the image have been its most contentious ingredient. Wrong demographic, wrong clothing, distracting from the architecture. The criticism was fair.</p>
-      <p>AI has not merely improved this. It has inverted it entirely. We can now generate custom people that address every point simultaneously — the right age, aesthetic, cultural background, clothing, and interaction, staged and lit as though captured by a photographer on the day.</p>
-      <blockquote><p>The people are no longer the thing a client has to apologise for in a presentation. They have become one of the most powerful narrative tools in the image.</p></blockquote>
-      <p>Buyers are not just purchasing a floor plan. They are purchasing a vision of their own life — a future they are invited to imagine themselves inhabiting. Done well, it is the difference between an image that shows a building and one that sells a life.</p>
+      <div class="ai-article-sub">From the most complained-about element to the most compelling</div>
+      <p>The people in CGI used to be its weakest ingredient — wrong demographic, wrong clothing, distracting from the architecture. Now we generate custom talent matched precisely to your buyer demographic, lit and staged so the people don't apologise for the image, they sell it.</p>
     </div>
   </div>
 </section>
@@ -855,21 +834,21 @@ const PROJECTS = [
     description:'Architecturally distinctive residential development in Bondi Junction. Penthouse, sub-penthouse, and apartment CGI suite.',
     tags:['Residential','Penthouse','Interior CGI','Eastern Suburbs'],
     heroVideo:null,
-    heroImage:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View1Q_Hero_Day_FINAL.jpg',
+    heroImage:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View1Q_Hero_Day_FINAL.jpg',
     media:[
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View1Q_Hero_Day_FINAL.jpg',label:'Hero — Day'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View2D_Apt1604_Superman_FINAL.jpg',label:'Superman View'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View06F_Apt1701_Living_To_View_FINAL2.jpg',label:'Apt 1701 — Living'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View10A2_Apt1701_Kitchen_Dark_FINAL2.jpg',label:'Kitchen — Dark'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View10A2_Apt1701_Kitchen_Light_FINAL3.jpg',label:'Kitchen — Light'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View11C_Apt1801_Scullery_Kit_FINAL2.jpg',label:'Scullery Kitchen'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55Grafton_View26C_Apt1501_Fireplace_to_Balcony_FINAL.jpg',label:'Fireplace to Balcony'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View18D7_Apt1403_Living_to_View_FINAL2.jpg',label:'Apt 1403 — Living'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View19C_Apt1403_Ensuite+WiR_FINAL2.jpg',label:'Ensuite & WIR'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View33_Penthouse_Master_Bed_WiR_R6.jpg',label:'Penthouse Master Bed'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View07B_Apt1702_Bedroom_FINAL2.jpg',label:'Bedroom'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55_Grafton_View06I5_Apt1702_WIR_FINAL2.jpg',label:'WIR'},
-      {type:'img',url:'images/projects/Origami_55%20Grafton%20Street%20Bondi%20Junction/55Grafton_View28A_Apt1201_Bedroom_FINAL3.jpg',label:'Apt 1201 Bedroom'}
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View1Q_Hero_Day_FINAL.jpg',label:'Hero — Day'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View2D_Apt1604_Superman_FINAL.jpg',label:'Superman View'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View06F_Apt1701_Living_To_View_FINAL2.jpg',label:'Apt 1701 — Living'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View10A2_Apt1701_Kitchen_Dark_FINAL2.jpg',label:'Kitchen — Dark'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View10A2_Apt1701_Kitchen_Light_FINAL3.jpg',label:'Kitchen — Light'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View11C_Apt1801_Scullery_Kit_FINAL2.jpg',label:'Scullery Kitchen'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55Grafton_View26C_Apt1501_Fireplace_to_Balcony_FINAL.jpg',label:'Fireplace to Balcony'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View18D7_Apt1403_Living_to_View_FINAL2.jpg',label:'Apt 1403 — Living'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View19C_Apt1403_Ensuite+WiR_FINAL2.jpg',label:'Ensuite & WIR'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View33_Penthouse_Master_Bed_WiR_R6.jpg',label:'Penthouse Master Bed'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View07B_Apt1702_Bedroom_FINAL2.jpg',label:'Bedroom'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55_Grafton_View06I5_Apt1702_WIR_FINAL2.jpg',label:'WIR'},
+      {type:'img',url:'images/projects/Origami%20-%20Bondi%20Junction/55Grafton_View28A_Apt1201_Bedroom_FINAL3.jpg',label:'Apt 1201 Bedroom'}
     ]
   },
   {
@@ -877,20 +856,242 @@ const PROJECTS = [
     description:'Landmark mixed-use development in Potts Point. Aerial, streetscape, and premium residential apartment interiors.',
     tags:['Residential','Mixed-Use','Aerial CGI','Inner Sydney'],
     heroVideo:null,
-    heroImage:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight_Aerial_FINAL.jpg',
+    heroImage:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight_Aerial_FINAL.jpg',
     media:[
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight_Aerial_FINAL.jpg',label:'Twilight Aerial'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_03C_Hero_FINAL.jpg',label:'Hero Exterior'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_05D_Laneway_FINAL.jpg',label:'Laneway'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_28C_Street_Level_FINAL.jpg',label:'Street Level'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_10A_R22_Living_FINAL.jpg',label:'R22 Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_12C_B22_Living_Final_CorrectView.jpg',label:'B22 Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_13B_E51_Living_FINAL.jpg',label:'E51 Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_43Ab_AptC501_Kitchen_Living_FINAL.jpg',label:'C501 Kitchen & Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_45A_AptS301_Living_FINAL.jpg',label:'S301 Living'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_14D_L62_Bedroom_FINAL.jpg',label:'L62 Bedroom'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_32B_Walk_In_Robe_FINAL.jpg',label:'Walk-In Robe'},
-      {type:'img',url:'images/projects/Queensgate%20-%2018-32A%20Darlinghurst%20Rd%20Potts%20Point/18_Darlinghurst_View_29N_135mm_View_Corridor_R51_R8.jpg',label:'View Corridor'}
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_01F3_Twilight_Aerial_FINAL.jpg',label:'Twilight Aerial'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_03C_Hero_FINAL.jpg',label:'Hero Exterior'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_05D_Laneway_FINAL.jpg',label:'Laneway'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_28C_Street_Level_FINAL.jpg',label:'Street Level'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_10A_R22_Living_FINAL.jpg',label:'R22 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_12C_B22_Living_Final_CorrectView.jpg',label:'B22 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_13B_E51_Living_FINAL.jpg',label:'E51 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_43Ab_AptC501_Kitchen_Living_FINAL.jpg',label:'C501 Kitchen & Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_45A_AptS301_Living_FINAL.jpg',label:'S301 Living'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_14D_L62_Bedroom_FINAL.jpg',label:'L62 Bedroom'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_32B_Walk_In_Robe_FINAL.jpg',label:'Walk-In Robe'},
+      {type:'img',url:'images/projects/Queensgate%20-%20Potts%20Point/18_Darlinghurst_View_29N_135mm_View_Corridor_R51_R8.jpg',label:'View Corridor'}
+    ]
+  },
+  {
+    key:'marquet', displayName:'Marquet & Mary-Rhodes', location:'Rhodes, NSW',
+    description:'Large-scale mixed-use precinct at Rhodes. Comprehensive CGI suite covering hero exterior, aerial, retail, podium gardens, lobby and residential interiors.',
+    tags:['Mixed-Use','Precinct','Aerial CGI','Interior CGI'],
+    heroVideo:null,
+    heroImage:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View13A_Aerial_of_Podium%20FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View09B_Hero_External%20FINAL.jpg',label:'Hero Exterior'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View08B_Superman%20FINAL.jpg',label:'Aerial Superman'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View13A_Aerial_of_Podium%20FINAL.jpg',label:'Aerial of Podium'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View26B_Podium_Gardens%20FINAL.jpg',label:'Podium Gardens'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View15C_Connection%20FINAL.jpg',label:'Connection'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View16B_Marquet_Lane%20FINAL.jpg',label:'Marquet Lane'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View18G_Retail_Exterior%20FINAL.jpg',label:'Retail Exterior'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View14A_Resi_Lobby%20FINAL.jpg',label:'Residential Lobby'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View04C_APT4102_Living_to_View%20FINAL.jpg',label:'APT4102 Living to View'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View30A_APT405_Living_to_View%20FINAL.jpg',label:'APT405 Living to View'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View05A_APT1001_Balcony_Looking_In%20FINAL.jpg',label:'APT1001 Balcony'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View06C_APT4106_Bedroom_FINAL.jpg',label:'APT4106 Bedroom'},
+      {type:'img',url:'images/projects/Marquet_%26_Mary%20-%20Rhodes/1_9Marquet_View14F_Typical_Kitchen%20Formal%20FINAL.jpg',label:'Typical Kitchen'}
+    ]
+  },
+  {
+    key:'prince-alfred', displayName:'120 Prince Alfred Parade', location:'Newport, NSW',
+    heroVideo:null,
+    heroImage:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewN06_120A_Boat_House%20FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewN06_120A_Boat_House%20FINAL.jpg',label:'Boat House'},
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewE09_120_Pool_Final_2.jpg',label:'Pool'},
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewB04_120_Living%20FINAL.jpg',label:'Living'},
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewB07_120_Living%20Final02.jpg',label:'Living 02'},
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewC01_120_GYM_FINAL.jpg',label:'Gym'},
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewG02_120A_Kitchen%20FINAL.jpg',label:'Kitchen'},
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewI01_120_Bedroom_FINAL.jpg',label:'Bedroom'},
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewJ04_120A_Ensuite_FINAL.jpg',label:'Ensuite'},
+      {type:'img',url:'images/projects/120%20Prince%20Alfred%20Parade%20-%20Newport/120PrinceAlfred_ViewL07_120_Entry%20FINAL.jpg',label:'Entry'}
+    ]
+  },
+  {
+    key:'yarranabbe', displayName:'22 Yarranabbe Road', location:'Darling Point, NSW',
+    heroVideo:null,
+    heroImage:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/22Yarra_Cam02_Aerial01_Final_6000.jpg',
+    media:[
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/22Yarra_Cam02_Aerial01_Final_6000.jpg',label:'Aerial'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View09_L4_Terrace_Final_6000.jpg',label:'L4 Terrace'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View03_Pool_Final_6000.jpg',label:'Pool'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/22Yarra_Cam12_L2_VIG_Terrace01_Final_6000.jpg',label:'L2 Terrace Vignette'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View16_L2_Dining_Final_6000.jpg',label:'L2 Dining'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View05_L3_Kitchen_Final_6000.jpg',label:'L3 Kitchen'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View14_L3_Kitchen_VIG_Final_6000.jpg',label:'L3 Kitchen Vignette'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View08_L2_Master02_Final_6000.jpg',label:'L2 Master'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View06_L2Ensuite_Final_6000.jpg',label:'L2 Ensuite'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View15_L2_Ensuite_VIG_Final_6000.jpg',label:'L2 Ensuite Vignette'},
+      {type:'img',url:'images/projects/22%20Yarranabbe%20Road%20-%20Darling%20Point/YarranabbeRd_DP_View07_L4_WIR_Final_6000.jpg',label:'L4 WIR'}
+    ]
+  },
+  {
+    key:'north-steyne', displayName:'42 North Steyne', location:'Manly, NSW',
+    heroVideo:null,
+    heroImage:'images/projects/42%20North%20Steyne%20-%20Manly/42_NS_Manly_View13E_Exterior_Street%20R6.jpg',
+    media:[
+      {type:'img',url:'images/projects/42%20North%20Steyne%20-%20Manly/42_NS_Manly_View13E_Exterior_Street%20R6.jpg',label:'Exterior Street'},
+      {type:'img',url:'images/projects/42%20North%20Steyne%20-%20Manly/42_NS_Manly_View10A_Surfer%20Final_B_3K-AI.jpg',label:'Surfer View'},
+      {type:'img',url:'images/projects/42%20North%20Steyne%20-%20Manly/42_NS_Manly_View25H_Pool%20R6.jpg',label:'Pool'},
+      {type:'img',url:'images/projects/42%20North%20Steyne%20-%20Manly/42_NS_Manly_View16B_U102_Courtyard-AI.jpg',label:'Courtyard'},
+      {type:'img',url:'images/projects/42%20North%20Steyne%20-%20Manly/42_NS_Manly_View24N_Pent_Living%20R5B.jpg',label:'Penthouse Living'},
+      {type:'img',url:'images/projects/42%20North%20Steyne%20-%20Manly/42_NS_Manly_View20F_U101_TV_Room%20R5.jpg',label:'TV Room'},
+      {type:'img',url:'images/projects/42%20North%20Steyne%20-%20Manly/42_NS_Manly_View27D_Pent_Bedroom%20R9.jpg',label:'Penthouse Bedroom'}
+    ]
+  },
+  {
+    key:'garfield', displayName:'71-73 Garfield Terrace', location:'Broadbeach, QLD',
+    heroVideo:null,
+    heroImage:'images/projects/71-73%20Garfield%20Terrace%20-%20Broadbeach/71_73_Garfield_View02_BEACH_HERO_FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/71-73%20Garfield%20Terrace%20-%20Broadbeach/71_73_Garfield_View02_BEACH_HERO_FINAL.jpg',label:'Beach Hero'},
+      {type:'img',url:'images/projects/71-73%20Garfield%20Terrace%20-%20Broadbeach/71_73_Garfield_View03_PODIUM%20FINAL.jpg',label:'Podium'},
+      {type:'img',url:'images/projects/71-73%20Garfield%20Terrace%20-%20Broadbeach/71_73_Garfield_View04_POOL_FINAL.jpg',label:'Pool'},
+      {type:'img',url:'images/projects/71-73%20Garfield%20Terrace%20-%20Broadbeach/71_73_Garfield_View05_YOGA_FINAL2.jpg',label:'Yoga'},
+      {type:'img',url:'images/projects/71-73%20Garfield%20Terrace%20-%20Broadbeach/71_73_Garfield_View09H_PENTHOUSE_FINAL.jpg',label:'Penthouse'}
+    ]
+  },
+  {
+    key:'st-georges', displayName:'76B St Georges Crescent', location:'Drummoyne, NSW',
+    heroVideo:null,
+    heroImage:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View20C_Waterfront_Pool%20R5.jpg',
+    media:[
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View20C_Waterfront_Pool%20R5.jpg',label:'Waterfront Pool'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View01B_Front%20R5.jpg',label:'Front Exterior'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View02A_Cutaway%20R5.jpg',label:'Cutaway'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View05B6_G_Pool%20R5.jpg',label:'Ground Pool'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View05C_G_Living%20Looking%20Out%20R6.jpg',label:'Living Looking Out'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View06C2_Living%20R6.jpg',label:'Living'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View08A_Kitchen%20R6.jpg',label:'Kitchen'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View10C_Master_Bed%20R6.jpg',label:'Master Bedroom'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View12A_Master_Ensuite%20R6.jpg',label:'Master Ensuite'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View18B_Bar_Cellar_R6.jpg',label:'Bar & Cellar'},
+      {type:'img',url:'images/projects/76B%20St%20Georges%20Crescent%20-%20Drummoyne/76b_SGC_View22C_Carpark%20R4.jpg',label:'Carpark'}
+    ]
+  },
+  {
+    key:'appin', displayName:'Appin', location:'Macarthur, NSW',
+    heroVideo:null,
+    heroImage:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View01_Hero_FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View01_Hero_FINAL.jpg',label:'Hero'},
+      {type:'img',url:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View09A_Soccer_Fields_FINAL.jpg',label:'Soccer Fields'},
+      {type:'img',url:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View03K_Bushland_Play_Area_FINAL.jpg',label:'Bushland Play Area'},
+      {type:'img',url:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View06_Eat%20St_Final_AI.jpg',label:'Eat Street'},
+      {type:'img',url:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View07_Picnic%20Park_Final_AI.jpg',label:'Picnic Park'},
+      {type:'img',url:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View04_Wellness_Centre_FINAL.jpg',label:'Wellness Centre'},
+      {type:'img',url:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View11_Dog%20Park_FINAL.jpg',label:'Dog Park'},
+      {type:'img',url:'images/projects/Appin%20-%20Macarthur/Walker_Appin_OS_View10_Hume_Interchange_FINAL.jpg',label:'Hume Interchange'}
+    ]
+  },
+  {
+    key:'commercial-office', displayName:'Commercial Office', location:'Sydney & Melbourne',
+    heroVideo:null,
+    heroImage:'images/projects/Commercial%20Office/1_Shelly_St_View1B_Wintergarden_FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/Commercial%20Office/1_Shelly_St_View1B_Wintergarden_FINAL.jpg',label:'Wintergarden'},
+      {type:'img',url:'images/projects/Commercial%20Office/17_19_Bridge_Cam03D_L5_Lobby%20FINAL.jpg',label:'L5 Lobby'},
+      {type:'img',url:'images/projects/Commercial%20Office/17_19_Bridge_Cam01D_Kit_FINAL.jpg',label:'Kitchen'},
+      {type:'img',url:'images/projects/Commercial%20Office/17_19_Bridge_Cam02B2_MU_FINAL.jpg',label:'MU'},
+      {type:'img',url:'images/projects/Commercial%20Office/17_19_Bridge_Cam05B_Phone_Booths%20FINAL.jpg',label:'Phone Booths'},
+      {type:'img',url:'images/projects/Commercial%20Office/1_Shelly_Cam01A_Wet_Dry_FINAL_2.jpg',label:'Wet/Dry'},
+      {type:'img',url:'images/projects/Commercial%20Office/1_Shelly_Cam02A_Female_Final.jpg',label:'Female Amenity'},
+      {type:'img',url:'images/projects/Commercial%20Office/1_Shelly_Cam03A_Male_Final.jpg',label:'Male Amenity'},
+      {type:'img',url:'images/projects/Commercial%20Office/555_Collins_St_Melbourne_Level_17_Boardroom_final.jpg',label:'Collins St Boardroom'},
+      {type:'img',url:'images/projects/Commercial%20Office/555_Collins_St_Melbourne_Level_17_Members_Assist_Area_final.jpg',label:'Members Assist Area'},
+      {type:'img',url:'images/projects/Commercial%20Office/555_Collins_St_Melbourne_Level_17_Reception_Area_final.jpg',label:'Reception'},
+      {type:'img',url:'images/projects/Commercial%20Office/555_Collins_St_Melbourne_Level_18_Typical_Teapoint_final.jpg',label:'Teapoint'},
+      {type:'img',url:'images/projects/Commercial%20Office/Jubilee%20House_Executive_FINAL.jpg',label:'Jubilee House Executive'},
+      {type:'img',url:'images/projects/Commercial%20Office/Jubilee%20House_Workplace_FINAL.jpg',label:'Jubilee House Workplace'},
+      {type:'img',url:'images/projects/Commercial%20Office/121683_Jubilee%20House_Sauna_final-B.jpg',label:'Jubilee House Sauna'}
+    ]
+  },
+  {
+    key:'flourish', displayName:'Flourish Symphony', location:'South Brisbane, QLD',
+    heroVideo:null,
+    heroImage:'images/projects/Flourish%20Symphony/21_23_Cordelia_View21A_Hero_Front_On%20Final.jpg',
+    media:[
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View21A_Hero_Front_On%20Final.jpg',label:'Hero Front'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View02B_Superman%20Final.jpg',label:'Superman View'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View07A_Rooftop_Topdown%20Final.jpg',label:'Rooftop Top Down'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View23A_Rooftop_Walkway%20Final.jpg',label:'Rooftop Walkway'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View22A_Spa_to_View%20Final.jpg',label:'Spa to View'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_CordeliaView03A_Spa%20Final.jpg',label:'Spa'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View11A_Amenities_Void%20Final.jpg',label:'Amenities Void'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View10A_Pizza_Ovens%20Final.jpg',label:'Pizza Ovens'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View12A_Private_Dining%20Final.jpg',label:'Private Dining'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View13C_Pilates%20Final.jpg',label:'Pilates'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View14A_Gym%20Final.jpg',label:'Gym'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View15A_WFH%20Final.jpg',label:'WFH'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View17A2_L24_Apartment%20Final.jpg',label:'L24 Apartment'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View18C_Bedroom%20Final.jpg',label:'Bedroom'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View19A_Kitchen%20Final.jpg',label:'Kitchen'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View24B_Treatment%20Final.jpg',label:'Treatment'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View26A_L19_Bathroom%20Final.jpg',label:'L19 Bathroom'},
+      {type:'img',url:'images/projects/Flourish%20Symphony/21_23_Cordelia_View05A_Traditional_Sauna%20Final.jpg',label:'Sauna'}
+    ]
+  },
+  {
+    key:'ingenia', displayName:'Ingenia — Natura', location:'Fullerton Cove, NSW',
+    heroVideo:null,
+    heroImage:'images/projects/Ingenia%20-%20Natura/Ingenia_Natura_View20A_Clubhouse_Pool_Veggie_R6-3K_AI.jpg',
+    media:[
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Natura_View20A_Clubhouse_Pool_Veggie_R6-3K_AI.jpg',label:'Clubhouse Pool'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Natura_View18E_Clubhouse_Alfresco_R6-3K_AI.jpg',label:'Clubhouse Alfresco'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Natura_View17C_Clubhouse_Dining_R6-3K_AI.jpg',label:'Clubhouse Dining'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Natura_View16A_Clubhouse_Kitchen_R7-6K_AI.jpg',label:'Clubhouse Kitchen'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Natura_View21E_Clubhouse_Wellness_Interior_R6-3K_AI.jpg',label:'Wellness Interior'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Natura_View02C_230_Living_Coastal%20R5.jpg',label:'Living Coastal'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Element_Fullerton_Cove_Living_250_Calcium_R3.jpg',label:'Living — Calcium'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Element_Fullerton_Cove_Living_230_Platinum_R3.jpg',label:'Living — Platinum'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Element_Fullerton_Cove_Living_Yarra_Carbon_R3.jpg',label:'Living — Carbon'},
+      {type:'img',url:'images/projects/Ingenia%20-%20Natura/Ingenia_Element_Fullerton_Cove_Bedroom_233_Platinum_R3.jpg',label:'Bedroom — Platinum'}
+    ]
+  },
+  {
+    key:'treehouse', displayName:'Treehouse', location:'Macquarie Park, NSW',
+    heroVideo:null,
+    heroImage:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_8J2_Hero_FINAL.jpg',
+    media:[
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_8J2_Hero_FINAL.jpg',label:'Hero'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_9A_Forest_Room_External_FINAL.jpg',label:'Forest Room External'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_9C_Forest_Room_External_FINAL.jpg',label:'Forest Room External 2'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C2_View_5F_Main_St_FINAL-4K_AI.jpg',label:'Main Street'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C2_View_2C_Community_Garden_FINAL-4K_AI.jpg',label:'Community Garden'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C2_View_3O_Community_Spaces_FINAL-4K_AI.jpg',label:'Community Spaces'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C2_View_7G2_Pool_FINAL-4K_AI.jpg',label:'Pool'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C2_View_6G_Playground_FINAL-4K_AI.jpg',label:'Playground'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C2_View_4C_Gym_FINAL-4K_AI.jpg',label:'Gym'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_11H3_ForestRoom2_FINAL.jpg',label:'Forest Room Interior'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_7B_Retail_FINAL.jpg',label:'Retail'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_7F_Retail_FINAL.jpg',label:'Retail 2'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_20H_Penthouse_Living%20CROP.jpg',label:'Penthouse Living'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_19I_Apt603_Living%20FINAL_02.jpg',label:'Apt 603 Living'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_17D2_Apt101_Living%20FINAL.jpg',label:'Apt 101 Living'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_14A_Apt303_Kitchen_Banksia_FINAL.jpg',label:'Kitchen'},
+      {type:'img',url:'images/projects/Treehouse%20-%20Macquarie%20Park/Midtown_C3_View_15A_Apt303_Bath_Banksia_FINAL.jpg',label:'Bathroom'}
+    ]
+  },
+  {
+    key:'victoria-albert', displayName:'Victoria and Albert', location:'Broadbeach, QLD',
+    heroVideo:null,
+    heroImage:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View02D2_Street_Final.jpg',
+    media:[
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View02D2_Street_Final.jpg',label:'Street'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View01B_Final.jpg',label:'Exterior'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View05E_Facade%20Final.jpg',label:'Facade'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View07P_Podium_Final.jpg',label:'Podium'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View04A_Lookup%20FINAL.jpg',label:'Look Up'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View09D2_Lobby_Final.jpg',label:'Lobby'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View08D_Owners_Lounge%20Final.jpg',label:'Owners Lounge'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbertAve_View01B_Type_H_Living_Final_Sunrise.jpg',label:'Living — Sunrise'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbertAve_View03B_Type_I_Living_Final.jpg',label:'Living Type I'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View16B_Penthouse_Living%20FINAL.jpg',label:'Penthouse Living'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbAveBB_View10A_West_2Bed_F_Bath_Final.jpg',label:'Bathroom'},
+      {type:'img',url:'images/projects/Victoria%20and%20Albert%20-%20Broadbeach/12AlbertAve_View06A_Type_N_Bedroom_Final.jpg',label:'Bedroom'}
     ]
   }
 ];
@@ -1082,26 +1283,38 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
   }
-  // Auto-advance every 5 seconds
-  let slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
-  // Pause auto-advance when hovering slideshow
+  // Auto-advance images every 3 seconds
+  let slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 3000);
+  // Pause image auto-advance when hovering slideshow
   const slideshow = document.getElementById('aiSlideshow');
   if(slideshow){
     slideshow.addEventListener('mouseenter', () => clearInterval(slideInterval));
     slideshow.addEventListener('mouseleave', () => {
-      slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+      slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 3000);
     });
   }
 
-  // Chapter tabs — independent of slideshow
-  tabs.forEach(tab => {
+  // Chapter tabs — independent of slideshow, auto-cycle every 30 seconds
+  let currentChapter = 0;
+  const chapterKeys = [...tabs].map(t => t.getAttribute('data-chapter'));
+
+  function goToChapter(idx) {
+    currentChapter = idx;
+    tabs.forEach(t => t.classList.remove('active'));
+    articles.forEach(a => a.classList.remove('active'));
+    tabs[currentChapter].classList.add('active');
+    const target = document.querySelector('.ai-article-content[data-chapter="'+chapterKeys[currentChapter]+'"]');
+    if(target) target.classList.add('active');
+  }
+
+  let chapterInterval = setInterval(() => goToChapter((currentChapter + 1) % tabs.length), 30000);
+
+  tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => {
-      const ch = tab.getAttribute('data-chapter');
-      tabs.forEach(t => t.classList.remove('active'));
-      articles.forEach(a => a.classList.remove('active'));
-      tab.classList.add('active');
-      const target = document.querySelector('.ai-article-content[data-chapter="'+ch+'"]');
-      if(target) target.classList.add('active');
+      // Manual click — go to chapter and reset the 30s timer
+      goToChapter(i);
+      clearInterval(chapterInterval);
+      chapterInterval = setInterval(() => goToChapter((currentChapter + 1) % tabs.length), 30000);
     });
   });
 })();

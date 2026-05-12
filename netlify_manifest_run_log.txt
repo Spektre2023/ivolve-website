@@ -1,0 +1,35 @@
+ 
+=============================================================== 
+  Ivolve Netlify Manifest Generator 
+  Tue 12/05/2026 23:36:05.55 
+  Scanning: C:\Users\schan\Documents\ivolve-website 
+=============================================================== 
+Scanning: C:\Users\schan\Documents\ivolve-website
+Found 214 files. Writing v4...
+
+Wrote ivolve_netlify_manifest_v4.txt with 214 files:
+    2  (root)
+    8  images/ai-advantage
+    6  images/icons
+    1  images/ivolve-logo.png
+    9  images/projects/120 Prince Alfred Parade - Newport
+   11  images/projects/22 Yarranabbe Road - Darling Point
+    7  images/projects/42 North Steyne - Manly
+    8  images/projects/688 Pacific Highway - Chatswood
+    5  images/projects/71-73 Garfield Terrace - Broadbeach
+   11  images/projects/76B St Georges Crescent - Drummoyne
+    8  images/projects/Appin - Macarthur
+   11  images/projects/Beauchamp - 107 High St North Sydney
+   15  images/projects/Commercial Office
+   18  images/projects/Flourish Symphony
+   15  images/projects/Hume_Place_Crows Nest
+   10  images/projects/Ingenia - Natura
+   13  images/projects/Marquet_&_Mary - Rhodes
+   13  images/projects/Origami - Bondi Junction
+   12  images/projects/Queensgate - Potts Point
+   17  images/projects/Treehouse - Macquarie Park
+   12  images/projects/Victoria and Albert - Broadbeach
+    1  ss/index_v15.html
+    1  ss/index_v16.html
+
+Saved to: C:\Users\schan\Documents\ivolve-website\ivolve_netlify_manifest_v4.txt
