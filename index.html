@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v26 | Built 2026-05-07 | Pan-on-hover effect, Marquet aerial hero, removed Turner Studios & Mary-Rhodes (6th project, 13 images) -->
+<!-- Ivolve Studios v28 | Built 2026-05-07 | Pan-on-hover effect, Marquet aerial hero, removed Turner Studios & Mary-Rhodes (6th project, 13 images) -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -203,10 +203,9 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .svc-item input[type=checkbox]{accent-color:var(--accent);width:13px;height:13px;flex-shrink:0;cursor:pointer}
 .svc-item label{font-size:14.5px;color:var(--text);cursor:pointer;line-height:1.4}
 .file-wrap{position:relative}
-.file-input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.file-display{background:var(--surface);border:1px dashed var(--border-light);padding:18px 16px;display:flex;align-items:center;gap:12px;color:var(--text-muted);font-size:14px;cursor:pointer;transition:border-color .2s}
-.file-wrap:hover .file-display{border-color:rgba(184,150,106,.3)}
-.file-display svg{flex-shrink:0}
+.file-note{font-size:13px;color:var(--text-dim);margin:4px 0 20px;line-height:1.6}
+.file-note a{color:var(--accent);text-decoration:none}
+.file-note a:hover{opacity:.75}
 .file-name{font-size:11px;color:var(--accent);margin-top:5px}
 .form-submit{margin-top:22px;padding:15px;background:var(--accent);color:var(--bg);border:none;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;transition:all .25s;width:100%}
 .form-submit:hover{background:var(--accent2)}
@@ -730,18 +729,7 @@ img{color:transparent} /* hide broken img alt text */
         </div>
         <div class="fsec">Project Details</div>
         <div class="frow full"><div class="ff"><label>About Your Project</label><textarea name="message" placeholder="Brief description, location, timeline, specific requirements..."></textarea></div></div>
-        <div class="frow full">
-          <div class="ff"><label>Upload Project Material (optional)</label>
-            <div class="file-wrap">
-              <input type="file" id="fileInput" name="attachment" class="file-input" accept=".pdf,.dwg,.jpg,.jpeg,.png,.zip,.docx,.pptx" onchange="updateFileName(this)">
-              <div class="file-display">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                <span>Plans, images, briefs — PDF, DWG, JPG, ZIP accepted</span>
-              </div>
-              <div class="file-name" id="fileName"></div>
-            </div>
-          </div>
-        </div>
+        <div class="file-note">To share plans, images or briefs, email them to <a href="mailto:mail@ivolvestudios.com">mail@ivolvestudios.com</a> alongside your enquiry.</div>
         <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
         <div class="fmsg" id="formSuccess">✓ Message sent — we'll be in touch within one business day.</div>
         <div class="fmsg" id="formError">Something went wrong. Email us directly at <a href="mailto:mail@ivolvestudios.com" style="color:var(--accent)">mail@ivolvestudios.com</a></div>
@@ -1206,9 +1194,6 @@ document.addEventListener('keydown', e => {
 document.querySelector('select[name=role]').addEventListener('change', function(){
   document.getElementById('otherRoleRow').style.display = this.value==='Other'?'grid':'none';
 });
-function updateFileName(input) {
-  document.getElementById('fileName').textContent = input.files.length ? '✓ '+input.files[0].name : '';
-}
 async function handleSubmit(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
@@ -1223,7 +1208,6 @@ async function handleSubmit(e) {
     const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`,{method:'POST',body:fd,headers:{'Accept':'application/json'}});
     if (res.ok) {
       e.target.reset();
-      document.getElementById('fileName').textContent='';
       document.getElementById('otherRoleRow').style.display='none';
       document.getElementById('formSuccess').className='fmsg ok';
     } else throw new Error();
