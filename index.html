@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v46 | Built 2026-05-13 | Security headers, SEO schema, dynamic features -->
+<!-- Ivolve Studios v50 | Built 2026-05-13 | Security headers, SEO schema, dynamic features -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -283,8 +283,10 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .gallery-bar-left{display:flex;align-items:baseline;gap:18px}
 .gallery-proj-name{font-family:var(--font-display);font-size:21px;font-weight:300;letter-spacing:-.01em;color:var(--text)}
 .gallery-count{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
-.gallery-close{background:none;border:1px solid rgba(255,255,255,.12);color:rgba(237,233,227,.5);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .2s;font-family:var(--font-ui)}
-.gallery-close:hover{color:var(--text);border-color:rgba(255,255,255,.3)}
+.gallery-close{background:rgba(6,6,6,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);color:var(--text);padding:0 20px;height:44px;display:flex;align-items:center;gap:10px;cursor:pointer;font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;transition:all .2s;white-space:nowrap;border-radius:2px}
+.gallery-close:hover{background:rgba(201,168,124,.15);border-color:var(--accent);color:var(--accent)}
+.gallery-close svg{flex-shrink:0;transition:transform .2s}
+.gallery-close:hover svg{transform:translateX(-3px)}
 /* Scroll container — fills remaining height, scrolls vertically */
 .gallery-scroll{flex:1;overflow-y:scroll;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:#030303}
 .gallery-scroll::-webkit-scrollbar{width:3px}
@@ -292,7 +294,17 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .gallery-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
 /* Each media item: full viewport width */
 .gallery-item{width:100%;display:block;position:relative;line-height:0}
-.gallery-item img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(255,255,255,.03)}
+.gallery-item img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(255,255,255,.03);cursor:zoom-in;pointer-events:auto}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:99999;background:rgba(3,3,3,.96);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease;cursor:zoom-out}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox-img{max-width:95vw;max-height:92vh;width:auto;height:auto;object-fit:contain;display:block;-webkit-user-select:none;user-select:none;cursor:default;pointer-events:none;box-shadow:0 8px 60px rgba(0,0,0,.8)}
+.lightbox-close{position:absolute;top:20px;right:24px;background:rgba(6,6,6,.8);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);color:var(--text);padding:0 18px;height:42px;display:flex;align-items:center;gap:9px;cursor:pointer;font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;transition:all .2s;border-radius:2px;z-index:2}
+.lightbox-close:hover{border-color:var(--accent);color:var(--accent)}
+.lightbox-close svg{transition:transform .2s}
+.lightbox-close:hover svg{transform:translateX(-3px)}
+.lightbox-caption{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:var(--font-ui);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);pointer-events:none;white-space:nowrap}
 .gallery-item video{width:100%;height:auto;display:block;border-bottom:1px solid rgba(255,255,255,.03)}
 .gallery-item-caption{padding:10px 24px 14px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(237,233,227,.3);background:#030303;line-height:1}
 /* Back to top button */
@@ -380,7 +392,12 @@ h1.hero-title em{font-style:italic;color:var(--accent2)}
 .form-submit{margin-top:22px;padding:15px;background:var(--accent);color:var(--bg);border:none;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;transition:all .25s;width:100%}
 .form-submit:hover{background:var(--accent2)}
 .form-submit:disabled{opacity:.55;cursor:not-allowed}
-.fmsg{display:none;margin-top:12px;padding:13px 15px;font-size:12px;text-align:center;letter-spacing:.03em}
+.fmsg{display:none;margin-top:20px;padding:28px 24px;text-align:center;border-radius:2px}
+.fmsg.ok{display:block;background:rgba(90,170,114,.1);border:1px solid rgba(90,170,114,.3)}
+.fmsg.err{display:block;background:rgba(192,90,90,.1);border:1px solid rgba(192,90,90,.3)}
+.fmsg-icon{font-size:32px;margin-bottom:12px;display:block}
+.fmsg-title{font-family:var(--font-display);font-size:26px;font-weight:300;color:var(--text);margin-bottom:10px;letter-spacing:-.01em}
+.fmsg-body{font-size:15px;line-height:1.65;color:var(--text-muted)}
 .fmsg.ok{background:rgba(61,107,79,.15);border:1px solid rgba(61,107,79,.3);color:#7dbf8f;display:block}
 .fmsg.err{background:rgba(160,60,60,.12);border:1px solid rgba(160,60,60,.25);color:#d08080;display:block}
 /* FOOTER */
@@ -582,7 +599,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:52px 56px
   .gallery-proj-name{font-size:16px}
   .gallery-thumbs{padding:8px 12px;gap:4px}
   .gallery-thumb{width:52px;height:36px}
-  .gallery-close{width:36px;height:36px;font-size:14px}
+  .gallery-close{height:38px;font-size:11px;padding:0 14px;gap:7px}
   /* SERVICES */
   .services-section{padding:60px 20px}
   .services-grid{grid-template-columns:1fr}
@@ -819,13 +836,26 @@ img{color:transparent} /* hide broken img alt text */
   <div class="projects-grid" id="projectCards"></div>
 </section>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <div class="gallery-drawer" id="galleryDrawer">
   <div class="gallery-bar">
     <div class="gallery-bar-left">
       <div class="gallery-proj-name" id="galleryTitle"></div>
       <div class="gallery-proj-sub" id="galleryCount"></div>
     </div>
-    <button class="gallery-close" id="galleryClose">✕</button>
+    <button class="gallery-close" id="galleryClose">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to Projects
+    </button>
   </div>
   <div class="gallery-scroll" id="galleryScroll">
     <!-- items injected by JS -->
@@ -931,8 +961,16 @@ img{color:transparent} /* hide broken img alt text */
         <div class="frow full"><div class="ff"><label>About Your Project</label><textarea name="message" placeholder="Brief description, location, timeline, specific requirements..."></textarea></div></div>
         <div class="file-note">To share plans, images or briefs, email them to <a href="mailto:mail@ivolvestudios.com">mail@ivolvestudios.com</a> alongside your enquiry.</div>
         <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
-        <div class="fmsg" id="formSuccess">✓ Message sent — we'll be in touch within one business day.</div>
-        <div class="fmsg" id="formError">Something went wrong. Email us directly at <a href="mailto:mail@ivolvestudios.com" style="color:var(--accent)">mail@ivolvestudios.com</a></div>
+        <div class="fmsg" id="formSuccess">
+          <span class="fmsg-icon">✓</span>
+          <div class="fmsg-title">Thank you for reaching out to us.</div>
+          <p class="fmsg-body">We'll make contact with you as soon as possible.</p>
+        </div>
+        <div class="fmsg" id="formError">
+          <span class="fmsg-icon" style="color:#e05a5a">!</span>
+          <div class="fmsg-title" style="color:#e05a5a">Something went wrong.</div>
+          <p class="fmsg-body">Please try again, or email us directly at <a href="mailto:mail@ivolvestudios.com" style="color:var(--accent)">mail@ivolvestudios.com</a></p>
+        </div>
       </form>
     </div>
   </div>
@@ -1377,6 +1415,7 @@ function buildScrollGallery(proj) {
       img.src = item.url;
       img.alt = item.label;
       img.loading = 'lazy';
+      img.addEventListener('click', () => openLightbox(item.url, item.label));
       wrap.appendChild(img);
     }
     if (item.label) {
@@ -1391,18 +1430,40 @@ function buildScrollGallery(proj) {
 
 document.getElementById('galleryClose').addEventListener('click', closeGallery);
 
-// Scroll-to-top button
+// ── LIGHTBOX ──────────────────────────────────────────────────
+const lightbox     = document.getElementById('lightbox');
+const lightboxImg  = document.getElementById('lightboxImg');
+const lightboxCap  = document.getElementById('lightboxCaption');
+
+function openLightbox(src, caption){
+  lightboxImg.src = src;
+  lightboxCap.textContent = caption || '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { lightboxImg.src = ''; }, 300);
+}
+
+document.getElementById('lightboxClose').addEventListener('click', e => { e.stopPropagation(); closeLightbox(); });
+lightbox.addEventListener('click', closeLightbox);
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    if(lightbox.classList.contains('open')){ closeLightbox(); return; }
+    if(!gOpen) return;
+    closeGallery();
+  }
+});
 const scrollEl = document.getElementById('galleryScroll');
 const topBtn = document.getElementById('galleryTopBtn');
 scrollEl.addEventListener('scroll', () => {
   topBtn.classList.toggle('visible', scrollEl.scrollTop > 600);
 });
 topBtn.addEventListener('click', () => scrollEl.scrollTo({top:0, behavior:'smooth'}));
-
-document.addEventListener('keydown', e => {
-  if (!gOpen) return;
-  if (e.key === 'Escape') closeGallery();
-});
 
 // Form
 document.querySelector('select[name=role]').addEventListener('change', function(){
@@ -1423,10 +1484,20 @@ async function handleSubmit(e) {
     if (res.ok) {
       e.target.reset();
       document.getElementById('otherRoleRow').style.display='none';
-      document.getElementById('formSuccess').className='fmsg ok';
+      // Fade out button then show success message
+      btn.style.transition = 'opacity .4s ease';
+      btn.style.opacity = '0';
+      setTimeout(() => {
+        btn.style.display = 'none';
+        const msg = document.getElementById('formSuccess');
+        msg.className = 'fmsg ok';
+        msg.style.display = 'block';
+      }, 400);
     } else throw new Error();
-  } catch { document.getElementById('formError').className='fmsg err'; }
-  btn.textContent='Send Enquiry →'; btn.disabled=false;
+  } catch {
+    document.getElementById('formError').className = 'fmsg err';
+    btn.textContent='Send Enquiry →'; btn.disabled=false;
+  }
 }
 
 // Vimeo background player — random start time via Player API
