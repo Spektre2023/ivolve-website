@@ -5,4 +5,4 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   X-XSS-Protection: 1; mode=block
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' player.vimeo.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: *.openstreetmap.org; frame-src player.vimeo.com; connect-src 'self' formspree.io; media-src 'self' *.vimeo.com *.vimeocdn.com
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' player.vimeo.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: *.openstreetmap.org *.tile.openstreetmap.org; frame-src player.vimeo.com *.openstreetmap.org; connect-src 'self' formspree.io *.openstreetmap.org; media-src 'self' *.vimeo.com *.vimeocdn.com
