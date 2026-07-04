@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v53 | Built 2026-06-25 | Multi-pair AI comparison slider with nav dots -->
+<!-- Ivolve Studios v55 | Built 2026-07-05 | Base Render labels + fade at slider extremes -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -106,10 +106,12 @@
 .compare-divider{position:absolute;top:0;bottom:0;left:var(--split,50%);width:2px;background:rgba(255,255,255,.85);transform:translateX(-50%);pointer-events:none;box-shadow:0 0 12px rgba(0,0,0,.6)}
 .compare-grip{position:absolute;top:50%;left:var(--split,50%);transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(6,6,6,.75);backdrop-filter:blur(6px);border:1.5px solid rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;gap:5px;pointer-events:none;color:#fff}
 .compare-grip svg{width:9px;height:14px;flex-shrink:0}
-.compare-label{position:absolute;top:14px;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;padding:6px 11px;background:rgba(6,6,6,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);color:var(--text);pointer-events:none;border-radius:2px;z-index:2}
+.compare-label{transition:opacity .3s ease;position:absolute;top:14px;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;padding:6px 11px;background:rgba(6,6,6,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);color:var(--text);pointer-events:none;border-radius:2px;z-index:2}
 .compare-label--before{left:14px}
 .compare-label--after{right:14px;color:var(--accent)}
 .compare-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.compare-note{max-width:640px;margin:22px auto 0;text-align:center;font-size:14px;line-height:1.75;color:var(--text-muted)}
+.compare-note::before{content:'';display:block;width:36px;height:1px;background:var(--accent);opacity:.5;margin:0 auto 16px}
 .compare-nav{display:flex;gap:9px;justify-content:center;margin-top:18px}
 .compare-nav:empty{display:none}
 .compare-dot{width:7px;height:7px;border-radius:50%;background:var(--border-light);border:none;padding:0;cursor:pointer;transition:background .25s,transform .25s}
@@ -856,20 +858,21 @@ img{color:transparent} /* hide broken img alt text */
   <!-- BEFORE / AFTER COMPARISON SLIDER -->
   <div class="compare-block reveal" id="compareBlock" style="display:none">
     <h3 class="compare-heading">See the <em>difference</em></h3>
-    <div class="compare-hint">Drag to compare — raw render vs AI-enhanced</div>
+    <div class="compare-hint">Drag to compare — base render vs AI-enhanced</div>
     <div class="compare-frame" id="compareFrame" style="--split:50%">
       <img class="compare-after" id="compareAfter" alt="AI-enhanced render">
-      <img class="compare-before" id="compareBefore" alt="Raw render">
+      <img class="compare-before" id="compareBefore" alt="Base render">
       <div class="compare-divider"></div>
       <div class="compare-grip">
         <svg viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 1L1 7l5 6"/></svg>
         <svg viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 1l5 6-5 6"/></svg>
       </div>
-      <span class="compare-label compare-label--before">Raw Render</span>
+      <span class="compare-label compare-label--before">Base Render</span>
       <span class="compare-label compare-label--after">AI Enhanced</span>
-      <input type="range" class="compare-range" id="compareRange" min="0" max="100" value="50" aria-label="Comparison slider — raw render versus AI enhanced">
+      <input type="range" class="compare-range" id="compareRange" min="0" max="100" value="50" aria-label="Comparison slider — base render versus AI enhanced">
     </div>
     <div class="compare-nav" id="compareNav"></div>
+    <p class="compare-note">Every refinement you see here is deliberate. Our artists direct each change — light, material, planting, atmosphere — with AI as the instrument, never the author. Nothing in the frame is random.</p>
   </div>
 </section>
 
@@ -1981,6 +1984,11 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
     pct = Math.max(0, Math.min(100, pct));
     frame.style.setProperty('--split', pct + '%');
     range.value = pct;
+    // Hide each label once its image is fully swiped away
+    const lb = frame.querySelector('.compare-label--before');
+    const la = frame.querySelector('.compare-label--after');
+    if(lb) lb.style.opacity = pct < 6 ? '0' : '1';   // base render swiped off
+    if(la) la.style.opacity = pct > 94 ? '0' : '1';  // AI enhanced swiped off
   }
   function fromEvent(e){
     const rect = frame.getBoundingClientRect();
