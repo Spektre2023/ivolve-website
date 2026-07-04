@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v51 | Built 2026-06-25 | WebP delivery, perf + a11y pass, Turnstile-ready form, AI before/after slider -->
+<!-- Ivolve Studios v52 | Built 2026-06-25 | Motion effects restored for all visitors, Turnstile live -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -95,11 +95,6 @@
 <link rel="preconnect" href="https://challenges.cloudflare.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* REDUCED MOTION — respect OS accessibility setting */
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
-}
-
 /* AI BEFORE/AFTER COMPARISON SLIDER */
 .compare-block{padding:64px 56px 8px;max-width:1250px;margin:0 auto}
 .compare-heading{font-family:var(--font-display);font-size:clamp(24px,2.6vw,34px);font-weight:300;color:var(--text);text-align:center;margin-bottom:8px}
@@ -1052,12 +1047,11 @@ const FORMSPREE_ID = 'xeenqpyw';
 // To activate: create a Turnstile widget in Cloudflare, paste the
 // SITE KEY below, and paste the SECRET KEY into Formspree's CAPTCHA
 // settings. Until a real key is pasted, the form works as normal.
-const TURNSTILE_SITEKEY = 'PASTE_YOUR_TURNSTILE_SITE_KEY_HERE';
+const TURNSTILE_SITEKEY = '0x4AAAAAADvg5JHGjTunE9lL';
 
 // ── WEBP SMART LOADER ────────────────────────────────────────
 // Tries the .webp version of a .jpg URL first; falls back to the
 // original JPEG automatically if the .webp file doesn't exist.
-const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function webpVersion(url){
   return /\.jpe?g(\?|$)/i.test(url) ? url.replace(/\.jpe?g(\?|$)/i, '.webp$1') : null;
 }
@@ -1622,7 +1616,7 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
     returnVisit = sessionStorage.getItem('iv_seen') === '1';
     sessionStorage.setItem('iv_seen', '1');
   } catch(e){}
-  const quick = returnVisit || REDUCED_MOTION;
+  const quick = returnVisit;
   if (quick && logoEl){ logoEl.style.animation = 'none'; logoEl.style.opacity = '1'; }
   const MIN_DISPLAY = quick ? 500 : 3500;
   let vimeoReady    = false;
@@ -1712,7 +1706,7 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
 
 // ── 3D CARD TILT ──────────────────────────────────────────────
 (function initCardTilt(){
-  if(window.matchMedia('(pointer:coarse)').matches || REDUCED_MOTION) return;
+  if(window.matchMedia('(pointer:coarse)').matches) return;
   const TILT_MAX = 10;
 
   document.querySelectorAll('.project-card').forEach(card => {
@@ -1779,7 +1773,7 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
   // CSS pointer-events on background-image divs handled via CSS
 })();
 (function initCursorTrail(){
-  if(window.matchMedia('(pointer:coarse)').matches || REDUCED_MOTION) return; // skip on touch
+  if(window.matchMedia('(pointer:coarse)').matches) return; // skip on touch
   const TRAIL = 8;
   const particles = [];
   for(let i=0;i<TRAIL;i++){
@@ -1806,13 +1800,6 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
 
 // ── STAT COUNTERS — animate on scroll into view ───────────────
 (function initStatCounters(){
-  if (REDUCED_MOTION){
-    document.querySelectorAll('.stat-number[data-count]').forEach(el => {
-      const suffix = el.getAttribute('data-suffix') || '';
-      el.textContent = parseInt(el.getAttribute('data-count')).toLocaleString() + suffix;
-    });
-    return;
-  }
   const els = document.querySelectorAll('.stat-number[data-count]');
   if(!els.length) return;
   const obs = new IntersectionObserver(entries => {
