@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v52 | Built 2026-06-25 | Motion effects restored for all visitors, Turnstile live -->
+<!-- Ivolve Studios v53 | Built 2026-06-25 | Multi-pair AI comparison slider with nav dots -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -110,6 +110,10 @@
 .compare-label--before{left:14px}
 .compare-label--after{right:14px;color:var(--accent)}
 .compare-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.compare-nav{display:flex;gap:9px;justify-content:center;margin-top:18px}
+.compare-nav:empty{display:none}
+.compare-dot{width:7px;height:7px;border-radius:50%;background:var(--border-light);border:none;padding:0;cursor:pointer;transition:background .25s,transform .25s}
+.compare-dot.active{background:var(--accent);transform:scale(1.35)}
 @media(max-width:768px){.compare-block{padding:44px 20px 0}.compare-frame{aspect-ratio:4/3}}
 
 /* GOLD SHIMMER ANIMATION */
@@ -865,6 +869,7 @@ img{color:transparent} /* hide broken img alt text */
       <span class="compare-label compare-label--after">AI Enhanced</span>
       <input type="range" class="compare-range" id="compareRange" min="0" max="100" value="50" aria-label="Comparison slider — raw render versus AI enhanced">
     </div>
+    <div class="compare-nav" id="compareNav"></div>
   </div>
 </section>
 
@@ -1910,15 +1915,67 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
   const before = document.getElementById('compareBefore');
   const after  = document.getElementById('compareAfter');
   const range  = document.getElementById('compareRange');
+  const navEl  = document.getElementById('compareNav');
   if(!block) return;
 
-  // Only reveal the block once BOTH images load; stays hidden if missing
-  let loaded = 0;
-  function one(){ loaded++; if(loaded === 2) block.style.display = ''; }
-  before.onload = one; after.onload = one;
-  before.onerror = after.onerror = () => { block.style.display = 'none'; };
-  before.src = 'images/compare/before.jpg';
-  after.src  = 'images/compare/after.jpg';
+  // ── MULTIPLE COMPARISON PAIRS ──────────────────────────────
+  // Pair 1:  images/compare/before.jpg     + after.jpg
+  // Pair 2:  images/compare/before_02.jpg  + after_02.jpg
+  // Pair 3:  images/compare/before_03.jpg  + after_03.jpg   ...and so on
+  // Number them consecutively (no gaps). Nav dots appear
+  // automatically when 2+ pairs exist. Max checked: 10.
+  const candidates = [{b:'images/compare/before.jpg', a:'images/compare/after.jpg'}];
+  for(let i = 2; i <= 10; i++){
+    const n = String(i).padStart(2,'0');
+    candidates.push({b:`images/compare/before_${n}.jpg`, a:`images/compare/after_${n}.jpg`});
+  }
+
+  function testPair(pair){
+    return new Promise(resolve => {
+      let okCount = 0, done = false;
+      function pass(){ okCount++; if(okCount === 2 && !done){ done = true; resolve(true); } }
+      function fail(){ if(!done){ done = true; resolve(false); } }
+      const b = new Image(); b.onload = pass; b.onerror = fail; b.src = pair.b;
+      const a = new Image(); a.onload = pass; a.onerror = fail; a.src = pair.a;
+    });
+  }
+
+  const pairs = [];
+  let current = 0;
+
+  function showPair(idx){
+    current = idx;
+    before.src = pairs[idx].b;
+    after.src  = pairs[idx].a;
+    setSplit(50);
+    navEl.querySelectorAll('.compare-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+  }
+
+  function buildNav(){
+    navEl.innerHTML = '';
+    if(pairs.length < 2) return;
+    pairs.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'compare-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Comparison ' + (i + 1));
+      dot.addEventListener('click', () => showPair(i));
+      navEl.appendChild(dot);
+    });
+  }
+
+  (async function discover(){
+    for(const pair of candidates){
+      const exists = await testPair(pair);
+      if(!exists) break;           // stop at first gap — number consecutively
+      pairs.push(pair);
+    }
+    if(!pairs.length) return;       // no images yet — block stays hidden
+    block.style.display = '';
+    buildNav();
+    showPair(0);
+  })();
 
   function setSplit(pct){
     pct = Math.max(0, Math.min(100, pct));
