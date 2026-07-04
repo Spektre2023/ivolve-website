@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v50 | Built 2026-05-13 | Security headers, SEO schema, dynamic features -->
+<!-- Ivolve Studios v51 | Built 2026-06-25 | WebP delivery, perf + a11y pass, Turnstile-ready form, AI before/after slider -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -88,8 +88,35 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://player.vimeo.com">
+<link rel="preconnect" href="https://i.vimeocdn.com">
+<link rel="preconnect" href="https://f.vimeocdn.com">
+<link rel="preconnect" href="https://challenges.cloudflare.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* REDUCED MOTION — respect OS accessibility setting */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+}
+
+/* AI BEFORE/AFTER COMPARISON SLIDER */
+.compare-block{padding:64px 56px 8px;max-width:1250px;margin:0 auto}
+.compare-heading{font-family:var(--font-display);font-size:clamp(24px,2.6vw,34px);font-weight:300;color:var(--text);text-align:center;margin-bottom:8px}
+.compare-heading em{font-style:italic;color:var(--accent2)}
+.compare-hint{font-family:var(--font-ui);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-dim);text-align:center;margin-bottom:26px}
+.compare-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--border);border-radius:4px;user-select:none;touch-action:none;cursor:ew-resize;background:var(--surface)}
+.compare-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-select:none;user-select:none}
+.compare-before{clip-path:inset(0 calc(100% - var(--split,50%)) 0 0)}
+.compare-divider{position:absolute;top:0;bottom:0;left:var(--split,50%);width:2px;background:rgba(255,255,255,.85);transform:translateX(-50%);pointer-events:none;box-shadow:0 0 12px rgba(0,0,0,.6)}
+.compare-grip{position:absolute;top:50%;left:var(--split,50%);transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(6,6,6,.75);backdrop-filter:blur(6px);border:1.5px solid rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;gap:5px;pointer-events:none;color:#fff}
+.compare-grip svg{width:9px;height:14px;flex-shrink:0}
+.compare-label{position:absolute;top:14px;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;padding:6px 11px;background:rgba(6,6,6,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);color:var(--text);pointer-events:none;border-radius:2px;z-index:2}
+.compare-label--before{left:14px}
+.compare-label--after{right:14px;color:var(--accent)}
+.compare-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+@media(max-width:768px){.compare-block{padding:44px 20px 0}.compare-frame{aspect-ratio:4/3}}
+
 /* GOLD SHIMMER ANIMATION */
 @keyframes goldShimmer {
   0%,30%{background-position:200% center}
@@ -826,6 +853,24 @@ img{color:transparent} /* hide broken img alt text */
       <p>The people in CGI used to be its weakest ingredient — wrong demographic, wrong clothing, distracting from the architecture. Now we generate custom talent matched precisely to your buyer demographic, lit and staged so the people don't apologise for the image, they sell it.</p>
     </div>
   </div>
+
+  <!-- BEFORE / AFTER COMPARISON SLIDER -->
+  <div class="compare-block reveal" id="compareBlock" style="display:none">
+    <h3 class="compare-heading">See the <em>difference</em></h3>
+    <div class="compare-hint">Drag to compare — raw render vs AI-enhanced</div>
+    <div class="compare-frame" id="compareFrame" style="--split:50%">
+      <img class="compare-after" id="compareAfter" alt="AI-enhanced render">
+      <img class="compare-before" id="compareBefore" alt="Raw render">
+      <div class="compare-divider"></div>
+      <div class="compare-grip">
+        <svg viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 1L1 7l5 6"/></svg>
+        <svg viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 1l5 6-5 6"/></svg>
+      </div>
+      <span class="compare-label compare-label--before">Raw Render</span>
+      <span class="compare-label compare-label--after">AI Enhanced</span>
+      <input type="range" class="compare-range" id="compareRange" min="0" max="100" value="50" aria-label="Comparison slider — raw render versus AI enhanced">
+    </div>
+  </div>
 </section>
 
 <section class="portfolio-section" id="work">
@@ -921,6 +966,7 @@ img{color:transparent} /* hide broken img alt text */
     </div>
     <div class="reveal" style="transition-delay:.12s">
       <form id="contactForm" onsubmit="handleSubmit(event)">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;opacity:0">
         <div class="fsec">Your Details</div>
         <div class="frow">
           <div class="ff"><label>Name *</label><input type="text" name="name" placeholder="Full name" required></div>
@@ -960,6 +1006,7 @@ img{color:transparent} /* hide broken img alt text */
         <div class="fsec">Project Details</div>
         <div class="frow full"><div class="ff"><label>About Your Project</label><textarea name="message" placeholder="Brief description, location, timeline, specific requirements..."></textarea></div></div>
         <div class="file-note">To share plans, images or briefs, email them to <a href="mailto:mail@ivolvestudios.com">mail@ivolvestudios.com</a> alongside your enquiry.</div>
+        <div id="turnstileSlot" style="margin:4px 0 16px"></div>
         <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
         <div class="fmsg" id="formSuccess">
           <span class="fmsg-icon">✓</span>
@@ -1000,6 +1047,26 @@ img{color:transparent} /* hide broken img alt text */
 
 <script>
 const FORMSPREE_ID = 'xeenqpyw';
+
+// ── CLOUDFLARE TURNSTILE (anti-spam) ─────────────────────────
+// To activate: create a Turnstile widget in Cloudflare, paste the
+// SITE KEY below, and paste the SECRET KEY into Formspree's CAPTCHA
+// settings. Until a real key is pasted, the form works as normal.
+const TURNSTILE_SITEKEY = 'PASTE_YOUR_TURNSTILE_SITE_KEY_HERE';
+
+// ── WEBP SMART LOADER ────────────────────────────────────────
+// Tries the .webp version of a .jpg URL first; falls back to the
+// original JPEG automatically if the .webp file doesn't exist.
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function webpVersion(url){
+  return /\.jpe?g(\?|$)/i.test(url) ? url.replace(/\.jpe?g(\?|$)/i, '.webp$1') : null;
+}
+function setSmartSrc(img, url){
+  const w = webpVersion(url);
+  if(!w){ img.src = url; return; }
+  img.onerror = () => { img.onerror = null; img.src = url; };
+  img.src = w;
+}
 
 const PROJECTS = [
   {
@@ -1412,9 +1479,9 @@ function buildScrollGallery(proj) {
       wrap.appendChild(vid);
     } else {
       const img = document.createElement('img');
-      img.src = item.url;
       img.alt = item.label;
       img.loading = 'lazy';
+      setSmartSrc(img, item.url);
       img.addEventListener('click', () => openLightbox(item.url, item.label));
       wrap.appendChild(img);
     }
@@ -1436,7 +1503,7 @@ const lightboxImg  = document.getElementById('lightboxImg');
 const lightboxCap  = document.getElementById('lightboxCaption');
 
 function openLightbox(src, caption){
-  lightboxImg.src = src;
+  setSmartSrc(lightboxImg, src);
   lightboxCap.textContent = caption || '';
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1550,7 +1617,14 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
   const eyebrow   = document.querySelector('.hero-eyebrow');
   if(!loader) return;
 
-  const MIN_DISPLAY = 3500;
+  let returnVisit = false;
+  try {
+    returnVisit = sessionStorage.getItem('iv_seen') === '1';
+    sessionStorage.setItem('iv_seen', '1');
+  } catch(e){}
+  const quick = returnVisit || REDUCED_MOTION;
+  if (quick && logoEl){ logoEl.style.animation = 'none'; logoEl.style.opacity = '1'; }
+  const MIN_DISPLAY = quick ? 500 : 3500;
   let vimeoReady    = false;
   let minTimeReached = false;
 
@@ -1638,7 +1712,7 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
 
 // ── 3D CARD TILT ──────────────────────────────────────────────
 (function initCardTilt(){
-  if(window.matchMedia('(pointer:coarse)').matches) return;
+  if(window.matchMedia('(pointer:coarse)').matches || REDUCED_MOTION) return;
   const TILT_MAX = 10;
 
   document.querySelectorAll('.project-card').forEach(card => {
@@ -1705,7 +1779,7 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
   // CSS pointer-events on background-image divs handled via CSS
 })();
 (function initCursorTrail(){
-  if(window.matchMedia('(pointer:coarse)').matches) return; // skip on touch
+  if(window.matchMedia('(pointer:coarse)').matches || REDUCED_MOTION) return; // skip on touch
   const TRAIL = 8;
   const particles = [];
   for(let i=0;i<TRAIL;i++){
@@ -1732,6 +1806,13 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
 
 // ── STAT COUNTERS — animate on scroll into view ───────────────
 (function initStatCounters(){
+  if (REDUCED_MOTION){
+    document.querySelectorAll('.stat-number[data-count]').forEach(el => {
+      const suffix = el.getAttribute('data-suffix') || '';
+      el.textContent = parseInt(el.getAttribute('data-count')).toLocaleString() + suffix;
+    });
+    return;
+  }
   const els = document.querySelectorAll('.stat-number[data-count]');
   if(!els.length) return;
   const obs = new IntersectionObserver(entries => {
@@ -1820,6 +1901,56 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
 })();
 
 
+
+// ── TURNSTILE INIT (only if a real site key has been pasted) ──
+(function initTurnstile(){
+  if (TURNSTILE_SITEKEY.indexOf('PASTE') !== -1) return;
+  const s = document.createElement('script');
+  s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+  s.async = true; s.defer = true;
+  s.onload = () => {
+    if (window.turnstile) {
+      window.turnstile.render('#turnstileSlot', { sitekey: TURNSTILE_SITEKEY, theme: 'dark' });
+    }
+  };
+  document.head.appendChild(s);
+})();
+
+// ── BEFORE/AFTER COMPARISON SLIDER ───────────────────────────
+(function initCompare(){
+  const block  = document.getElementById('compareBlock');
+  const frame  = document.getElementById('compareFrame');
+  const before = document.getElementById('compareBefore');
+  const after  = document.getElementById('compareAfter');
+  const range  = document.getElementById('compareRange');
+  if(!block) return;
+
+  // Only reveal the block once BOTH images load; stays hidden if missing
+  let loaded = 0;
+  function one(){ loaded++; if(loaded === 2) block.style.display = ''; }
+  before.onload = one; after.onload = one;
+  before.onerror = after.onerror = () => { block.style.display = 'none'; };
+  before.src = 'images/compare/before.jpg';
+  after.src  = 'images/compare/after.jpg';
+
+  function setSplit(pct){
+    pct = Math.max(0, Math.min(100, pct));
+    frame.style.setProperty('--split', pct + '%');
+    range.value = pct;
+  }
+  function fromEvent(e){
+    const rect = frame.getBoundingClientRect();
+    const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+    setSplit(x / rect.width * 100);
+  }
+  let dragging = false;
+  frame.addEventListener('pointerdown', e => { dragging = true; frame.setPointerCapture(e.pointerId); fromEvent(e); });
+  frame.addEventListener('pointermove', e => { if(dragging) fromEvent(e); });
+  frame.addEventListener('pointerup',   () => { dragging = false; });
+  frame.addEventListener('pointercancel', () => { dragging = false; });
+  range.addEventListener('input', () => setSplit(parseFloat(range.value))); // keyboard access
+})();
+
 // ── IMAGE LOADING OPTIMISATION ────────────────────────────────────────────
 // Fade in images as they load, remove skeleton when done
 function setupImageLoading() {
@@ -1866,9 +1997,25 @@ function setupImageLoading() {
       const bgObs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.setAttribute('style', entry.target.dataset.bg);
-            entry.target.style.opacity = '1';
-            bgObs.unobserve(entry.target);
+            const el = entry.target;
+            const styleStr = el.dataset.bg;
+            const m = styleStr.match(/url\('([^']+)'\)/);
+            const jpgUrl = m ? m[1] : null;
+            const wUrl = jpgUrl ? webpVersion(jpgUrl) : null;
+            function apply(u){
+              el.setAttribute('style', styleStr.replace(jpgUrl, u));
+              el.style.opacity = '1';
+            }
+            if (wUrl) {
+              const test = new Image();
+              test.onload = () => apply(wUrl);
+              test.onerror = () => apply(jpgUrl);
+              test.src = wUrl;
+            } else {
+              el.setAttribute('style', styleStr);
+              el.style.opacity = '1';
+            }
+            bgObs.unobserve(el);
           }
         });
       }, { rootMargin: '150px 0px' });
