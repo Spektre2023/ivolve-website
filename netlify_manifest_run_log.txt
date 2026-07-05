@@ -1,14 +1,14 @@
  
 =============================================================== 
   Ivolve Netlify Manifest Generator 
-  Wed 13/05/2026 16:42:54.10 
+  Mon 18/05/2026 15:05:19.73 
   Scanning: C:\Users\schan\Documents\ivolve-website 
 =============================================================== 
 Scanning: C:\Users\schan\Documents\ivolve-website
-Found 222 files. Writing v6...
+Found 224 files. Writing v2...
 
-Wrote ivolve_netlify_manifest_v6.txt with 222 files:
-    2  (root)
+Wrote ivolve_netlify_manifest_v2.txt with 224 files:
+    3  (root)
     8  images/ai-advantage
     6  images/icons
     1  images/ivolve-logo.png
@@ -32,5 +32,6 @@ Wrote ivolve_netlify_manifest_v6.txt with 222 files:
    12  images/projects/Victoria and Albert - Broadbeach
     1  ss/index_v15.html
     1  ss/index_v16.html
+    1  ss/index_v30.html
 
-Saved to: C:\Users\schan\Documents\ivolve-website\ivolve_netlify_manifest_v6.txt
+Saved to: C:\Users\schan\Documents\ivolve-website\ivolve_netlify_manifest_v2.txt
