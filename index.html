@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ivolve Studios v56 | Built 2026-07-05 | Compare frame adapts to each image's native aspect ratio -->
+<!-- Ivolve Studios v58 | Built 2026-10-15 | Ace Residences tour live; 688 Pacific staged behind coming-soon placeholder -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -117,6 +117,34 @@
 .compare-dot{width:7px;height:7px;border-radius:50%;background:var(--border-light);border:none;padding:0;cursor:pointer;transition:background .25s,transform .25s}
 .compare-dot.active{background:var(--accent);transform:scale(1.35)}
 @media(max-width:768px){.compare-block{padding:44px 20px 0}}
+
+/* VIRTUAL TOURS */
+.vt-section{padding:100px 0 90px;background:var(--bg);border-top:1px solid var(--border)}
+.vt-header{padding:0 56px;margin:0 auto 44px;max-width:1250px}
+.vt-lede{font-size:15px;line-height:1.85;color:var(--text-muted);max-width:660px;margin-top:16px}
+.vt-tours{display:grid;grid-template-columns:1fr;gap:56px;padding:0 56px;max-width:1250px;margin:0 auto}
+.vt-card{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--surface)}
+.vt-frame{position:relative;aspect-ratio:16/9;background:var(--bg2)}
+.vt-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.vt-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-ui);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--text-dim)}
+.vt-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;border-top:1px solid var(--border)}
+.vt-label{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text)}
+.vt-launch{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:color .2s;white-space:nowrap}
+.vt-launch:hover{color:var(--accent2)}
+.vt-launch svg{transition:transform .2s}
+.vt-launch:hover svg{transform:translate(2px,-2px)}
+.vt-devices{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin:56px auto 0;max-width:1138px;width:calc(100% - 112px)}
+.vt-device{background:var(--surface);padding:30px 28px}
+.vt-device-title{font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.vt-device p{font-size:13.5px;line-height:1.75;color:var(--text-muted)}
+.vt-frame--soon{display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 60% 55% at 50% 45%,rgba(184,150,106,.07) 0%,transparent 70%),var(--bg2)}
+.vt-soon{text-align:center;padding:20px}
+.vt-soon::before{content:'';display:block;width:42px;height:1px;background:var(--accent);opacity:.55;margin:0 auto 22px}
+.vt-soon-title{font-family:var(--font-display);font-size:clamp(26px,3.2vw,40px);font-weight:300;letter-spacing:-.01em;color:var(--text)}
+.vt-soon-sub{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-top:14px}
+.vt-partner{text-align:center;margin:36px 20px 0;font-family:var(--font-ui);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-dim)}
+@media(max-width:900px){.vt-devices{grid-template-columns:1fr}}
+@media(max-width:768px){.vt-section{padding:60px 0 52px}.vt-header{padding:0 20px;margin-bottom:28px}.vt-tours{padding:0 20px;gap:36px}.vt-devices{width:calc(100% - 40px);margin-top:40px}.vt-bar{padding:12px 14px}}
 
 /* GOLD SHIMMER ANIMATION */
 @keyframes goldShimmer {
@@ -695,6 +723,7 @@ img{color:transparent} /* hide broken img alt text */
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#ai-advantage">AI Case Studies</a></li>
+    <li id="vtNavItem"><a href="#virtual-tours">Virtual Tours</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in Touch</a>
 </nav>
@@ -874,6 +903,31 @@ img{color:transparent} /* hide broken img alt text */
     <div class="compare-nav" id="compareNav"></div>
     <p class="compare-note">Every refinement you see here is deliberate. Our artists direct each change — light, material, planting, atmosphere — with AI as the instrument, never the author. Nothing in the frame is random.</p>
   </div>
+</section>
+
+<!-- ── VIRTUAL TOURS ─────────────────────────────────────────── -->
+<section class="vt-section" id="virtual-tours">
+  <div class="vt-header reveal">
+    <div class="eyebrow">Immersive</div>
+    <h2 class="display-title">Virtual <em class="shimmer-gold">Tours</em></h2>
+    <p class="vt-lede">Our environments are modelled with such depth and precision that you can step inside them. We transform the photorealistic worlds behind our imagery into fully explorable virtual tours — walk the spaces, study the materials, understand the volumes, long before construction begins.</p>
+  </div>
+  <div class="vt-tours reveal" id="vtTours"></div>
+  <div class="vt-devices reveal">
+    <div class="vt-device">
+      <div class="vt-device-title">Online</div>
+      <p>Explore in any modern browser — no apps, no downloads. Share a link, and the space does the selling.</p>
+    </div>
+    <div class="vt-device">
+      <div class="vt-device-title">iPad &amp; iPhone</div>
+      <p>Carry the development in your hand — made for sales suites, site meetings and boardroom presentations.</p>
+    </div>
+    <div class="vt-device">
+      <div class="vt-device-title">Meta Quest &amp; Apple Vision Pro</div>
+      <p>The ultimate spatial experience. True scale, true depth — stand inside the design in full immersion.</p>
+    </div>
+  </div>
+  <p class="vt-partner">Virtual tours produced in partnership with Enviz</p>
 </section>
 
 <section class="portfolio-section" id="work">
@@ -2010,6 +2064,83 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
   frame.addEventListener('pointerup',   () => { dragging = false; });
   frame.addEventListener('pointercancel', () => { dragging = false; });
   range.addEventListener('input', () => setSplit(parseFloat(range.value))); // keyboard access
+})();
+
+// ── VIRTUAL TOURS ─────────────────────────────────────────────
+// Paste each Enviz tour URL (and a display name) below. The whole
+// section and its nav link stay hidden until a real URL is present,
+// so this is always safe to deploy.
+// status: 'live' shows the embedded tour; 'soon' shows an unnamed
+// "New Project Launch — Coming Soon" placeholder card instead.
+// To launch 688 Pacific when the display suite opens, change its
+// status from 'soon' to 'live' — nothing else needs touching.
+const VT_TOURS = [
+  { label: 'The Ace Residences — Bowral',    url: 'https://app.enviz.co/?intent=view/ACE1', status: 'live' },
+  { label: '688 Pacific Highway — Chatswood', url: 'https://app.enviz.co/?intent=view/C6YV', status: 'soon' }
+];
+
+(function initVirtualTours(){
+  const section = document.getElementById('virtual-tours');
+  const wrap    = document.getElementById('vtTours');
+  const navItem = document.getElementById('vtNavItem');
+  if(!section || !wrap) return;
+
+  const entries = VT_TOURS.filter(t =>
+    t.status === 'soon' || (t.url && t.url.indexOf('PASTE') === -1));
+  const hasLive = entries.some(t => t.status !== 'soon');
+  if(!entries.length || !hasLive){
+    section.style.display = 'none';
+    if(navItem) navItem.style.display = 'none';
+    return;
+  }
+
+  entries.forEach((t, i) => {
+    const card = document.createElement('div');
+    card.className = 'vt-card';
+    if(t.status === 'soon'){
+      card.innerHTML =
+        '<div class="vt-frame vt-frame--soon">' +
+          '<div class="vt-soon">' +
+            '<div class="vt-soon-title">New Project Launch</div>' +
+            '<div class="vt-soon-sub">Coming Soon</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="vt-bar"><span class="vt-label">Coming Soon</span></div>';
+    } else {
+      const name = (t.label && t.label.indexOf('PASTE') === -1)
+        ? t.label
+        : 'Virtual Tour ' + String(i + 1).padStart(2, '0');
+      card.innerHTML =
+        '<div class="vt-frame" data-src="' + t.url + '">' +
+          '<div class="vt-loading">Loading tour…</div>' +
+        '</div>' +
+        '<div class="vt-bar">' +
+          '<span class="vt-label">' + name + '</span>' +
+          '<a class="vt-launch" href="' + t.url + '" target="_blank" rel="noopener">Launch Full Screen ' +
+            '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>' +
+          '</a>' +
+        '</div>';
+    }
+    wrap.appendChild(card);
+  });
+
+  // The tours are heavy WebGL apps — only create each iframe as it
+  // approaches the viewport so they never slow the rest of the page.
+  const vtObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      const frame = entry.target;
+      const iframe = document.createElement('iframe');
+      iframe.src = frame.dataset.src;
+      iframe.loading = 'lazy';
+      iframe.setAttribute('allow', 'fullscreen; xr-spatial-tracking; gyroscope; accelerometer; magnetometer');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.title = 'Ivolve Studios virtual tour';
+      frame.appendChild(iframe);
+      vtObs.unobserve(frame);
+    });
+  }, { rootMargin: '500px' });
+  wrap.querySelectorAll('.vt-frame[data-src]').forEach(f => vtObs.observe(f));
 })();
 
 // ── IMAGE LOADING OPTIMISATION ────────────────────────────────────────────
