@@ -143,6 +143,22 @@
 .vt-soon-title{font-family:var(--font-display);font-size:clamp(26px,3.2vw,40px);font-weight:300;letter-spacing:-.01em;color:var(--text)}
 .vt-soon-sub{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-top:14px}
 .vt-partner{text-align:center;margin:36px 20px 0;font-family:var(--font-ui);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-dim)}
+/* Apt 501 explore card (24 Nov 2026) */
+.vt-item{min-width:0}
+.vt-new-heading{font-family:var(--font-display);font-size:clamp(22px,2.6vw,34px);font-weight:300;line-height:1.3;letter-spacing:-.005em;color:var(--text);margin:0 0 24px;max-width:980px}
+.vt-new-heading .vt-new{color:var(--accent);font-weight:400}
+a.vt-frame--explore{display:block;overflow:hidden;color:inherit;text-decoration:none;cursor:pointer}
+.vt-frame--explore .vt-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 8s ease}
+.vt-frame--explore:hover .vt-still{transform:scale(1.035)}
+.vt-explore{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
+.vt-explore-panel{display:flex;flex-direction:column;align-items:center;gap:22px;padding:30px 46px 32px;background:rgba(8,8,8,.58);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:3px}
+.vt-explore-logo{width:clamp(130px,15vw,210px);height:auto}
+.vt-explore-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#fff;padding:15px 32px;border:1px solid rgba(255,255,255,.6);background:transparent;transition:all .3s}
+.vt-frame--explore:hover .vt-explore-btn,.vt-frame--explore:focus-visible .vt-explore-btn{border-color:var(--accent);color:var(--accent)}
+.vt-bar-links{display:inline-flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:flex-end}
+.vt-request{color:var(--text-muted)}
+.vt-credit{text-align:center;margin:16px 20px 0;font-family:var(--font-ui);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-dim)}
+@media(max-width:768px){.vt-bar-links{gap:16px}.vt-new-heading{margin-bottom:16px}.vt-explore-panel{gap:12px;padding:16px 22px 18px}.vt-explore-logo{width:100px}.vt-explore-btn{font-size:10px;padding:10px 18px}}
 @media(max-width:900px){.vt-devices{grid-template-columns:1fr}}
 @media(max-width:768px){.vt-section{padding:60px 0 52px}.vt-header{padding:0 20px;margin-bottom:28px}.vt-tours{padding:0 20px;gap:36px}.vt-devices{width:calc(100% - 40px);margin-top:40px}.vt-bar{padding:12px 14px}}
 
@@ -927,7 +943,6 @@ img{color:transparent} /* hide broken img alt text */
       <p>The ultimate spatial experience. True scale, true depth — stand inside the design in full immersion.</p>
     </div>
   </div>
-  <p class="vt-partner">Virtual tours produced in partnership with Enviz</p>
 </section>
 
 <section class="portfolio-section" id="work">
@@ -2067,16 +2082,20 @@ document.querySelectorAll('a,button,.project-card,.service-card,.gallery-thumb,.
 })();
 
 // ── VIRTUAL TOURS ─────────────────────────────────────────────
-// Paste each Enviz tour URL (and a display name) below. The whole
-// section and its nav link stay hidden until a real URL is present,
-// so this is always safe to deploy.
-// status: 'live' shows the embedded tour; 'soon' shows an unnamed
-// "New Project Launch — Coming Soon" placeholder card instead.
-// To launch 688 Pacific when the display suite opens, change its
-// status from 'soon' to 'live' — nothing else needs touching.
+// Each tour: label, url, status, optional heading (shown above the card)
+// and credit (shown under it). The whole section and its nav link stay
+// hidden until a real URL is present, so this is always safe to deploy.
+// status: 'live' embeds the tour; 'explore' shows a still image with a
+// "Click to explore" button that opens the tour (sign-in protected);
+// 'soon' shows an unnamed "New Project Launch — Coming Soon" card.
 const VT_TOURS = [
-  { label: 'The Ace Residences — Bowral',    url: 'https://app.enviz.co/?intent=view/ACE1', status: 'live' },
-  { label: '688 Pacific Highway — Chatswood', url: 'https://app.enviz.co/?intent=view/C6YV', status: 'soon' }
+  { label: '688 Pacific Highway — Chatswood', url: 'https://apt501.ivolvestudios.com/apt501.html', status: 'explore',
+    img: 'images/tours/apt501_start.jpg', webp: 'images/tours/apt501_start.webp',
+    alt: 'Kitchen and dining room of the 688 Pacific Highway virtual apartment: the opening view of the tour',
+    heading: 'NEW - Super fidelity Virtual Tour with full detail materials, lighting, furniture and landscaping',
+    credit: 'Built entirely in-house by Ivolve Studios' },
+  { label: 'The Ace Residences — Bowral', url: 'https://app.enviz.co/?intent=view/ACE1', status: 'live',
+    credit: 'Virtual tour produced in partnership with Enviz' }
 ];
 
 (function initVirtualTours(){
@@ -2094,10 +2113,46 @@ const VT_TOURS = [
     return;
   }
 
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   entries.forEach((t, i) => {
+    const item = document.createElement('div');
+    item.className = 'vt-item';
+    if(t.heading){
+      const h = document.createElement('h3');
+      h.className = 'vt-new-heading';
+      h.innerHTML = /^NEW\b/.test(t.heading) ? '<span class="vt-new">NEW</span>' + esc(t.heading.slice(3)) : esc(t.heading);
+      item.appendChild(h);
+    }
     const card = document.createElement('div');
     card.className = 'vt-card';
-    if(t.status === 'soon'){
+    item.appendChild(card);
+    if(t.credit){
+      const c = document.createElement('p');
+      c.className = 'vt-credit';
+      c.textContent = t.credit;
+      item.appendChild(c);
+    }
+    if(t.status === 'explore'){
+      card.innerHTML =
+        '<a class="vt-frame vt-frame--explore" href="' + esc(t.url) + '" target="_blank" rel="noopener" aria-label="Click to explore the ' + esc(t.label) + '">' +
+          '<picture>' + (t.webp ? '<source srcset="' + esc(t.webp) + '" type="image/webp">' : '') +
+            '<img class="vt-still" src="' + esc(t.img) + '" alt="' + esc(t.alt || t.label) + '" loading="lazy" decoding="async" draggable="false">' +
+          '</picture>' +
+          '<span class="vt-explore"><span class="vt-explore-panel">' +
+            '<img class="vt-explore-logo" src="images/ivolve-logo.png" alt="Ivolve Studios" draggable="false">' +
+            '<span class="vt-explore-btn">Click to explore</span>' +
+          '</span></span>' +
+        '</a>' +
+        '<div class="vt-bar">' +
+          '<span class="vt-label">' + esc(t.label) + '</span>' +
+          '<span class="vt-bar-links">' +
+            '<a class="vt-launch vt-request" href="#contact">Request access</a>' +
+            '<a class="vt-launch" href="' + esc(t.url) + '" target="_blank" rel="noopener">Explore ' +
+              '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>' +
+            '</a>' +
+          '</span>' +
+        '</div>';
+    } else if(t.status === 'soon'){
       card.innerHTML =
         '<div class="vt-frame vt-frame--soon">' +
           '<div class="vt-soon">' +
@@ -2121,7 +2176,7 @@ const VT_TOURS = [
           '</a>' +
         '</div>';
     }
-    wrap.appendChild(card);
+    wrap.appendChild(item);
   });
 
   // The tours are heavy WebGL apps — only create each iframe as it
